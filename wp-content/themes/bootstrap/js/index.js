@@ -1,0 +1,1 @@
+$(function() {	$('#slide').cycle({		fx:'scrollHorz',		speed: 1000,		timeout: 5000,		next:'.next_img',		prev:'.prev_img'	});});
