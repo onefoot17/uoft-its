@@ -114,3 +114,8 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+
+function register_menu_social_links() {
+    register_nav_menu('social-links',__( 'Social Links' ));
+}
+add_action( 'init', 'register_menu_social_links' );

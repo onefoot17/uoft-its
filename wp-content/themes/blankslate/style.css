@@ -14,6 +14,16 @@ BlankSlate WordPress Theme © 2011-2019 TidyThemes
 BlankSlate is distributed under the terms of the GNU GPL
 */
 
+:root {
+    --black: #000000;
+    --blue: #003366;
+    --blue-light: #336699;
+    --green: #339933;
+    --white: #ffffff;
+    --margin: 1rem;
+    --padding: 1rem;
+}
+
 html,
 body,
 div,
@@ -103,8 +113,35 @@ video {
     vertical-align: baseline;
 }
 
+*,
+*:before,
+*:after{
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    transition: .2s all ease-in-out;
+}
+
+body,
+html {
+    font-size: 10px;
+    width: 100%;
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
     line-height: 1;
+    min-height: 100vh;
+    word-break: break-word;
+}
+
+img {
+    display: block;
+    height: auto;
+    width: 100%;
 }
 
 button {
@@ -163,7 +200,7 @@ table {
 
 th,
 td {
-    padding: 2px;
+    padding: calc(var(--padding) / 2);
 }
 
 big {
@@ -185,7 +222,7 @@ sub {
 }
 
 dd {
-    margin-left: 20px;
+    margin-left: 2rem;
 }
 
 kbd,
@@ -252,4 +289,123 @@ section {
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
+}
+
+.header,
+.branding,
+.nav__top,
+.nav__menu {
+    display: flex;
+}
+
+.header,
+.footer {
+    background-color: var(--blue);
+}
+
+.header {
+    align-items: flex-end;
+    padding: calc(var(--padding) * 2);
+}
+
+.header > *{
+    flex: 1;
+}
+
+.header__logo__its {
+    border-left: 1px solid var(--white);
+    padding: calc(var(--padding) / 2) var(--padding);
+}
+
+.branding {
+    align-items: flex-end;
+}
+
+.nav {
+    text-align: right;
+}
+
+.nav__top {
+    align-items: center;
+    border-bottom: 1px solid var(--blue-light);
+    font-size: .8rem;
+    justify-content: flex-end;
+    margin-bottom: calc(var(--margin) / 2);
+    padding-bottom: calc(var(--margin) / 2);
+}
+
+.nav__its-alerts {
+    border: 1px solid var(--blue-light);
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px var(--black);
+    color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--padding) / 2);
+    text-decoration: none;
+}
+
+.nav__its-alerts__icon {
+    background-color: var(--green);
+    border-radius: 50%;
+    margin-top: -1px;
+    width: 5px;
+    height: 5px;
+}
+
+.nav__its-alerts__text {
+    padding-left: calc(var(--padding) / 2);
+}
+
+.nav__menu {
+    justify-content: space-between;
+}
+
+.nav__menu a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.sub-menu {
+    display: none;
+}
+
+.nav__menu--social a {
+    font-family: "Font Awesome 5 Brands";
+    font-size: 0;
+    padding-left: calc(var(--padding) * 2);
+    text-indent: -9999px;
+}
+
+.nav__menu--social a:before {
+    font-size: initial;
+}
+
+.twitter a:before {
+    content: "\f099";
+}
+
+.facebook a:before {
+    content: "\f09a";
+}
+
+.instagram a:before {
+    content: "\f16d";
+}
+
+.youtube a:before {
+    content: "\f167";
+}
+
+.linkedin a:before {
+    content: "\f08c";
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.footer {
+    color: var(--white);
 }
