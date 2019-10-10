@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../src/js/scripts.js"],"names":["console","log"],"mappings":"AAAAA,QAAQC,IAAI"}
+{"version":3,"sources":["../../src/js/scripts.js"],"names":["carousels","document","querySelectorAll","Object","values","map","carousel","Glide","type","mount"],"mappings":"AACA,MAAMA,UAAYC,SAASC,iBAAiB,UAE5CC,OAAOC,OAAQJ,WAAYK,IAAKC,IACb,IAAIC,MAAOD,EAAU,CAChCE,KAAM,aAGHC"}

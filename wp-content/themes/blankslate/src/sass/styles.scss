@@ -1,28 +1,19 @@
 @import '_reset';
 @import '_variables';
+@import '_mixins';
 
-*,
-*:before,
-*:after{
-    -moz-box-sizing:border-box;
-    -webkit-box-sizing:border-box;
-    box-sizing:border-box;
-    transition: .2s all ease-in-out;
-}
-
-body,
-html {
-    font-size: 10px;
-    width: 100%;
-    height: 100%;
-}
+// Glide carousel slider
+@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 
 body {
+    background-color: $gray-light;
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, Verdana, sans-serif;
     line-height: 1;
     min-height: 100vh;
+    padding: $padding/2;
     word-break: break-word;
 }
 
@@ -33,262 +24,113 @@ img {
 }
 
 button {
-    outline: 0;
+    @include button-styles;
 }
 
-ol,
-ul {
-    list-style: none;
+h1 {
+    font-size: 2rem;
 }
 
-blockquote,
-q {
-    quotes: none;
-}
+.#{$header} {
+    @include display-flex($align-items: flex-end);
+    
+    background-color: $blue;
+    padding: $padding*2;
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-q {
-    display: inline;
-    font-style: italic
-}
-
-q:before {
-    content: '"';
-    font-style: normal;
-}
-
-q:after {
-    content: '"';
-    font-style: normal;
-}
-
-textarea,
-input[type="text"],
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="search"],
-input[type="password"] {
-    -webkit-appearance: none;
-    appearance: none;
-    border-radius: 0;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-th,
-td {
-    padding: calc(var(--padding) / 2);
-}
-
-big {
-    font-size: 120%;
-}
-
-small,
-sup,
-sub {
-    font-size: 80%;
-}
-
-sup {
-    vertical-align: super;
-}
-
-sub {
-    vertical-align: sub;
-}
-
-dd {
-    margin-left: 2rem;
-}
-
-kbd,
-tt {
-    font-family: courier;
-    font-size: 12px;
-}
-
-ins {
-    text-decoration: underline;
-}
-
-del,
-strike,
-s {
-    text-decoration: line-through;
-}
-
-dt {
-    font-weight: bold;
-}
-
-address,
-cite,
-var {
-    font-style: italic;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-
-* {
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.sticky {}
-
-.bypostauthor {}
-
-.wp-caption {}
-
-.wp-caption-text {}
-
-.gallery-caption {}
-
-.alignright {}
-
-.alignleft {}
-
-.aligncenter {}
-
-.screen-reader-text {
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
-}
-
-.header,
-.branding,
-.nav__top,
-.nav__menu {
-    display: flex;
-}
-
-.header,
-.footer {
-    background-color: var(--blue);
-}
-
-.header {
-    align-items: flex-end;
-    padding: calc(var(--padding) * 2);
-}
-
-.header > *{
-    flex: 1;
-}
-
-.header__logo__its {
-    border-left: 1px solid var(--white);
-    padding: calc(var(--padding) / 2) var(--padding);
+    > * {
+        flex: 1;
+    }
+    
+    &#{$es}logo__its {
+        border-left: 1px solid $white;
+        padding: $padding/2 $padding;
+    }
 }
 
 .branding {
-    align-items: flex-end;
+    @include display-flex($align-items: flex-end);
 }
 
-.nav {
+.#{$nav} {
     text-align: right;
-}
-
-.nav__top {
-    align-items: center;
-    border-bottom: 1px solid var(--blue-light);
-    font-size: .8rem;
-    justify-content: flex-end;
-    margin-bottom: calc(var(--margin) / 2);
-    padding-bottom: calc(var(--margin) / 2);
-}
-
-.nav__its-alerts {
-    border: 1px solid var(--blue-light);
-    border-radius: 2px;
-    box-shadow: 0px 0px 2px var(--black);
-    color: var(--white);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: calc(var(--padding) / 2);
-    text-decoration: none;
-}
-
-.nav__its-alerts__icon {
-    background-color: var(--green);
-    border-radius: 50%;
-    margin-top: -1px;
-    width: 5px;
-    height: 5px;
-}
-
-.nav__its-alerts__text {
-    padding-left: calc(var(--padding) / 2);
-}
-
-.nav__menu {
-    justify-content: space-between;
-}
-
-.nav__menu a {
-    color: var(--white);
-    text-decoration: none;
-}
-
-.sub-menu {
-    display: none;
-}
-
-.nav__menu--social a {
-    font-family: "Font Awesome 5 Brands";
-    font-size: 0;
-    padding-left: calc(var(--padding) * 2);
-    text-indent: -9999px;
-}
-
-.nav__menu--social a:before {
-    font-size: initial;
-}
-
-a:before {
-    .twitter & {
-        content: "\f099";
+    
+    &#{$es}top {
+        @include display-flex($justify-content: flex-end);
+        
+        border-bottom: 1px solid $blue-light;
+        font-size: .8rem;
+        margin-bottom: $margin/2;
+        padding-bottom: $padding/2;
     }
-
-    .facebook & {
-        content: "\f09a";
+    
+    &#{$es}its-alerts {
+        @include button-styles($border-color: $blue-light);
+        
+        box-shadow: 0px 0px 2px $black;
+        color: $white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: $padding/2;
+        text-decoration: none;
+        
+        &#{$es}icon {
+            background-color: $green;
+            border-radius: 50%;
+            margin-top: -1px;
+            width: 5px;
+            height: 5px;
+        }
+        
+        &#{$es}text {
+            padding-left: $padding/2;
+        }
     }
-
-    .instagram & {
-        content: "\f16d";
+    
+    &#{$es}menu {
+        @include display-flex;
+        
+        a {
+            color: $white;
+            text-decoration: none;
+        }
     }
-
-    .youtube & {
-        content: "\f167";
+    
+    .sub-menu {
+        display: none;
     }
-
-    .linkedin & {
-        content: "\f08c";
+    
+    &#{$es}menu#{$ms}social {
+        a {
+            font-family: "Font Awesome 5 Brands";
+            font-size: 0;
+            padding-left: $padding*2;
+            text-indent: -9999px;
+            
+            &:before {
+                font-size: initial;
+            }
+        }
+        
+        .twitter a:before {
+            content: "\f099";
+        }
+        
+        .facebook a:before {
+            content: "\f09a";
+        }
+        
+        .instagram a:before {
+            content: "\f16d";
+        }
+        
+        .youtube a:before {
+            content: "\f167";
+        }
+        
+        .linkedin a:before {
+            content: "\f08c";
+        }
     }
 }
 
@@ -296,6 +138,135 @@ a:before {
     flex-grow: 1;
 }
 
-.footer {
-    color: var(--white);
+.#{$section} {
+    &#{$es}width {
+        margin: 0 auto;
+        max-width: $section-width;
+        padding-top: $padding*4;
+        padding-bottom: $padding*4 ;
+    }
+
+    &#{$es}header {
+        @include display-flex;
+
+        padding: $padding;
+    }
+
+    &#{$es}button:hover {
+        @include button-hover;
+    }
+
+    &#{$es}posts {
+        @include display-flex($align-items: flex-start);
+
+        > * {
+            flex: 0 1 $section-width/4;
+            padding: $padding;
+        }
+
+    }
+
+    &#{$es}link {
+        text-decoration: none;
+
+        &:hover button {
+            @include button-hover;
+        }
+    }
+
+    &#{$es}image {
+        margin-bottom: $margin;
+    }
+}
+
+.#{$featured} {
+    background-color: $white;
+}
+
+.#{$carousel} {
+    &#{$es}item {
+        @include display-flex;
+        
+        text-decoration: none;
+    }
+
+    &#{$es}button {
+        @include button-styles($background-color: $blue, $border-color: transparent, $color: $white);
+
+        font-size: 1.2rem;
+    }
+}
+
+.#{$alerts} {
+    padding-top: 0;
+    padding-bottom: 0;
+    
+    &#{$es}link {
+        @include display-flex($justify-content: center);
+        
+        background-color: $green;
+        color: $white;
+        padding: $padding;
+        text-align: center;
+        text-decoration: none;
+        
+        > * {
+            padding: $padding;
+        }
+    }
+    
+    &#{$es}title {
+        font-size: 2rem;
+    }
+    
+    &#{$es}excerpt p{
+        font-size: 1.5rem;
+    }
+    
+    &#{$es}button {
+        @include button-styles($border-color: $white);
+        
+        font-size: 1.2rem;
+    }
+}
+
+.#{$section}#{$ms}#{$news} {
+    background-color: $white;
+
+    &#{$es}heading {
+        color: $blue-light;
+    }
+
+    &#{$es}link {
+        color: $blue;
+    }
+
+    &#{$es}button {
+        @include button-styles($border-color: $blue-light, $color: $blue-light);
+
+        font-size: 1.2rem;
+    }
+
+    &#{$es}title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding-left: $padding;
+        padding-right: $padding;
+    }
+}
+
+.#{$section}#{$ms}#{$follow} {
+    &#{$es}button {
+        @include button-styles($border-color: $gray-dark, $color: $gray-dark);
+    }
+
+    &#{$es}posts#{$es}button {
+        width: 100%;
+    }
+}
+
+.#{$footer} {
+    background-color: $blue-light;
+    color: $white;
+    padding: $padding*2;
 }

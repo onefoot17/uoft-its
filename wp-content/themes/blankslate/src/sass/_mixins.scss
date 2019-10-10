@@ -1,0 +1,20 @@
+@mixin display-flex($align-items: center, $justify-content: space-between) {
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin button-styles($background-color: transparent, $border-color: $gray-light, $color: inherit, $padding: $padding/2 $padding, $text-decoration: none ) {
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    color: $color;
+    padding: $padding;
+    text-decoration: $text-decoration;
+}
+
+@mixin button-hover($background-color: $gray-dark, $color: $white) {
+    background-color: $background-color;
+    color: $color;
+    transition: $transition;
+}
