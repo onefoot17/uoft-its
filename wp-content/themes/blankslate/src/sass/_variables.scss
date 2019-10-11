@@ -2,6 +2,7 @@
 $black: var(--black) !default;
 $blue: var(--blue) !default;
 $blue-light: var(--blue-light) !default;
+$blue-medium: var(--blue-medium) !default;
 $gray-light: var(--gray-light) !default;
 $gray-medium: var(--gray-medium) !default;
 $gray-dark: var(--gray-dark) !default;
@@ -35,6 +36,7 @@ $transition: all 200ms ease-in-out;
     --black: #000000;
     --blue: #003366;
     --blue-light: #336699;
+    --blue-medium: #003366;
     --gray-light: #cccccc;
     --gray-medium: #999999;
     --gray-dark: #666666;

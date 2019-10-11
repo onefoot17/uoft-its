@@ -1,9 +1,11 @@
-        <footer id="footer" class="footer">
-            <section id="copyright">
-                &copy; <?php echo esc_html( date_i18n( __( 'Y', 'blankslate' ) ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+        <footer class="footer">
+            <section class="section__width">
+                <section><?php echo esc_html( get_bloginfo( 'name' ) ); ?></section>
+
+                <section>University of Toronto</section>
             </section>
-        
-            <?php wp_footer(); ?>
         </footer>
+
+        <?php wp_footer(); ?>
     </body>
 </html>

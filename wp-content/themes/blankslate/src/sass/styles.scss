@@ -148,7 +148,7 @@ p{
         margin: 0 auto;
         max-width: $section-width;
         padding-top: $padding*4;
-        padding-bottom: $padding*4 ;
+        padding-bottom: $padding*4;
     }
 
     &#{$es}header {
@@ -336,7 +336,14 @@ p{
 }
 
 .#{$footer} {
-    background-color: $blue-light;
+    background-color: $blue-medium;
     color: $white;
-    padding: $padding*2;
+    font-size: 2rem;
+    padding-top: $padding*4;
+    
+    .section__width {
+        @include display-flex;
+        
+        border-top: 1px solid $blue-light;
+    }
 }
