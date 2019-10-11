@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="content">
-    <section class="section featured">
+    <section class="section section--featured">
         <section class="section__width glide">
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
@@ -18,12 +18,12 @@
                             setup_postdata( $post ); 
                     ?>
                                 <li class="glide__slide">
-                                    <a class="section__link carousel__item" href="<?php the_permalink(); ?>">
+                                    <a class="section__link section__carousel-item" href="<?php the_permalink(); ?>">
                                         <h2><?php the_title(); ?></h2>
 
                                         <p><?php the_excerpt(); ?></p>
 
-                                        <button class="section__button carousel__button">Learn more</button>
+                                        <button class="section__button section--featured__button">Learn more</button>
                                     </a>
                                 </li>
                     <?php
@@ -62,35 +62,33 @@
         </section>
     </section>
 
-    <section class="section alerts">
-        <section class="section__width">
-            <?php
-                global $post;
+    <section class="section section--alerts">
+        <?php
+            global $post;
 
-                $args = array(
-                    'category_name' => 'Alerts',
-                    'posts_per_page' => 1
-                );
+            $args = array(
+                'category_name' => 'Alerts',
+                'posts_per_page' => 1
+            );
 
-                $postslist = get_posts( $args );
+            $postslist = get_posts( $args );
 
-                foreach ( $postslist as $post ) :
-                    setup_postdata( $post ); 
-            ?>
-                        
-                    <a class="section__link alerts__link" href="<?php the_permalink(); ?>">
-                        <h2 class="alerts__title"><?php the_title(); ?></h2>
+            foreach ( $postslist as $post ) :
+                setup_postdata( $post ); 
+        ?>
+                    
+                <a class="section__link section--alerts__link" href="<?php the_permalink(); ?>">
+                    <h2 class="section--alerts__title"><?php the_title(); ?></h2>
 
-                        <span class="alerts__excerpt"><?php the_excerpt(); ?></span>
+                    <span class="section--alerts__excerpt"><?php the_excerpt(); ?></span>
 
-                        <button class="section__button alerts__button">Learn more</button>
-                    </a>
-            <?php
-                endforeach;
+                    <button class="section__button section--alerts__button">Learn more</button>
+                </a>
+        <?php
+            endforeach;
 
-                wp_reset_postdata();
-            ?>
-        </section>
+            wp_reset_postdata();
+        ?>
     </section>
 
     <section class="section section--news">

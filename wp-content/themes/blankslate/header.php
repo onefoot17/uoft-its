@@ -11,10 +11,10 @@
 
     <body <?php body_class(); ?>>
         <header id="header" class="header">
-            <section class="branding">
-                <a class="header__logo__uoft" href="" title=""><?php echo wp_get_attachment_image( 8695, 'full', false, array('class' => 'header__logo') ); ?></a>
+            <section class="header__logos">
+                <a class="header__logos__uoft" href="" title=""><?php echo wp_get_attachment_image( 8695, 'full', false, array('class' => 'header__logo') ); ?></a>
 
-                <a class="header__logo__its" href="" title=""><?php echo wp_get_attachment_image( 8696, 'full', false, array('class' => 'header__logo') ); ?></a>
+                <a class="header__logos__its" href="" title=""><?php echo wp_get_attachment_image( 8696, 'full', false, array('class' => 'header__logo') ); ?></a>
             </section>
 
             <nav class="nav">

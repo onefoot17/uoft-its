@@ -41,14 +41,14 @@ h1 {
         flex: 1;
     }
     
-    &#{$es}logo__its {
-        border-left: 1px solid $white;
-        padding: $padding/2 $padding;
-    }
-}
+    &#{$es}logos {
+        @include display-flex($align-items: flex-end);
 
-.branding {
-    @include display-flex($align-items: flex-end);
+        &#{$es}__its {
+            border-left: 1px solid $white;
+            padding: $padding/2 $padding;
+        }
+    }
 }
 
 .#{$nav} {
@@ -177,91 +177,86 @@ h1 {
     &#{$es}image {
         margin-bottom: $margin;
     }
-}
-
-.#{$featured} {
-    background-color: $white;
-}
-
-.#{$carousel} {
-    &#{$es}item {
+    
+    &#{$ms}#{$featured} {
+        background-color: $white;
+        
+        &#{$es}button {
+            @include button-styles($background-color: $blue, $border-color: transparent, $color: $white);
+            
+            font-size: 1.2rem;
+        }
+    }
+    
+    &#{$es}#{$carousel}-item {
         @include display-flex;
         
         text-decoration: none;
     }
-
-    &#{$es}button {
-        @include button-styles($background-color: $blue, $border-color: transparent, $color: $white);
-
-        font-size: 1.2rem;
-    }
-}
-
-.#{$alerts} {
-    padding-top: 0;
-    padding-bottom: 0;
     
-    &#{$es}link {
-        @include display-flex($justify-content: center);
-        
-        background-color: $green;
-        color: $white;
-        padding: $padding;
-        text-align: center;
-        text-decoration: none;
-        
-        > * {
+    &#{$ms}#{$alerts} {
+        &#{$es}link {
+            @include display-flex($justify-content: center);
+            
+            background-color: $green;
+            color: $white;
             padding: $padding;
+            text-align: center;
+            text-decoration: none;
+            
+            > * {
+                padding: $padding;
+            }
+        }
+        
+        &#{$es}title {
+            font-size: 2rem;
+        }
+        
+        &#{$es}excerpt p {
+            font-size: 1.5rem;
+        }
+        
+        &#{$es}button {
+            @include button-styles($border-color: $white);
+            
+            font-size: 1.2rem;
         }
     }
     
-    &#{$es}title {
-        font-size: 2rem;
-    }
-    
-    &#{$es}excerpt p{
-        font-size: 1.5rem;
-    }
-    
-    &#{$es}button {
-        @include button-styles($border-color: $white);
+    &#{$ms}#{$news} {
+        background-color: $white;
         
-        font-size: 1.2rem;
+        &#{$es}heading {
+            color: $blue-light;
+        }
+        
+        &#{$es}link {
+            color: $blue;
+        }
+        
+        &#{$es}button {
+            @include button-styles($border-color: $blue-light, $color: $blue-light);
+            
+            font-size: 1.2rem;
+        }
+        
+        &#{$es}title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding-left: $padding;
+            padding-right: $padding;
+        }
     }
-}
-
-.#{$section}#{$ms}#{$news} {
-    background-color: $white;
-
-    &#{$es}heading {
-        color: $blue-light;
-    }
-
-    &#{$es}link {
-        color: $blue;
-    }
-
-    &#{$es}button {
-        @include button-styles($border-color: $blue-light, $color: $blue-light);
-
-        font-size: 1.2rem;
-    }
-
-    &#{$es}title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        padding-left: $padding;
-        padding-right: $padding;
-    }
-}
-
-.#{$section}#{$ms}#{$follow} {
-    &#{$es}button {
-        @include button-styles($border-color: $gray-dark, $color: $gray-dark);
-    }
-
-    &#{$es}posts#{$es}button {
-        width: 100%;
+    
+    &#{$ms}#{$follow} {
+        &#{$es}button {
+            @include button-styles($border-color: $gray-dark, $color: $gray-dark);
+        }
+        
+        &#{$es}posts#{$es}button {
+            width: 100%;
+        }
     }
 }
 
