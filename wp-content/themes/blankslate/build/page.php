@@ -116,7 +116,7 @@
                             
                         <li>
                             <a class="section__link section--news__link" href="<?php the_permalink(); ?>">
-                                <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'thumbnail', false, array('class' => 'section__image') ); ?>
+                                <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'thumbnail', false, array('class' => 'section--news__image') ); ?>
 
                                 <h2 class="section--news__title"><?php the_title(); ?></h2>
                             </a>
@@ -155,9 +155,54 @@
                             
                         <li>
                             <a class="section__link" href="<?php the_permalink(); ?>">
-                                <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'thumbnail', false, array('class' => 'section__image') ); ?>
+                                <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'thumbnail', false, array('class' => 'section--follow__image') ); ?>
 
                                 <button class="section--follow__button section--follow__posts__button"><?php the_title(); ?></button>
+                            </a>
+                        </li>
+                <?php
+                    endforeach;
+
+                    wp_reset_postdata();
+                ?>
+            </ul>
+        </section>
+    </section>
+
+    <section class="section section--highlights">
+        <section class="section__width section--highlights__width">
+            <ul class="section__posts section--highlights__posts">
+                <?php
+                    global $post;
+
+                    $args = array(
+                        'category_name' => 'Highlights',
+                        'posts_per_page' => 4
+                    );
+
+                    $postslist = get_posts( $args );
+
+                    foreach ( $postslist as $post ) :
+                        setup_postdata( $post ); 
+                ?>
+                            
+                        <li class="section--highlights__post">
+                            <a class="section__link section--highlights__link" href="<?php the_permalink(); ?>">
+                                <header class="section--highlights__link__top">
+                                    <h2 class="section--highlights__posts__title"><?php the_title(); ?></h2>
+
+                                    <button class="section--highlights__button section--highlights__posts__button">Visit Website</button>
+                                </header>
+
+                                <section class="section--highlights__link__bottom">
+                                    <p class="section--highlights__posts__excerpt"><?php the_excerpt(); ?></p>
+
+                                    <?php
+                                        if ( has_post_thumbnail() ) {
+                                            echo '<section>' . wp_get_attachment_image(get_post_thumbnail_id(), 'thumbnail', false, array('class' => 'section__image section--highlights__link__image') ) . '</section>';
+                                        }
+                                    ?>
+                                </section>
                             </a>
                         </li>
                 <?php

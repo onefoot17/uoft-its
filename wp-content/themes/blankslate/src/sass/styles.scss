@@ -31,6 +31,11 @@ h1 {
     font-size: 2rem;
 }
 
+p{
+    font-size: 1.2rem;
+    line-height: 1.4em;
+}
+
 .#{$header} {
     @include display-flex($align-items: flex-end);
     
@@ -160,7 +165,7 @@ h1 {
         @include display-flex($align-items: flex-start);
 
         > * {
-            flex: 0 1 $section-width/4;
+            flex: 0 1 25%;
             padding: $padding;
         }
 
@@ -172,10 +177,6 @@ h1 {
         &:hover button {
             @include button-hover;
         }
-    }
-
-    &#{$es}image {
-        margin-bottom: $margin;
     }
     
     &#{$ms}#{$featured} {
@@ -231,14 +232,18 @@ h1 {
             color: $blue-light;
         }
         
-        &#{$es}link {
-            color: $blue;
-        }
-        
         &#{$es}button {
             @include button-styles($border-color: $blue-light, $color: $blue-light);
             
             font-size: 1.2rem;
+        }
+        
+        &#{$es}link {
+            color: $blue;
+        }
+
+        &#{$es}image {
+            margin-bottom: $margin;
         }
         
         &#{$es}title {
@@ -253,9 +258,79 @@ h1 {
         &#{$es}button {
             @include button-styles($border-color: $gray-dark, $color: $gray-dark);
         }
+
+        &#{$es}image {
+            margin-bottom: $margin;
+        }
         
         &#{$es}posts#{$es}button {
             width: 100%;
+        }
+    }
+    
+    &#{$ms}#{$highlights} {
+        &#{$es}width {
+            padding-top: 0;
+        }
+
+        &#{$es}posts {
+            flex-wrap: wrap;
+            
+            > * {
+                flex-basis: 50%;
+                padding-right: $padding;   
+            }
+            
+            &#{$es}title {
+                font-size: 3rem;
+                margin-bottom: $margin;
+            }
+            
+            &#{$es}button {
+                @include button-styles($border-color: $gray-dark, $color: $black);
+                
+                display: inline-block;
+                font-size: 1.2rem;
+            }
+            
+            &#{$es}excerpt {
+                font-size: 2rem;
+                line-height: 1.4em;
+                text-align: left;
+            }
+        }
+        
+        &#{$es}post{
+            display: flex;
+            align-self: stretch;
+        }
+        
+        &#{$es}link {
+            background-image: linear-gradient($white, $gray-light);
+            border: 1px solid $white;
+            color: $black;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: $padding*4;
+            text-align: center;
+
+            &#{$es}top {
+                margin-bottom: $margin*2;
+            }
+
+            &#{$es}bottom {
+                @include display-flex($align-items: flex-start);
+
+                > * {
+                    flex-basis: 50%;
+                    flex-grow: 1;
+                }
+            }
+
+            &#{$es}image {
+                padding-left: $padding;
+            }
         }
     }
 }

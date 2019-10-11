@@ -34,4 +34,8 @@
 
         wp_enqueue_script( 'script-scripts', get_template_directory_uri() . '/build/js/scripts-min.js', array(), false, true );
     }
+
+    // Remove auto tags
+    remove_filter ('the_excerpt', 'wpautop');
+    remove_filter ('the_content', 'wpautop');
 ?>
