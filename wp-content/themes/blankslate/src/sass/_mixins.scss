@@ -1,20 +1,40 @@
-@mixin display-flex($align-items: center, $justify-content: space-between) {
+@mixin display-flex( $align-items: center, $justify-content: space-between ) {
     display: flex;
     align-items: $align-items;
     justify-content: $justify-content;
 }
 
-@mixin button-styles($background-color: transparent, $border-color: $gray-light, $color: inherit, $padding: $padding/2 $padding, $text-decoration: none ) {
+@mixin button-styles( $background-color: transparent, $border-color: $gray-light, $color: inherit, $padding: $padding/2 $padding, $text-decoration: none ) {
     background-color: $background-color;
     border: 1px solid $border-color;
     border-radius: 4px;
     color: $color;
+    font-size: 1.2rem;
     padding: $padding;
     text-decoration: $text-decoration;
 }
 
-@mixin button-hover($background-color: $gray-dark, $color: $white) {
-    background-color: $background-color;
-    color: $color;
-    transition: $transition;
+@mixin button-hover( $button: button, $background-color: $gray-dark, $color: $white ) {
+    * {
+        transition: $transition;
+    }
+
+    @if $button == button {        
+        transition: $transition;
+        
+        &:hover {
+            background-color: $background-color;
+            color: $color;
+        }
+    } @else if $button == link {
+        &:hover button {
+            background-color: $background-color;
+            color: $color;
+        }
+    }
+}
+
+// Typography
+@mixin line-height( $line-height: 1.3em ) {
+    line-height: $line-height;
 }

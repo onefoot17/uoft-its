@@ -13,14 +13,33 @@
             $content_width = 1920;
         }
 
-        // Navigation
+        // Navigation Menu
         register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'blankslate' ) ) );
+
+        add_filter( 'walker_nav_menu_start_el', 'add_chevron', 10, 4 );
+
+        function add_chevron( $output, $item, $depth, $args ) {
+            //Only add class to 'top level' items on the 'primary' menu.
+            if( 'main-menu' == $args->theme_location ) {
+                if ( in_array( 'menu-item-has-children', $item->classes ) ) {
+                    $output .='<i class="fas fa-chevron-down nav__menu__chevron"></i>';
+                }
+            }
+            
+            return $output;
+        }
     }
 
-    // Social Links Navigation
+    // Social Links Navigation Menu
     add_action( 'init', 'register_menu_social_links' );
     function register_menu_social_links() {
-        register_nav_menu('social-links',__( 'Social Links' ));
+        register_nav_menu( 'social-links',__( 'Social Links' ) );
+    }
+
+    // Footer Navigation Menu
+    add_action( 'init', 'register_menu_footer' );
+    function register_menu_footer() {
+        register_nav_menu( 'footer',__( 'Footer' ) );
     }
 
     // Enqueue Scripts
@@ -38,4 +57,11 @@
     // Remove auto tags
     remove_filter ('the_excerpt', 'wpautop');
     remove_filter ('the_content', 'wpautop');
+    
+    // SVG Upload
+    function cc_mime_types($mimes) {
+        $mimes['svg'] = 'image/svg+xml';
+        return $mimes;
+      }
+      add_filter('upload_mimes', 'cc_mime_types');
 ?>

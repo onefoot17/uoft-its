@@ -1,8 +1,16 @@
         <footer class="footer">
-            <section class="section__width">
-                <section><?php echo esc_html( get_bloginfo( 'name' ) ); ?></section>
+            <section class="section__width section__width--footer">
+                <?php wp_nav_menu( array(
+                    'theme_location' => 'footer',
+                    'container' => '',
+                    'menu_class' => 'nav__menu nav__menu--footer'
+                ) ); ?>
 
-                <section>University of Toronto</section>
+                <ul class="footer__bottom">
+                    <li><?php echo esc_html( get_bloginfo( 'name' ) ); ?></li>
+
+                    <li>University of Toronto</li>
+                </ul>
             </section>
         </footer>
 
