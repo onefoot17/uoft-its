@@ -16,13 +16,13 @@
         // Navigation Menu
         register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'blankslate' ) ) );
 
-        add_filter( 'walker_nav_menu_start_el', 'add_chevron', 10, 4 );
+        add_filter( 'walker_nav_menu_start_el', 'add_arrow', 10, 4 );
 
-        function add_chevron( $output, $item, $depth, $args ) {
+        function add_arrow( $output, $item, $depth, $args ) {
             //Only add class to 'top level' items on the 'primary' menu.
             if( 'main-menu' == $args->theme_location ) {
                 if ( in_array( 'menu-item-has-children', $item->classes ) ) {
-                    $output .='<i class="fas fa-chevron-down nav__menu__chevron"></i>';
+                    $output .='<i class="fas fa-angle-down nav__menu__arrow"></i>';
                 }
             }
             

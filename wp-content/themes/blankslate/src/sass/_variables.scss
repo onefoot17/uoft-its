@@ -1,5 +1,6 @@
 // Colours
 $black: var(--black) !default;
+$blue-very-light: var(--blue-very-light) !default;
 $blue-light: var(--blue-light) !default;
 $blue-medium: var(--blue-medium) !default;
 $blue-dark: var(--blue-dark) !default;
@@ -20,7 +21,6 @@ $ms: '--' !default; // Modifier separator
 $header: 'header' !default;
 $nav: 'nav' !default;
 $section: 'section' !default;
-$featured: 'featured' !default;
 $carousel: 'carousel' !default;
 $alerts: 'alerts' !default;
 $news: 'news' !default;
@@ -28,12 +28,10 @@ $follow: 'follow' !default;
 $highlights: 'highlights' !default;
 $footer: 'footer' !default;
 
-// Animation
-$transition: all 200ms ease-in-out;
-
 // CSS variables
 :root {
     --black: #000000;
+    --blue-very-light: #99ccff;
     --blue-light: #336699;
     --blue-medium: #0066CC;
     --blue-dark: #003366;

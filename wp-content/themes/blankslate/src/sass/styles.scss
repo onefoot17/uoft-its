@@ -7,7 +7,9 @@
 @import "../../node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 
 body {
-    @include line-height($line-height: 1);
+    @include line-height(
+        $line-height: 1
+    );
     
     background-color: $gray-light;
     display: flex;
@@ -38,14 +40,19 @@ p{
     font-size: 1.2rem;
 }
 
+// Header
 .#{$header} {
-    @include display-flex($align-items: flex-end);
+    @include display-flex(
+        $align-items: flex-end
+    );
     
     background-color: $blue-dark;
     padding: $padding*2;
     
     &#{$es}logos {
-        @include display-flex($align-items: flex-end);
+        @include display-flex(
+            $align-items: flex-end
+        );
 
         &#{$es}uoft {
             max-width: 225px;
@@ -70,9 +77,12 @@ p{
     }
 }
 
+// Navigation
 .#{$nav} {
     &#{$es}top {
-        @include display-flex($justify-content: flex-end);
+        @include display-flex(
+            $justify-content: flex-end
+        );
         
         border-bottom: 1px solid $blue-light;
         padding-bottom: $padding/2;
@@ -80,8 +90,13 @@ p{
     }
     
     &#{$es}its-alerts {
-        @include button-hover($background-color: $blue-medium);
-        @include button-styles($border-color: $blue-light);
+        @include button-hover(
+            $background-color: $blue-medium
+        );
+        @include button-styles(
+            $border-color: $blue-light
+        );
+        @include transition;
         
         align-items: center;
         box-shadow: 0px 0px 2px $black;
@@ -113,20 +128,27 @@ p{
         position: relative;
         
         .menu-item {
-            @include button-hover($background-color: $blue-medium);
+            @include button-hover(
+                $background-color: $blue-medium
+            );
             @include line-height;
+            @include transition;
             
             display: flex;
             align-items: center;
             padding: $padding;
 
             &:hover {
-                > .nav__menu__chevron:before {
-                    content: '\f077';
+                > .nav__menu__arrow:before {
+                    color: $blue-dark;
+                    content: '\f106';
                 }
 
                 > .sub-menu { // Level 2 Menu
-                    @include display-flex($align-items: flex-start, $justify-content: flex-start);
+                    @include display-flex(
+                        $align-items: flex-start,
+                        $justify-content: flex-start
+                    );
                     
                     flex-wrap: wrap;
                     
@@ -138,13 +160,19 @@ p{
             }
             
             .menu-item { // Level 2 Menu
-                @include button-hover($background-color: $blue-light);
+                @include button-hover(
+                    $background-color: $blue-light
+                );
+                @include transition;
 
                 background-color: $blue-medium;
                 position: relative;
 
                 .menu-item { // Level 3 Menu
-                    @include button-hover($background-color: $gray-light);
+                    @include button-hover(
+                        $background-color: $gray-light
+                    );
+                    @include transition;
 
                     background-color: $blue-light;
                 }
@@ -156,8 +184,9 @@ p{
             text-decoration: none;
         }
 
-        &#{$es}chevron {
+        &#{$es}arrow {
             color: $white;
+            font-size: 1.5rem;
             padding-left: $padding/2;
         }
     }
@@ -172,7 +201,9 @@ p{
     
     &#{$es}menu#{$ms}social {
         .menu-item {
-            @include line-height($line-height: 1);
+            @include line-height(
+                $line-height: 1
+            );
 
             padding-left: $padding/2;
         }
@@ -218,6 +249,7 @@ p{
     &#{$es}width {
         margin: 0 auto;
         max-width: $section-width;
+        overflow: hidden;
         padding-top: $padding*4;
         padding-bottom: $padding*4;
     }
@@ -230,41 +262,94 @@ p{
 
     &#{$es}button {
         @include button-hover;
+        @include transition;
     }
 
     &#{$es}posts {
-        @include display-flex($align-items: flex-start);
+        @include display-flex(
+            $align-items: flex-start,
+            $flex-basis: 25%,
+            $flex-grow: 1
+        );
 
         > * {
-            flex: 0 1 25%;
             padding: $padding;
         }
-
     }
 
     &#{$es}link {
-        @include button-hover(link);
+        @include button-hover(
+            link
+        );
+
+        &#{$es}title {
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        button {
+            @include transition;
+        }
 
         text-decoration: none;
-    }
-    
-    &#{$ms}#{$featured} {
-        background-color: $white;
         
-        &#{$es}button {
-            @include button-styles($background-color: $blue-medium, $border-color: transparent, $color: $white);
+        &#{$es}image {
+            border: 1px solid $gray-light;
         }
     }
     
-    &#{$es}#{$carousel}-item {
-        @include display-flex;
+    // Carousel
+    &#{$ms}#{$carousel} {
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/$blue-light+0,ffffff+25,ffffff+25,2989d8+75,ffffff+100 */
+        background: $blue-very-light; /* Old browsers */
+        background: -moz-linear-gradient(45deg,  $blue-very-light 0%, $gray-light 25%, $gray-light 25%, $blue-very-light 75%, $gray-light 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(45deg,  $blue-very-light 0%,$gray-light 25%,$gray-light 25%,$blue-very-light 75%,$gray-light 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(45deg,  $blue-very-light 0%,$gray-light 25%,$gray-light 25%,$blue-very-light 75%,$gray-light 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$blue-very-light', endColorstr='$gray-light',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
         
-        text-decoration: none;
+        &#{$es}link {
+            @include display-flex(
+                $flex-basis: 50%,
+                $flex-grow: 1
+            );
+            
+            color: $blue-medium;
+            padding-left: $padding*8;
+            padding-right: $padding*8;
+            text-decoration: none;
+
+            &#{$es}title {
+                font-size: 4rem;
+                margin-bottom: $margin;
+            }
+            
+            &#{$es}excerpt {
+                font-size: 1.5rem;
+                margin-bottom: $margin;
+            }
+
+            &#{$es}button {
+                @include button-styles(
+                    $border-color: $blue-dark,
+                    $color: $blue-dark
+                );
+            }
+                
+            &#{$es}image-con {
+                padding-left: $padding;
+            }
+                
+            &#{$es}image {
+                border-color: $white;
+            }
+        }
     }
     
+    // Alerts
     &#{$ms}#{$alerts} {
         &#{$es}link {
-            @include display-flex($justify-content: center);
+            @include display-flex(
+                $justify-content: center
+            );
             
             background-color: $green;
             color: $white;
@@ -275,23 +360,25 @@ p{
             > * {
                 padding: $padding;
             }
-        }
-        
-        &#{$es}title {
-            font-size: 2rem;
-        }
-        
-        &#{$es}excerpt p {
-            font-size: 1.5rem;
-        }
-        
-        &#{$es}button {
-            @include button-styles($border-color: $white);
             
-            font-size: 1.2rem;
+            &#{$es}title {
+                font-size: 3rem;
+                text-transform: uppercase;
+            }
+            
+            &#{$es}excerpt {
+                font-size: 1.5rem;
+            }
+            
+            &#{$es}button {
+                @include button-styles(
+                    $border-color: $white
+                );
+            }
         }
     }
     
+    // News
     &#{$ms}#{$news} {
         background-color: $white;
         
@@ -300,48 +387,66 @@ p{
         }
         
         &#{$es}button {
-            @include button-styles($border-color: $blue-light, $color: $blue-light);
-            
-            font-size: 1.2rem;
+            @include button-styles (
+                $border-color: $blue-light,
+                $color: $blue-light
+            );
+        }
+
+        &#{$es}post {
+            display: flex;
+            align-self: stretch;
         }
         
         &#{$es}link {
+            border: 1px solid $gray-light;
+            color: $blue-dark;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            
+            &#{$es}image-con {
+                @include ratio;
+            }
+
+            &#{$es}image {
+                border: none;
+            }
+            
+            &#{$es}title {
+                @include line-height;
+                
+                font-size: 1.5rem;
+                font-weight: bold;
+                padding: $padding;
+            }
+        }
+    }
+    
+    // Follow
+    &#{$ms}#{$follow} {
+        background-color: $gray-medium;
+
+        &#{$es}heading {
             color: $blue-dark;
         }
 
-        &#{$es}image {
-            margin-bottom: $margin;
-        }
-        
-        &#{$es}title {
-            @include line-height;
-
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding-left: $padding;
-            padding-right: $padding;
-        }
-    }
-    
-    &#{$ms}#{$follow} {
         &#{$es}button {
-            @include button-styles($border-color: $gray-dark, $color: $gray-dark);
+            @include button-styles(
+                $border-color: $blue-dark,
+                $color: $blue-dark
+            );
         }
 
-        &#{$es}image {
-            margin-bottom: $margin;
-        }
-        
-        &#{$es}posts#{$es}button {
-            width: 100%;
+        &#{$es}link {
+            &#{$es}button {
+                width: 100%;
+            }
         }
     }
     
+    // Highlights
     &#{$ms}#{$highlights} {
-        &#{$es}width {
-            padding-top: 0;
-        }
-
         &#{$es}posts {
             flex-wrap: wrap;
             
@@ -349,34 +454,16 @@ p{
                 flex-basis: 50%;
                 padding-right: $padding;   
             }
-            
-            &#{$es}title {
-                font-size: 3rem;
-                margin-bottom: $margin;
-            }
-            
-            &#{$es}button {
-                @include button-styles($border-color: $gray-dark, $color: $black);
-                
-                display: inline-block;
-                font-size: 1.2rem;
-            }
-            
-            &#{$es}excerpt {
-                @include line-height;
-
-                font-size: 2rem;
-                text-align: left;
-            }
         }
-        
-        &#{$es}post{
+
+        &#{$es}post {
             display: flex;
             align-self: stretch;
         }
-        
+
         &#{$es}link {
-            background-image: linear-gradient($white, $gray-light);
+            @include background-gradient;
+
             border: 1px solid $white;
             color: $black;
             display: flex;
@@ -384,13 +471,36 @@ p{
             flex-grow: 1;
             padding: $padding*4;
             text-align: center;
-
+    
             &#{$es}top {
                 margin-bottom: $margin*2;
             }
 
+            &#{$es}title {
+                font-size: 3rem;
+                margin-bottom: $margin;
+            }
+            
+            &#{$es}button {
+                @include button-styles(
+                    $border-color: $gray-dark,
+                    $color: $black
+                );
+                
+                display: inline-block;
+            }
+            
+            &#{$es}excerpt {
+                @include line-height;
+
+                font-size: 1.5rem;
+                text-align: left;
+            }
+
             &#{$es}bottom {
-                @include display-flex($align-items: flex-start);
+                @include display-flex(
+                    $align-items: flex-start
+                );
 
                 > * {
                     flex-basis: 50%;
@@ -398,13 +508,14 @@ p{
                 }
             }
 
-            &#{$es}image {
+            &#{$es}image-con {
                 padding-left: $padding;
             }
         }
     }
 }
 
+// Footer
 .#{$footer} {
     background-color: $blue-dark;
     color: $white;
@@ -414,7 +525,9 @@ p{
         padding: 0 $padding*4 $padding*4;
 
         > * {
-            @include display-flex($justify-content: center);
+            @include display-flex(
+                $justify-content: center
+            );
             @include line-height;
 
             align-self: stretch;

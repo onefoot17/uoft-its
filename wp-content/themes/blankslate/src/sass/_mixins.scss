@@ -1,40 +1,78 @@
-@mixin display-flex( $align-items: center, $justify-content: space-between ) {
-    display: flex;
-    align-items: $align-items;
-    justify-content: $justify-content;
-}
-
-@mixin button-styles( $background-color: transparent, $border-color: $gray-light, $color: inherit, $padding: $padding/2 $padding, $text-decoration: none ) {
-    background-color: $background-color;
-    border: 1px solid $border-color;
-    border-radius: 4px;
-    color: $color;
-    font-size: 1.2rem;
-    padding: $padding;
-    text-decoration: $text-decoration;
-}
-
-@mixin button-hover( $button: button, $background-color: $gray-dark, $color: $white ) {
-    * {
-        transition: $transition;
-    }
-
-    @if $button == button {        
-        transition: $transition;
-        
+// Buttons
+@mixin button-hover( $button: button, $background-color: $gray-dark, $border-color: $background-color, $color: $white ) {
+    @if $button == button {
         &:hover {
             background-color: $background-color;
+            border-color: $background-color;
             color: $color;
         }
     } @else if $button == link {
         &:hover button {
             background-color: $background-color;
+            border-color: $background-color;
             color: $color;
         }
+    }
+}
+
+@mixin button-styles( $background-color: transparent, $border-color: $gray-light, $color: inherit, $padding: $padding/1.5 $padding*2, $text-decoration: none ) {
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    color: $color;
+    font-size: 1.4rem;
+    padding: $padding;
+    text-decoration: $text-decoration;
+}
+
+// Spacing
+@mixin display-flex( $align-items: center, $flex-grow: 0, $flex-shrink: 0, $flex-basis: auto, $justify-content: space-between ) {
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+
+    > * {
+        flex: $flex-grow $flex-shrink $flex-basis;
+    }
+}
+
+// Ratio
+@mixin ratio {
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: 66.66%;
+        // 1:1 - 100%
+        // 16:9 - 56.25%
+        // 4:3 - 75%
+        // 3:2 - 66.66%
+        // 8:5 - 62.5%
+    }
+
+    :first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 }
 
 // Typography
 @mixin line-height( $line-height: 1.3em ) {
     line-height: $line-height;
+}
+
+// Animation
+@mixin transition( $transition-property: all, $transition-duration: 200ms, $transition-timing-function: ease-in-out ) {
+    transition: $transition-property $transition-duration $transition-timing-function;
+}
+
+// Gradients
+@mixin background-gradient( $gradient-direction: linear-gradient, $gradient-color-1: $white, $gradient-color-2: $gray-light ) {
+    background: linear-gradient(to bottom, $gradient-color-1 0%, $gradient-color-2 100% );
 }
