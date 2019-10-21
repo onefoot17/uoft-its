@@ -1,5 +1,32 @@
+// Media Queries
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+}
+  
 // Buttons
-@mixin button-hover( $button: button, $background-color: $gray-dark, $border-color: $background-color, $color: $white ) {
+@mixin button-styles( $background-color: $blue-light, $border-color: transparent, $color: $white, $padding: $padding/1.5 $padding*2, $text-decoration: none ) {
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    color: $color;
+    font-size: 1.4rem;
+    padding: $padding;
+    text-decoration: $text-decoration;
+}
+
+@mixin button-hover( $button: button, $background-color: $gray-medium, $border-color: $background-color, $color: $black ) {
     @if $button == button {
         &:hover {
             background-color: $background-color;
@@ -15,24 +42,26 @@
     }
 }
 
-@mixin button-styles( $background-color: transparent, $border-color: $gray-light, $color: inherit, $padding: $padding/1.5 $padding*2, $text-decoration: none ) {
-    background-color: $background-color;
-    border: 1px solid $border-color;
-    border-radius: 4px;
-    color: $color;
-    font-size: 1.4rem;
-    padding: $padding;
-    text-decoration: $text-decoration;
-}
-
 // Spacing
-@mixin display-flex( $align-items: center, $flex-grow: 0, $flex-shrink: 0, $flex-basis: auto, $justify-content: space-between ) {
+@mixin display-flex( $align-items: center, $flex-grow: 0, $flex-shrink: 0, $flex-basis: auto, $justify-content: space-between, $media-queries: true ) {
     display: flex;
     align-items: $align-items;
     justify-content: $justify-content;
 
+    @if $media-queries {
+        @include for-phone-only {
+            flex-wrap: wrap;
+        }
+    }
+
     > * {
         flex: $flex-grow $flex-shrink $flex-basis;
+
+        @if $media-queries {
+            @include for-phone-only {
+                flex-basis: 100%;
+            }
+        }
     }
 }
 
@@ -73,6 +102,10 @@
 }
 
 // Gradients
-@mixin background-gradient( $gradient-direction: linear-gradient, $gradient-color-1: $white, $gradient-color-2: $gray-light ) {
-    background: linear-gradient(to bottom, $gradient-color-1 0%, $gradient-color-2 100% );
+@mixin background-gradient( $gradient-direction: linear, $gradient-color-1: $white, $gradient-color-2: $gray-light ) {
+    @if $gradient-direction == 'diagonal' {
+        background: linear-gradient(45deg, $gradient-color-1 0%, $gradient-color-2 25%, $gradient-color-2 25%, $gradient-color-1 75%, $gradient-color-2 100%);
+    } @else {
+        background: linear-gradient(to bottom, $gradient-color-1 0%, $gradient-color-2 100% );
+    }
 }

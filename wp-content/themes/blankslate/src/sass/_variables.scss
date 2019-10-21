@@ -7,7 +7,8 @@ $blue-dark: var(--blue-dark) !default;
 $gray-light: var(--gray-light) !default;
 $gray-medium: var(--gray-medium) !default;
 $gray-dark: var(--gray-dark) !default;
-$green: var(--green) !default;
+$green-very-light: var(--green-very-light) !default;
+$green-medium: var(--green-medium) !default;
 $white: var(--white) !default;
 
 // Spacing
@@ -38,7 +39,8 @@ $footer: 'footer' !default;
     --gray-light: #cccccc;
     --gray-medium: #999999;
     --gray-dark: #666666;
-    --green: #339933;
+    --green-very-light: #99cc99;
+    --green-medium: #339933;
     --white: #ffffff;
     --margin: #{$margin};
     --padding: #{$padding};

@@ -14,7 +14,7 @@ body {
     background-color: $gray-light;
     display: flex;
     flex-direction: column;
-    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
     min-height: 100vh;
     padding: $padding/2;
     word-break: break-word;
@@ -43,7 +43,7 @@ p{
 // Header
 .#{$header} {
     @include display-flex(
-        $align-items: flex-end
+        $align-items: flex-end,
     );
     
     background-color: $blue-dark;
@@ -51,8 +51,19 @@ p{
     
     &#{$es}logos {
         @include display-flex(
-            $align-items: flex-end
+            $align-items: flex-end,
+            $media-queries: false
         );
+        @include for-phone-only {
+            align-items: center;
+            margin-bottom: $margin;
+        }
+
+        > * {
+            @include for-phone-only {
+                flex-basis: 50%;
+            }
+        }
 
         &#{$es}uoft {
             max-width: 225px;
@@ -83,23 +94,46 @@ p{
         @include display-flex(
             $justify-content: flex-end
         );
+        @include for-phone-only {
+            justify-content: center;
+        }
         
         border-bottom: 1px solid $blue-light;
         padding-bottom: $padding/2;
         text-align: right;
+
+        > * {
+            @include for-phone-only {
+                margin-bottom: $margin;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
     
-    &#{$es}its-alerts {
-        @include button-hover(
-            $background-color: $blue-medium
-        );
-        @include button-styles(
-            $border-color: $blue-light
-        );
+    &#{$es}esc {
+        @include button-hover;
+        @include button-styles;
         @include transition;
+        @include for-phone-only {
+            margin-right: 0;
+            text-align: center;
+        }
+
+        margin-right: $margin*2;
+    }
+
+    &#{$es}its-alerts {
+        @include button-hover;
+        @include button-styles;
+        @include transition;
+        @include for-phone-only {
+            margin-right: 0;
+        }
         
         align-items: center;
-        box-shadow: 0px 0px 2px $black;
         color: $white;
         display: inline-flex;
         justify-content: center;
@@ -108,7 +142,7 @@ p{
         text-decoration: none;
         
         &#{$es}icon {
-            background-color: $green;
+            background-color: $green-medium;
             border-radius: 50%;
             margin-top: -1px;
             width: 5px;
@@ -116,13 +150,14 @@ p{
         }
         
         &#{$es}text {
-            font-size: 1.2rem;
             padding-left: $padding/2;
         }
     }
     
     &#{$es}menu { // Level 1 Menu
-        @include display-flex;
+        @include display-flex(
+            $media-queries: false
+        );
 
         font-size: 1.2rem;
         position: relative;
@@ -147,7 +182,8 @@ p{
                 > .sub-menu { // Level 2 Menu
                     @include display-flex(
                         $align-items: flex-start,
-                        $justify-content: flex-start
+                        $justify-content: flex-start,
+                        $media-queries: false
                     );
                     
                     flex-wrap: wrap;
@@ -239,6 +275,12 @@ p{
             content: "\f08c";
         }
     }
+
+    &#{$es}menu#{$ms}main {
+        @include for-phone-only {
+            display: none;
+        }
+    }
 }
 
 .content {
@@ -258,11 +300,21 @@ p{
         @include display-flex;
 
         padding: $padding;
+
+        > * {
+            @include for-phone-only {
+                text-align: center;
+            }
+        }
     }
 
     &#{$es}button {
         @include button-hover;
         @include transition;
+
+        @include for-phone-only {
+            margin-top: $margin;
+        }
     }
 
     &#{$es}posts {
@@ -272,7 +324,15 @@ p{
             $flex-grow: 1
         );
 
+        @include for-phone-only {
+            flex-wrap: wrap;
+        }
+
         > * {
+            @include for-phone-only {
+                flex-basis: 100%;
+            }
+
             padding: $padding;
         }
     }
@@ -299,12 +359,7 @@ p{
     
     // Carousel
     &#{$ms}#{$carousel} {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/$blue-light+0,ffffff+25,ffffff+25,2989d8+75,ffffff+100 */
-        background: $blue-very-light; /* Old browsers */
-        background: -moz-linear-gradient(45deg,  $blue-very-light 0%, $gray-light 25%, $gray-light 25%, $blue-very-light 75%, $gray-light 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(45deg,  $blue-very-light 0%,$gray-light 25%,$gray-light 25%,$blue-very-light 75%,$gray-light 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(45deg,  $blue-very-light 0%,$gray-light 25%,$gray-light 25%,$blue-very-light 75%,$gray-light 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$blue-very-light', endColorstr='$gray-light',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        @include background-gradient(diagonal, $blue-very-light, $gray-light);
         
         &#{$es}link {
             @include display-flex(
@@ -328,13 +383,22 @@ p{
             }
 
             &#{$es}button {
-                @include button-styles(
-                    $border-color: $blue-dark,
-                    $color: $blue-dark
-                );
+                @include button-styles;
+
+                @include for-phone-only {
+                    width: 100%;
+                }
+            }
+
+            &#{$es}copy {
+                margin-bottom: $margin;
             }
                 
             &#{$es}image-con {
+                @include for-phone-only {
+                    padding-left: 0;
+                }
+
                 padding-left: $padding;
             }
                 
@@ -351,15 +415,11 @@ p{
                 $justify-content: center
             );
             
-            background-color: $green;
+            background-color: $green-medium;
             color: $white;
             padding: $padding;
             text-align: center;
             text-decoration: none;
-            
-            > * {
-                padding: $padding;
-            }
             
             &#{$es}title {
                 font-size: 3rem;
@@ -367,13 +427,14 @@ p{
             }
             
             &#{$es}excerpt {
+                @include line-height;
+                
                 font-size: 1.5rem;
+                padding: $padding*2;
             }
             
             &#{$es}button {
-                @include button-styles(
-                    $border-color: $white
-                );
+                @include button-styles;
             }
         }
     }
@@ -387,10 +448,7 @@ p{
         }
         
         &#{$es}button {
-            @include button-styles (
-                $border-color: $blue-light,
-                $color: $blue-light
-            );
+            @include button-styles;
         }
 
         &#{$es}post {
@@ -399,6 +457,9 @@ p{
         }
         
         &#{$es}link {
+            @include button-hover;
+            @include transition;
+            
             border: 1px solid $gray-light;
             color: $blue-dark;
             display: flex;
@@ -432,10 +493,7 @@ p{
         }
 
         &#{$es}button {
-            @include button-styles(
-                $border-color: $blue-dark,
-                $color: $blue-dark
-            );
+            @include button-styles;
         }
 
         &#{$es}link {
@@ -452,13 +510,29 @@ p{
             
             > * {
                 flex-basis: 50%;
-                padding-right: $padding;   
+                padding-right: $padding;
+
+                @include for-phone-only {
+                    flex-basis: 100%;
+                }
             }
         }
 
         &#{$es}post {
             display: flex;
             align-self: stretch;
+
+            &:nth-of-type(2) .section__link {
+                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: $gray-light, $gradient-color-2: $blue-very-light );
+            }
+
+            &:nth-of-type(3) .section__link {
+                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: $gray-light, $gradient-color-2: $white );
+            }
+
+            &:nth-of-type(4) .section__link {
+                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: $gray-light, $gradient-color-2: $green-very-light );
+            }
         }
 
         &#{$es}link {
@@ -471,7 +545,7 @@ p{
             flex-grow: 1;
             padding: $padding*4;
             text-align: center;
-    
+
             &#{$es}top {
                 margin-bottom: $margin*2;
             }
@@ -482,10 +556,7 @@ p{
             }
             
             &#{$es}button {
-                @include button-styles(
-                    $border-color: $gray-dark,
-                    $color: $black
-                );
+                @include button-styles;
                 
                 display: inline-block;
             }
@@ -522,6 +593,10 @@ p{
     font-size: 2rem;
 
     .nav__menu--footer {
+        @include for-phone-only {
+            flex-wrap: wrap;
+        }
+        
         padding: 0 $padding*4 $padding*4;
 
         > * {
@@ -529,6 +604,15 @@ p{
                 $justify-content: center
             );
             @include line-height;
+            @include for-phone-only {
+                flex-basis: 100%;
+                margin-bottom: $margin;
+                margin-right: 0;
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
 
             align-self: stretch;
             border: 3px dashed $blue-light;
@@ -547,7 +631,18 @@ p{
     
     &#{$es}bottom {
         @include display-flex;
-        
+
+        > * {
+            @include for-phone-only {
+                margin-bottom: $margin;
+                margin-right: 0;
+                
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
         border-top: 1px solid $blue-light;
         padding: $padding*2 $padding*2 0;
     }

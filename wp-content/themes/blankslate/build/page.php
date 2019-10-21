@@ -20,7 +20,7 @@
                         ?>
                                     <li class="glide__slide">
                                         <a class="section__link section__carousel-item section--carousel__link" href="<?php the_permalink(); ?>">
-                                            <section>
+                                            <section class="section--carousel__link__copy">
                                                 <h2 class="section__link__title section--carousel__link__title"><?php the_title(); ?></h2>
 
                                                 <p class="section--carousel__link__excerpt"><?php the_excerpt(); ?></p>
@@ -90,7 +90,7 @@
                 <a class="section__link section--alerts__link" href="<?php the_permalink(); ?>">
                     <h2 class="section__link__title section--alerts__link__title"><?php the_title(); ?></h2>
 
-                    <span class="section--alerts__link__excerpt"><?php the_excerpt(); ?></span>
+                    <p class="section--alerts__link__excerpt"><?php the_excerpt(); ?></p>
 
                     <button class="section__button section--alerts__button">Learn more</button>
                 </a>
@@ -148,8 +148,6 @@
         <section class="section__width">
             <header class="section__header">
                 <h1 class="section--follow__heading">Follow Us</h1>
-
-                <a class="section__button section--follow__button" href="https://www.utoronto.ca/social-media-directory/all">ITS social media directory</a>
             </header>
 
             <ul class="section__posts section--follow__posts">
@@ -203,7 +201,7 @@
                                 <header class="section--highlights__link__top">
                                     <h2 class="section__link__title section--highlights__link__title"><?php the_title(); ?></h2>
 
-                                    <button class="section--highlights__button section--highlights__link__button">Visit Website</button>
+                                    <button class="section--highlights__button section--highlights__link__button">Read more</button>
                                 </header>
 
                                 <section class="section--highlights__link__bottom">
