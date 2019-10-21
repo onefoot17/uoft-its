@@ -201,7 +201,7 @@
                                 <header class="section--highlights__link__top">
                                     <h2 class="section__link__title section--highlights__link__title"><?php the_title(); ?></h2>
 
-                                    <button class="section--highlights__button section--highlights__link__button">Read more</button>
+                                    <button class="section--highlights__button section--highlights__link__button"><?php the_field('read_more_button'); ?></button>
                                 </header>
 
                                 <section class="section--highlights__link__bottom">

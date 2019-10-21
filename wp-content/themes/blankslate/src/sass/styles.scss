@@ -428,7 +428,7 @@ p{
             
             &#{$es}excerpt {
                 @include line-height;
-                
+
                 font-size: 1.5rem;
                 padding: $padding*2;
             }
@@ -527,7 +527,7 @@ p{
             }
 
             &:nth-of-type(3) .section__link {
-                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: $gray-light, $gradient-color-2: $white );
+                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: $gold-light, $gradient-color-2: $gold-very-light );
             }
 
             &:nth-of-type(4) .section__link {

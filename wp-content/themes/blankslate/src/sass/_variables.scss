@@ -9,6 +9,9 @@ $gray-medium: var(--gray-medium) !default;
 $gray-dark: var(--gray-dark) !default;
 $green-very-light: var(--green-very-light) !default;
 $green-medium: var(--green-medium) !default;
+$gold-very-light: var(--gold-very-light) !default;
+$gold-light: var(--gold-light) !default;
+$gold-medium: var(--gold-medium) !default;
 $white: var(--white) !default;
 
 // Spacing
@@ -41,6 +44,9 @@ $footer: 'footer' !default;
     --gray-dark: #666666;
     --green-very-light: #99cc99;
     --green-medium: #339933;
+    --gold-very-light: #FAFAD2;
+    --gold-light: #F0E68C;
+    --gold-medium: #FFD700;
     --white: #ffffff;
     --margin: #{$margin};
     --padding: #{$padding};
