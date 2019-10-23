@@ -561,6 +561,17 @@ p{
                 display: inline-block;
             }
             
+            &#{$es}bottom {
+                @include display-flex(
+                    $align-items: flex-start
+                );
+                
+                > * {
+                    flex-basis: 50%;
+                    flex-grow: 1;
+                }
+            }
+                
             &#{$es}excerpt {
                 @include line-height;
 
@@ -568,18 +579,7 @@ p{
                 text-align: left;
             }
 
-            &#{$es}bottom {
-                @include display-flex(
-                    $align-items: flex-start
-                );
-
-                > * {
-                    flex-basis: 50%;
-                    flex-grow: 1;
-                }
-            }
-
-            &#{$es}image-con {
+            &#{$es}excerpt + &#{$es}image-con {
                 padding-left: $padding;
             }
         }

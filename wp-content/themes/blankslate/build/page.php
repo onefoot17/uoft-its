@@ -25,7 +25,7 @@
 
                                                 <p class="section--carousel__link__excerpt"><?php the_excerpt(); ?></p>
 
-                                                <button class="section__button section--carousel__link__button">Learn more<?php get_post_type(); ?></button>
+                                                <button class="section__button section--carousel__link__button"><?php the_field('read_more_button'); ?></button>
                                             </section>
 
                                             <?php
@@ -92,7 +92,7 @@
 
                     <p class="section--alerts__link__excerpt"><?php the_excerpt(); ?></p>
 
-                    <button class="section__button section--alerts__button">Learn more</button>
+                    <button class="section__button section--alerts__button"><?php the_field('read_more_button'); ?></button>
                 </a>
         <?php
             endforeach;
@@ -106,7 +106,7 @@
             <header class="section__header">
                 <h1 class="section--news__heading">Latest News & Announcements</h1>
 
-                <a class="section__button section--news__button" href="">More ITS news</a>
+                <a class="section__button section--news__button" href=""><?php the_field('learn_more_button'); ?></a>
             </header>
 
             <ul class="section__posts section--news__posts">
@@ -205,9 +205,13 @@
                                 </header>
 
                                 <section class="section--highlights__link__bottom">
-                                    <p class="section--highlights__link__excerpt"><?php the_excerpt(); ?></p>
+                                    <?php 
+                                        $turn_off_excerpt = get_field('turn_off_excerpt');
 
-                                    <?php
+                                        if( ! $turn_off_excerpt ) {
+                                            echo '<p class="section--highlights__link__excerpt">' . get_the_excerpt();
+                                        }
+                                        
                                         if ( has_post_thumbnail() ) {
                                             echo '<section class="section--highlights__link__image-con">' . wp_get_attachment_image(get_post_thumbnail_id(), 'medium', false, array('class' => 'section__link__image section--highlights__link__image') ) . '</section>';
                                         }
