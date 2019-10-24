@@ -1,52 +1,24 @@
 <!DOCTYPE html>
-
 <html <?php language_attributes(); ?>>
-    <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>" />
-
-        <meta name="viewport" content="width=device-width" />
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap" rel="stylesheet">
-
-        <?php wp_head(); ?>
-    </head>
-
-    <body <?php body_class(); ?>>
-        <header id="header" class="header">
-            <section class="header__logos">
-                <a class="header__logos__uoft" href="" title=""><?php echo wp_get_attachment_image( 8734, 'full', false, array('class' => 'header__logo') ); ?></a>
-
-                <a class="header__logos__its" href="" title="">
-                    <span class="header__logos__its__top">ITS</span>
-                    <span class="header__logos__its__bottom">Information Technology Services</span>
-                </a>
-            </section>
-
-            <nav class="nav">
-                <section class="nav__top">
-                    <a class="nav__esc" href="https://uthrprod.service-now.com/help">
-                        <section class="nav__its-alerts__text">Enterprise Service Centre</section>
-                    </a>
-
-                    <a class="nav__its-alerts" href="http://www.systemstatus.utoronto.ca/">
-                        <section class="nav__its-alerts__icon"></section>
-                        
-                        <section class="nav__its-alerts__text">ITS Alerts</section>
-                    </a>
-
-                    <?php wp_nav_menu( array(
-                        'theme_location' => 'social-links',
-                        'container' => '',
-                        'menu_class' => 'nav__menu nav__menu--social'
-                    ) ); ?>
-                </section>
-                
-                <?php wp_nav_menu( array(
-                    'theme_location' => 'main-menu',
-                    'container' => '',
-                    'menu_class' => 'nav__menu nav__menu--main nav__bottom'
-                ) ); ?>
-            </nav>
-        </header>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=device-width" />
+<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+<div id="wrapper" class="hfeed">
+<header id="header">
+<div id="branding">
+<div id="site-title">
+<?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
+<?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
+</div>
+<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+</div>
+<nav id="menu">
+<div id="search"><?php get_search_form(); ?></div>
+<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+</nav>
+</header>
+<div id="container">

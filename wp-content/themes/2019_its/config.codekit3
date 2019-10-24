@@ -111,6 +111,14 @@
 		"oAP": "/build/footer.php",
 		"oF": 0
 		},
+	"/front-page.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/front-page.php",
+		"oF": 0
+		},
 	"/functions.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -305,6 +313,19 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/src/sass/legacy.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "/build/sass/legacy.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"/src/sass/styles.scss": {
 		"aP": 1,
 		"bl": 0,
@@ -343,7 +364,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 592233773.21886301,
-	"displayValue": "blankslate",
+	"displayValue": "2019_its",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-slime",
 	"iconImageWasSetByUser": 0

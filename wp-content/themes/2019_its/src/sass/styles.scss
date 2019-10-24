@@ -1,6 +1,10 @@
+// Intialization
 @import '_reset';
 @import '_variables';
 @import '_mixins';
+
+//Legacy
+@import 'legacy';
 
 // Glide carousel slider
 @import "../../node_modules/@glidejs/glide/src/assets/sass/glide.core";

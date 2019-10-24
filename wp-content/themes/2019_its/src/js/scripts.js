@@ -9,5 +9,3 @@ Object.values( carousels ).map( carousel => {
     
     slider.mount();
 });
-
-//console.log('howdy');
