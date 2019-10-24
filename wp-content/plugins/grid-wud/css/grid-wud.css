@@ -1,0 +1,327 @@
+/*
+ *	=== Grid WUD ===
+*/
+#grid-1-wud-wrapper-1 {
+    width: 50%;
+	height: 0;	
+	padding-bottom: 49.99%;
+	font-size: 20px;
+}
+#grid-1-wud-wrapper-2, #grid-1-wud-wrapper-3, #grid-1-wud-wrapper-4, #grid-1-wud-wrapper-5 {
+    width: 25%;
+	height: 0;	
+	padding-bottom: 25%;	
+	font-size: 18px;	
+}
+#grid-1-wud-wrapper-6, #grid-1-wud-wrapper-7, #grid-1-wud-wrapper-8, #grid-1-wud-wrapper-9, #grid-1-wud-wrapper-10, 
+#grid-1-wud-wrapper-11, #grid-1-wud-wrapper-12, #grid-1-wud-wrapper-13, #grid-1-wud-wrapper-14, #grid-1-wud-wrapper-15, 
+#grid-1-wud-wrapper-16, #grid-1-wud-wrapper-17, #grid-1-wud-wrapper-18, #grid-1-wud-wrapper-19, #grid-1-wud-wrapper-20 {
+    width: 20%;
+	height: 0;	
+	padding-bottom: 20%;	
+	font-size: 18px;	
+}
+
+/*
+ *	=== Grid WUD SQUARE ===
+*/
+#grid-2-wud-wrapper-1, #grid-2-wud-wrapper-2, #grid-2-wud-wrapper-3, #grid-2-wud-wrapper-4, #grid-2-wud-wrapper-5, #grid-2-wud-wrapper-6, 
+#grid-2-wud-wrapper-7, #grid-2-wud-wrapper-8, #grid-2-wud-wrapper-9, #grid-2-wud-wrapper-10, #grid-2-wud-wrapper-11, 
+#grid-2-wud-wrapper-12, #grid-2-wud-wrapper-13, #grid-2-wud-wrapper-14, #grid-2-wud-wrapper-15, #grid-2-wud-wrapper-16, 
+#grid-2-wud-wrapper-17, #grid-2-wud-wrapper-18, #grid-2-wud-wrapper-19, #grid-2-wud-wrapper-20 {
+    width: 25%;
+	height: 0;	
+	padding-bottom: 24.99%;	
+	font-size: 18px;
+}
+	
+/*
+ *	=== Grid WUD BLOCKS ===
+*/
+#grid-3-wud-wrapper-1, #grid-3-wud-wrapper-5, #grid-3-wud-wrapper-9, #grid-3-wud-wrapper-19 {
+    width: 50%;
+	height: 0;	
+	padding-bottom: 24.99%;
+	font-size: 20px;
+}
+#grid-3-wud-wrapper-2, #grid-3-wud-wrapper-3, #grid-3-wud-wrapper-4, #grid-3-wud-wrapper-6, #grid-3-wud-wrapper-7, 
+#grid-3-wud-wrapper-8, #grid-3-wud-wrapper-10, #grid-3-wud-wrapper-11, #grid-3-wud-wrapper-12, #grid-3-wud-wrapper-13, 
+#grid-3-wud-wrapper-14, #grid-3-wud-wrapper-15, #grid-3-wud-wrapper-16, #grid-3-wud-wrapper-17, #grid-3-wud-wrapper-18, 
+#grid-3-wud-wrapper-20  {
+    width: 25%;
+	height: 0;	
+	padding-bottom: 25%;
+	font-size: 18px;	
+}
+
+/*
+ *	=== Grid WUD CIRCLE ===
+*/
+#grid-4-wud-wrapper-1, #grid-4-wud-wrapper-5, #grid-4-wud-wrapper-9, #grid-4-wud-wrapper-13, #grid-4-wud-wrapper-17 {
+    width: 24%;
+	height: 0;	
+	padding-bottom: 24%;
+	margin-left: 0;
+	margin-bottom: 0.5%;	
+	font-size: 18px;
+}
+#grid-4-wud-wrapper-2, #grid-4-wud-wrapper-3, #grid-4-wud-wrapper-4, #grid-4-wud-wrapper-6, #grid-4-wud-wrapper-7, 
+#grid-4-wud-wrapper-8, #grid-4-wud-wrapper-10, #grid-4-wud-wrapper-11, #grid-4-wud-wrapper-12, #grid-4-wud-wrapper-14, 
+#grid-4-wud-wrapper-15, #grid-4-wud-wrapper-16, #grid-4-wud-wrapper-18, #grid-4-wud-wrapper-19, #grid-4-wud-wrapper-20 {
+    width: 24%;
+	height: 0;	
+	padding-bottom: 24%;
+	margin-left: 0.9%;
+	margin-bottom: 0.5%;	
+	font-size: 18px;	
+}
+	
+/*
+ *	=== Grid WUD PHOTO'S ===
+*/
+#grid-5-wud-wrapper-1, #grid-5-wud-wrapper-2, #grid-5-wud-wrapper-3, #grid-5-wud-wrapper-4, #grid-5-wud-wrapper-5, 
+#grid-5-wud-wrapper-6, #grid-5-wud-wrapper-7, #grid-5-wud-wrapper-8, #grid-5-wud-wrapper-9, #grid-5-wud-wrapper-10,
+#grid-5-wud-wrapper-11, #grid-5-wud-wrapper-12, #grid-5-wud-wrapper-13, #grid-5-wud-wrapper-14, #grid-5-wud-wrapper-15, 
+#grid-5-wud-wrapper-16, #grid-5-wud-wrapper-17, #grid-5-wud-wrapper-18, #grid-5-wud-wrapper-19, #grid-5-wud-wrapper-20 {
+    width: 25%;
+	height: 8vw;	
+	padding-bottom: 36%;	
+	font-size: 18px;
+}
+	
+/*
+ *	=== Grid WUD HORIZON ===
+*/
+#grid-6-wud-wrapper-1, #grid-6-wud-wrapper-2, #grid-6-wud-wrapper-3, #grid-6-wud-wrapper-4, #grid-6-wud-wrapper-5, 
+#grid-6-wud-wrapper-6, #grid-6-wud-wrapper-7, #grid-6-wud-wrapper-8, #grid-6-wud-wrapper-9, #grid-6-wud-wrapper-10,
+#grid-6-wud-wrapper-11, #grid-6-wud-wrapper-12, #grid-6-wud-wrapper-13, #grid-6-wud-wrapper-14, #grid-6-wud-wrapper-15, 
+#grid-6-wud-wrapper-16, #grid-6-wud-wrapper-17, #grid-6-wud-wrapper-18, #grid-6-wud-wrapper-19, #grid-6-wud-wrapper-20 {
+    width: 50%;
+	height: 0;	
+	padding-bottom: 25%;	
+	font-size: 18px;
+}
+
+/*
+ *	=== Grid WUD MIXED ===
+*/
+#grid-7-wud-wrapper-1 {
+    width: 50%;
+	height: 0;	
+	padding-bottom: 49.99%;
+	font-size: 20px;
+}
+#grid-7-wud-wrapper-2, #grid-7-wud-wrapper-5 {
+    width: 25%;
+	height: 0;
+	padding-bottom: 49.99%;	
+	font-size: 18px;	
+}
+#grid-7-wud-wrapper-3, #grid-7-wud-wrapper-4, #grid-7-wud-wrapper-7, #grid-7-wud-wrapper-9 {
+    width: 25%;
+	height: 0;	
+	padding-bottom: 25%;	
+	font-size: 18px;	
+}
+
+#grid-7-wud-wrapper-6, #grid-7-wud-wrapper-8 {
+    width: 50%;
+	height: 0;	
+	padding-bottom: 25%;	
+	font-size: 18px;	
+}
+
+#grid-7-wud-wrapper-10, #grid-7-wud-wrapper-12, #grid-7-wud-wrapper-14, #grid-7-wud-wrapper-15 {
+    width: 40%;
+	height: 0;	
+	padding-bottom: 20%;
+	font-size: 18px;
+	}
+#grid-7-wud-wrapper-11, #grid-7-wud-wrapper-13, #grid-7-wud-wrapper-16, #grid-7-wud-wrapper-17, #grid-7-wud-wrapper-18 {
+    width: 20%;
+	height: 0;	
+	padding-bottom: 20%;	
+	font-size: 18px;	
+}
+
+#grid-7-wud-wrapper-19 {
+    width: 50%;
+	height: 0;	
+	padding-bottom: 20%;	
+	font-size: 18px;	
+}
+#grid-7-wud-wrapper-20 {
+    width: 30%;
+	height: 0;	
+	padding-bottom: 20%;	
+	font-size: 18px;	
+}
+
+/*
+ *	=== Tiles WUD MIX 2 ===
+*/	
+#grid-8-wud-wrapper-1, #grid-8-wud-wrapper-6, #grid-8-wud-wrapper-11, #grid-8-wud-wrapper-16 {
+    width: 50%;
+	height: 0;	
+	padding-bottom: 24.99%;	
+	font-size: 20px;
+}
+#grid-8-wud-wrapper-2, #grid-8-wud-wrapper-3, #grid-8-wud-wrapper-4, #grid-8-wud-wrapper-5, #grid-8-wud-wrapper-7, 
+#grid-8-wud-wrapper-8, #grid-8-wud-wrapper-9, #grid-8-wud-wrapper-10, #grid-8-wud-wrapper-12, #grid-8-wud-wrapper-13, 
+#grid-8-wud-wrapper-14, #grid-8-wud-wrapper-15, #grid-8-wud-wrapper-17, #grid-8-wud-wrapper-18, #grid-8-wud-wrapper-19, 
+#grid-8-wud-wrapper-20 {
+    width: 25%;
+	height: 0;	
+	padding-bottom: 12.5%;	
+	font-size: 18px;	
+}
+
+
+/* ============================================================================================================================================ */
+/* START MOBILE DESIGN */
+@media screen and (max-width: 1024px) {
+/* START MOBILE DESIGN */
+
+/*
+ *	=== Grid WUD ===
+*/	
+#grid-1-wud-wrapper-1, #grid-1-wud-wrapper-20 {
+    width: 100%;
+	height: 0;	
+	padding-bottom: 49.99%;
+	font-size: 20px;
+}
+#grid-1-wud-wrapper-2, #grid-1-wud-wrapper-3, #grid-1-wud-wrapper-4, #grid-1-wud-wrapper-5, #grid-1-wud-wrapper-6, 
+#grid-1-wud-wrapper-7, #grid-1-wud-wrapper-8, #grid-1-wud-wrapper-9, #grid-1-wud-wrapper-10, #grid-1-wud-wrapper-11, 
+#grid-1-wud-wrapper-12, #grid-1-wud-wrapper-13, #grid-1-wud-wrapper-14, #grid-1-wud-wrapper-15, #grid-1-wud-wrapper-16, 
+#grid-1-wud-wrapper-17, #grid-1-wud-wrapper-18, #grid-1-wud-wrapper-19 {
+    width: 33.33%;
+	height: 0;	
+	padding-bottom: 33.33%;	
+	font-size: 18px;	
+}
+
+/*
+ *	=== Grid WUD SQUARE ===
+*/
+#grid-2-wud-wrapper-1, #grid-2-wud-wrapper-2, #grid-2-wud-wrapper-3, #grid-2-wud-wrapper-4, #grid-2-wud-wrapper-5, 
+#grid-2-wud-wrapper-6, #grid-2-wud-wrapper-7, #grid-2-wud-wrapper-8, #grid-2-wud-wrapper-9, #grid-2-wud-wrapper-10, 
+#grid-2-wud-wrapper-11, #grid-2-wud-wrapper-12, #grid-2-wud-wrapper-13, #grid-2-wud-wrapper-14, #grid-2-wud-wrapper-15, 
+#grid-2-wud-wrapper-16, #grid-2-wud-wrapper-17, #grid-2-wud-wrapper-18, #grid-2-wud-wrapper-19, #grid-2-wud-wrapper-20 {
+    width: 33.33%;
+	height: 0;	
+	padding-bottom: 33.33%;	
+	font-size: 18px;
+}
+
+/*
+ *	=== Grid WUD BLOCKS ===
+*/
+#grid-3-wud-wrapper-1, #grid-3-wud-wrapper-4, #grid-3-wud-wrapper-5, #grid-3-wud-wrapper-8, #grid-3-wud-wrapper-9, 
+#grid-3-wud-wrapper-12, #grid-3-wud-wrapper-13, #grid-3-wud-wrapper-16, #grid-3-wud-wrapper-17, #grid-3-wud-wrapper-20 {
+    width: 66.6%;
+	height: 0;	
+	padding-bottom: 33%;
+	font-size: 20px;
+}
+#grid-3-wud-wrapper-2, #grid-3-wud-wrapper-3, #grid-3-wud-wrapper-6, #grid-3-wud-wrapper-7, #grid-3-wud-wrapper-10, 
+#grid-3-wud-wrapper-11, #grid-3-wud-wrapper-14, #grid-3-wud-wrapper-15, #grid-3-wud-wrapper-18, #grid-3-wud-wrapper-19 {
+    width: 33.3%;
+	height: 0;	
+	padding-bottom: 33%;
+	font-size: 18px;	
+}	
+
+/*
+ *	=== Grid WUD CIRCLE ===
+*/
+#grid-4-wud-wrapper-1, #grid-4-wud-wrapper-2, #grid-4-wud-wrapper-3, #grid-4-wud-wrapper-4, #grid-4-wud-wrapper-5, 
+#grid-4-wud-wrapper-6, #grid-4-wud-wrapper-7, #grid-4-wud-wrapper-8, #grid-4-wud-wrapper-9, #grid-4-wud-wrapper-10, 
+#grid-4-wud-wrapper-11, #grid-4-wud-wrapper-12, #grid-4-wud-wrapper-13, #grid-4-wud-wrapper-14, #grid-4-wud-wrapper-15, 
+#grid-4-wud-wrapper-16, #grid-4-wud-wrapper-17, #grid-4-wud-wrapper-18, #grid-4-wud-wrapper-19, #grid-4-wud-wrapper-20 {
+    width: 32%;
+	height: 0;	
+	padding-bottom: 32%;
+	margin-left: 0.9%;
+	margin-bottom: 0.5%;	
+	font-size: 18px;	
+}
+
+/*
+ *	=== Grid WUD PHOTO'S ===
+*/
+#grid-5-wud-wrapper-1, #grid-5-wud-wrapper-2, #grid-5-wud-wrapper-3, #grid-5-wud-wrapper-4, #grid-5-wud-wrapper-5, 
+#grid-5-wud-wrapper-6, #grid-5-wud-wrapper-7, #grid-5-wud-wrapper-8, #grid-5-wud-wrapper-9, #grid-5-wud-wrapper-10, 
+#grid-5-wud-wrapper-11, #grid-5-wud-wrapper-12, #grid-5-wud-wrapper-13, #grid-5-wud-wrapper-14, #grid-5-wud-wrapper-15, 
+#grid-5-wud-wrapper-16, #grid-5-wud-wrapper-17, #grid-5-wud-wrapper-18, #grid-5-wud-wrapper-19, #grid-5-wud-wrapper-20 {
+    width: 33%;
+	height: 8vw;	
+	padding-bottom: 44%;	
+	font-size: 18px;	
+}
+
+/*
+ *	=== Grid WUD HORIZON ===
+*/
+#grid-6-wud-2-columns-grids{
+	
+}
+
+/*
+ *	=== Grid WUD MIXED ===
+*/
+#grid-7-wud-wrapper-1, #grid-7-wud-wrapper-7, #grid-7-wud-wrapper-10, #grid-7-wud-wrapper-16 {
+    width: 25%;
+	height: 0;	
+	padding-bottom: 50%;
+	font-size: 20px;
+}
+#grid-7-wud-wrapper-2, #grid-7-wud-wrapper-9, #grid-7-wud-wrapper-11, #grid-7-wud-wrapper-18, #grid-7-wud-wrapper-19, 
+#grid-7-wud-wrapper-20 {
+    width: 50%;
+	height: 0;
+	padding-bottom: 50%;	
+	font-size: 18px;	
+}
+#grid-7-wud-wrapper-3, #grid-7-wud-wrapper-6, #grid-7-wud-wrapper-12, #grid-7-wud-wrapper-15 {
+    width: 25%;
+	height: 0;	
+	padding-bottom: 50%;	
+	font-size: 18px;	
+}
+#grid-7-wud-wrapper-4, #grid-7-wud-wrapper-13 {
+    width: 50%;
+	height: 0;	
+	padding-bottom: 50%;
+	font-size: 20px;
+}
+#grid-7-wud-wrapper-5, #grid-7-wud-wrapper-8, #grid-7-wud-wrapper-14, #grid-7-wud-wrapper-17 {
+    width: 25%;
+	height: 0;
+	padding-bottom: 50%;	
+	font-size: 18px;	
+}
+
+/*
+ *	=== Tiles WUD Mix2 ===
+*/		
+#grid-8-wud-wrapper-1, #grid-8-wud-wrapper-6, #grid-8-wud-wrapper-11, #grid-8-wud-wrapper-16 {
+    width: 100%;
+	height: 0;	
+	padding-bottom: 50%;	
+	font-size: 20px;
+}
+
+#grid-8-wud-wrapper-2, #grid-8-wud-wrapper-3, #grid-8-wud-wrapper-4, #grid-8-wud-wrapper-5, #grid-8-wud-wrapper-7, 
+#grid-8-wud-wrapper-8, #grid-8-wud-wrapper-9, #grid-8-wud-wrapper-10, #grid-8-wud-wrapper-12, #grid-8-wud-wrapper-13, 
+#grid-8-wud-wrapper-14, #grid-8-wud-wrapper-15, #grid-8-wud-wrapper-17, #grid-8-wud-wrapper-18, #grid-8-wud-wrapper-19, 
+#grid-8-wud-wrapper-20 {
+    width: 50%;
+	height: 0;	
+	padding-bottom: 25%;	
+	font-size: 18px; 	
+}
+
+/* END MOBILE DESIGN */	
+}
+/* END MOBILE DESIGN */	

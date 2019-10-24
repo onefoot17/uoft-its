@@ -16,7 +16,7 @@
     <body <?php body_class(); ?>>
         <header id="header" class="header">
             <section class="header__logos">
-                <a class="header__logos__uoft" href="" title=""><img class="header__logo" src="http://staging.its.utoronto.ca/wp-content/uploads/2019/10/U-of-T-logo.svg" /></a>
+                <a class="header__logos__uoft" href="<?php echo get_site_url(); ?>" title="<?php echo get_bloginfo( 'name' ); ?>"><img class="header__logo" src="http://staging.its.utoronto.ca/wp-content/uploads/2019/10/U-of-T-logo.svg" /></a>
 
                 <a class="header__logos__its" href="" title="">
                     <span class="header__logos__its__top">ITS</span>

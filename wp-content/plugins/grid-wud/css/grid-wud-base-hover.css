@@ -1,0 +1,27 @@
+/*All grids/tiles */  
+.grid-wud-wrapper:hover > a .grid-wud-image{ 
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);	
+	filter:gray alpha(opacity=30);
+	-webkit-filter:grayscale(30%);
+	filter: grayscale(30%);
+	-webkit-backface-visibility:hidden;
+	text-decoration: none;
+	box-shadow: none !important;
+}
+
+/* Gallery only */
+.grid-wud-wrapper:hover > .grid-wud-image{ 
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);	
+	filter:gray alpha(opacity=30);
+	-webkit-filter:grayscale(30%);
+	filter: grayscale(30%);
+	-webkit-backface-visibility:hidden;
+	text-decoration: none;
+	box-shadow: none !important;
+}

@@ -64,4 +64,16 @@
         return $mimes;
       }
       add_filter('upload_mimes', 'cc_mime_types');
+
+      //Page Slug Body Class
+      function add_slug_body_class( $classes ) {
+          global $post;
+
+          if ( isset( $post ) ) {
+              $classes[] = $post->post_type . '-' . $post->post_name;
+            }
+            
+            return $classes;
+        }
+        add_filter( 'body_class', 'add_slug_body_class' );
 ?>

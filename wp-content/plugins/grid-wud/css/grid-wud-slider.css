@@ -1,0 +1,203 @@
+#wud_stage {
+    display: block;
+    position: relative;
+    width: 100%;
+	margin: 0 auto;
+	padding-bottom: 33%;
+	border: none;
+	overflow: hidden;
+	box-shadow: 2px 2px 6px #000000;
+	margin-bottom: 2%;
+	box-shadow: none !important;
+    text-decoration: none;	
+}
+@media screen and (max-width: 624px) {
+	#wud_stage {
+		padding-bottom: 90% !important;
+	}
+}
+
+.wud_slide {
+    display: block;
+    position: absolute;
+	width: 100%;
+	height: 100%;
+    top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    background-size: cover;
+	background-position: center;
+    opacity: 0;
+	z-index: 1;
+}
+
+.wud_slide > .wud_excerpt {
+	display: block;
+	font-size: inherit;
+	position: absolute;
+	bottom: 2%;
+	left: 4%;
+	background-color: rgba(0,0,0,.6);
+	padding: 4px;
+	color: #ccc;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.1);
+	border-radius: 4px;
+	font-weight: 300;
+	width: 90%;
+}
+
+#WudButtonBannerCss{
+    display: inline-block;
+	box-shadow: 2px 2px 2px #000;
+	padding: 4px;
+	margin: 4px;
+    color: #fff;
+	font-family:inherit;
+	font-size: 20px;
+	background-color: rgba(76, 76, 76, 0.79);
+	float: right;
+	cursor:pointer;
+	border-radius: 3px;
+	box-shadow: none !important;
+    text-decoration: none;	
+}
+
+#WudButtonBannerCss:hover{
+	background-color: rgba(76, 76, 76, 0.53);
+	box-shadow: none !important;
+    text-decoration: none;	
+}
+
+.wud_slide  .woocommerce ul.products li.product .price {
+	color: #00ec00;
+	background-color: transparent;
+	box-shadow: none;
+	font-size: 1.2em;
+}
+
+.wud_slide  .woocommerce ul.products li.product .price del {
+	color: #ff8f18;
+	background-color: transparent;
+	box-shadow: none;
+	font-size: 1.2em;
+}
+
+.wud_slide  .woocommerce ul.products li.product .price ins{
+	color: #00ec00;
+	background-color: transparent;
+	box-shadow: none;
+	font-size: 1.2em;
+}
+
+.wud_excerpt  .woocommerce ul.products li.product a img{
+	display: none;
+}
+
+.wud_excerpt  .woocommerce{
+	width: 200px;
+	float: right;
+	margin-left: 4%;
+}
+
+.wud_excerpt  .woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3{
+	display: none;
+}
+
+.wud_excerpt  .woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+	padding: 0;
+	margin: 0;
+	width: 90%;	
+}
+
+.wud_excerpt  .woocommerce ul.products li.product .button{
+	margin-top: 0;
+}
+
+.wud_excerpt a{
+	color: #e2e2e2;
+	box-shadow: none !important;
+	text-decoration: none;
+}
+
+.wud_excerpt a:hover{
+	color: #fff;
+	box-shadow: none !important;
+	text-decoration: none;
+}
+
+.wud_next,
+.wud_prev {
+	transition: 150ms linear all;
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+	border-width: calc(.25vw + .25vh + .125vmin) calc(.25vw + .25vh + .125vmin) 0 0;
+	border-style: solid;
+	border-color: #fff;
+	width: calc(.75vw + .75vh + .375vmin);
+	height: calc(.75vw + .75vh + .375vmin);
+	cursor: pointer;
+	opacity: .8;
+    filter: drop-shadow(0 0 5px #000)
+}
+.wud_next {
+	right: 25px; z-index: 10;
+	transform: rotate(45deg);
+}
+.wud_prev {
+	left: 25px; z-index: 10;
+	transform: rotate(-135deg);
+}
+.wud_next:hover,
+.wud_next:active,
+.wud_prev:hover,
+.wud_prev:active {
+	opacity: 1;
+	filter: drop-shadow(0 0 5px rgba(0,0,0,.5));
+}
+
+
+
+/* Normal wud_slide in vanilla/inactive state */
+#wud_stage .wud_slide {
+    transition-property: opacity, transform, z-index;
+	transition-duration: 0ms;
+	transition-function: linear;
+	transition-delay: 5000ms, 5000ms, 0ms;
+	transform: scale(2) rotate(10deg);
+}
+
+/* Active wud_slide */
+#wud_stage .wud_slide.on {
+	transition-property: opacity, transform, z-index;
+	transition-duration: 2000ms, 2000ms, 0ms;
+	transition-function: linear;
+	transition-delay: 0ms;
+	transform: scale(1);
+	opacity: 1;
+	z-index: 10;
+}
+
+/* .wud_slide activated by clicking next/prev navigation button.
+ * May have, for instance, faster transition time, or a completely differen effect */
+#wud_stage .wud_slide.on.toggled {
+	transition-property: opacity, transform, z-index;
+	transition-duration: 2000ms, 2000ms, 0ms;
+	transition-function: linear;
+	transition-delay: 0ms;
+	transform: scale(1);
+	opacity: 1;
+	z-index: 10;
+}
+
+/* .wud_slide deactivated by clicking next/prev navigation button. */
+#wud_stage .wud_slide.toggled {
+	transition-property: opacity, transform, z-index;
+	transition-duration: 2000ms, 2000ms, 0ms;
+	transition-function: linear;
+	transition-delay: 0ms;
+	transform: scale(2) rotate(10deg);
+	opacity: 0.0001;
+	z-index: 1;
+}

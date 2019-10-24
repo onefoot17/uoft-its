@@ -19,7 +19,7 @@ Tags: Fluid Grid
 
 .legacy {
     background-color: $white;
-    
+
     .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
 
     .clearfix:after{clear:both;}
@@ -1086,7 +1086,9 @@ Tags: Fluid Grid
 
     /* Pretty Tables */
 
-    table {width:100%;margin-bottom:18px;background-color:transparent;border-collapse:collapse;border-spacing:0;}
+    table {
+        width:100%;margin-bottom:18px;background-color:transparent;border-collapse:collapse;border-spacing:0;
+    }
 
     table th,table td{padding:8px;line-height:18px;text-align:left;vertical-align:top;border-top:1px solid #dddddd;}
 
@@ -1100,7 +1102,26 @@ Tags: Fluid Grid
 
     table thead:last-child tr:last-child th:last-child,table tbody:last-child tr:last-child td:last-child{-webkit-border-bottom-right-radius:4px;border-bottom-right-radius:4px;-moz-border-radius-bottomright:4px;}
 
-    table thead th{vertical-align:bottom;}
+    table thead th{
+        vertical-align:bottom;
+        
+        // Contact page
+        &:nth-of-type(1) {
+            width: 40%;
+        }
+
+        &:nth-of-type(2) {
+            width: 15%;
+        }
+
+        &:nth-of-type(3) {
+            width: 25%;
+        }
+
+        &:nth-of-type(4) {
+            width: 20%;
+        }
+    }
 
     table caption+thead tr:first-child th,table caption+thead tr:first-child td,table colgroup+thead tr:first-child th,table colgroup+thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0;}
 
@@ -1114,10 +1135,7 @@ Tags: Fluid Grid
 
     table tbody tr:hover td,table tbody tr:hover th{background-color:#f5f5f5;}
 
-
-
     /* Service Detail Tables */
-
     .single-service table { border-collapse: separate; border-spacing:0 15px; position: relative; border: none; }
 
     .single-service span.audience-icons { position: absolute; top: 16px; left: 215px; }

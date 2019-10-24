@@ -1,0 +1,25 @@
+/*
+ *	=== Grid WUD ===
+*/
+
+/* Excerpt = 3 */
+.grid-wud-excerpt-3 {	
+	height: 100% !important;
+    max-height: 100% !important;
+    vertical-align: middle;
+}
+.grid-wud-excerpt-3 b{
+	display: inline;
+    top: 50%;
+    position: relative;
+}
+.grid-wud-excerpt-3-no {	
+	height: 100% !important;
+    max-height: 100% !important;
+    vertical-align: middle;
+}
+.grid-wud-excerpt-3-no b{
+	display: inline;
+    top: 50%;
+    position: relative;
+}
