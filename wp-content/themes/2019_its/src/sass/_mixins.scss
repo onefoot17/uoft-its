@@ -46,6 +46,7 @@
 @mixin display-flex( $align-items: center, $flex-grow: 0, $flex-shrink: 0, $flex-basis: auto, $justify-content: space-between, $media-queries: true ) {
     display: flex;
     align-items: $align-items;
+    flex-wrap: wrap;
     justify-content: $justify-content;
 
     @if $media-queries {

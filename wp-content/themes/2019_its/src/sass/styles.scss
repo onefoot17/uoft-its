@@ -48,6 +48,7 @@ p{
 .#{$header} {
     @include display-flex(
         $align-items: flex-end,
+        $justify-content: center
     );
     
     background-color: $blue-dark;
@@ -189,9 +190,7 @@ p{
                         $justify-content: flex-start,
                         $media-queries: false
                     );
-                    
-                    flex-wrap: wrap;
-                    
+                                        
                     > * {
                         flex: 0 1 100%;
                         padding: $padding;
@@ -327,10 +326,6 @@ p{
             $flex-basis: 25%,
             $flex-grow: 1
         );
-
-        @include for-phone-only {
-            flex-wrap: wrap;
-        }
 
         > * {
             @include for-phone-only {
@@ -509,9 +504,7 @@ p{
     
     // Highlights
     &#{$ms}#{$highlights} {
-        &#{$es}posts {
-            flex-wrap: wrap;
-            
+        &#{$es}posts {            
             > * {
                 flex-basis: 50%;
                 padding-right: $padding;
@@ -597,10 +590,6 @@ p{
     font-size: 2rem;
 
     .nav__menu--footer {
-        @include for-phone-only {
-            flex-wrap: wrap;
-        }
-        
         padding: 0 $padding*4 $padding*4;
 
         > * {

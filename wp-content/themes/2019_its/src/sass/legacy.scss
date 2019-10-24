@@ -19,6 +19,8 @@ Tags: Fluid Grid
 
 .legacy {
     background-color: $white;
+    padding-left: $padding;
+    padding-right: $padding;
 
     .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
 
@@ -41,7 +43,12 @@ Tags: Fluid Grid
     sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
     sup{top:-0.5em;}
     sub{bottom:-0.25em;}
-    img{max-width:100%;vertical-align:middle;border:0;-ms-interpolation-mode:bicubic;}
+    
+    img{
+        max-width:100%;vertical-align:middle;border:0;-ms-interpolation-mode:bicubic;
+        width: auto;
+    }
+
     button,input,select,textarea{margin:0;font-size:100%;vertical-align:middle;}
 
     button,input{*overflow:visible;line-height:normal;}
@@ -55,8 +62,6 @@ Tags: Fluid Grid
     input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none;}
 
     textarea{overflow:auto;vertical-align:top;}
-
-    // body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;color:#333333;background-color:#ffffff;}
 
     .row{margin-left:-20px;*zoom:1;}.row:before,.row:after{display:table;content:"";}
 
@@ -148,7 +153,8 @@ Tags: Fluid Grid
 
     cite{font-style:normal;}
 
-    code,pre{padding:0 3px 2px;font-family:Menlo,Monaco,Consolas,"Courier New",monospace;font-size:12px;color:#333333;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+    code,pre{padding:0 3px 2px;
+        font-family:Menlo,Monaco,Consolas,"Courier New",monospace;font-size:12px;color:#333333;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
 
     code{padding:2px 4px;color:#d14;background-color:#f7f7f9;border:1px solid #e1e1e8;}
 
@@ -314,7 +320,14 @@ Tags: Fluid Grid
 
     .navbar-form .input-append,.navbar-form .input-prepend{margin-top:6px;white-space:nowrap;}.navbar-form .input-append input,.navbar-form .input-prepend input{margin-top:0;}
 
-    .navbar-search{position:relative;float:left;margin-top:6px;margin-bottom:0;}.navbar-search .search-query{padding:4px 9px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:13px;font-weight:normal;line-height:1;color:#ffffff;background-color:#626262;border:1px solid #151515;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);box-shadow:inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);-webkit-transition:none;-moz-transition:none;-ms-transition:none;-o-transition:none;transition:none;}.navbar-search .search-query:-moz-placeholder{color:#cccccc;}
+    .navbar-search{
+        position:relative;float:left;margin-top:6px;margin-bottom:0;
+    }
+    
+    .navbar-search .search-query{
+        padding:4px 9px;
+        font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+        font-size:13px;font-weight:normal;line-height:1;color:#ffffff;background-color:#626262;border:1px solid #151515;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);box-shadow:inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);-webkit-transition:none;-moz-transition:none;-ms-transition:none;-o-transition:none;transition:none;}.navbar-search .search-query:-moz-placeholder{color:#cccccc;}
 
     .navbar-search .search-query::-webkit-input-placeholder{color:#cccccc;}
 
@@ -1010,9 +1023,15 @@ Tags: Fluid Grid
 
 
 
-    h1, h2, h3, h4, h4 a, h5, h5 a, h6, th { font-family: "franklin-gothic-urw-cond", Times, serif; text-rendering: optimizeLegibility; }
+    h1, h2, h3, h4, h4 a, h5, h5 a, h6, th {
+        font-family: 'Open Sans Condensed', sans-serif;
+        text-rendering: optimizeLegibility;
+    }
 
-    p, td, li, a, dd, dt, legend { font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; text-rendering: optimizeLegibility; }
+    p, td, li, a, dd, dt, legend {
+        font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+        text-rendering: optimizeLegibility;
+    }
 
 
 
@@ -1042,7 +1061,9 @@ Tags: Fluid Grid
 
     .serif { font-family: Georgia, "Times New Roman", Times, serif; }
 
-    .sans-serif { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .sans-serif {
+        font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+    }
 
     .monospace { font-family: Menlo, Monaco, "Courier New", monospace; }
 
@@ -1594,7 +1615,7 @@ Tags: Fluid Grid
 
         color: #fff;
 
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
 
         text-shadow: none;
 
@@ -1670,7 +1691,7 @@ Tags: Fluid Grid
 
         border-radius:3px;
 
-        font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
 
     }
 
@@ -2110,7 +2131,9 @@ Tags: Fluid Grid
 
     .widget {
 
-        font-family: "proxima-nova", "Helvetica Neue", Helvetica, sans-serif; text-rendering: optimizeLegibility;
+        font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+        
+        text-rendering: optimizeLegibility;
 
         border: 1px solid #ccc;
 
@@ -2810,7 +2833,9 @@ Tags: Fluid Grid
 
         // body { width: 100% !important; margin:0 !important; padding:0 !important; line-height: 1.4; word-spacing: 1.1pt; letter-spacing: 0.2pt; font-family: Garamond,"Times New Roman", serif; color: #000; background: none; font-size: 12pt; }
 
-        h1,h2,h3,h4,h5,h6 { font-family: Helvetica, Arial, sans-serif; }
+        h1,h2,h3,h4,h5,h6 {
+            font-family: 'Open Sans Condensed', sans-serif;
+         }
 
         h1{ font-size: 19pt; }
 
@@ -3054,8 +3079,7 @@ Tags: Fluid Grid
 
     :focus{ outline:none}
     img, fieldset{ border:none}
-    // body{ font-family:Arial, Helvetica, sans-serif; }
-
+    
     .wrapper{ max-width:1130px; margin:0 auto;}
         .padding {padding: 2em 1em;}
         
@@ -3063,7 +3087,9 @@ Tags: Fluid Grid
     #quick_nav_container p{ float:left; width:100%; font-size:13px; padding:15px 0 0 8px}
     #quick_nav_container h2{ float:left; width:100%; border-bottom:1px solid #dddddd; padding:18px 0;; font-size:24px}
 
-    h1.page-title { font-family: "proxima-nova"; font-weight: 100; }
+    h1.page-title {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 100; }
 
     #quick_nav_container ul{ float:left; list-style:none; margin:0px; padding:0px;}
         #quick_nav_container ul li{ float:left; position:relative; /*background: url(../images/quick_nav_img.jpg) 0 0;*/ margin-left:8px; margin-bottom:10px; height:170px; width:268px;/* margin-top:25px*/ overflow:hidden}
@@ -3082,31 +3108,54 @@ Tags: Fluid Grid
 
     .aero{ float:right; margin-top:3px; z-index:9!important}
 
-    #blackboard_container{ float:left; width:98.5%; margin-top:23px; background: url(../images/blakbrd_bg.jpg) repeat-y 0 0; padding-left:14px; border-radius:7px; background-color: #fbfbfb!important }
-    #blackboard_left_container{ float:left; width:195px; background:url(../images/blackboard_img.jpg) repeat-y 0 0; padding-right:10px}
-        #blackboard_left_container h3{ float:left; padding:24px 0 20px 0}
+    #blackboard_container{
+        float:left; width:98.5%; margin-top:23px; background: url(../images/blakbrd_bg.jpg) repeat-y 0 0; padding-left:14px; border-radius:7px; background-color: #fbfbfb!important
+    }
+
+    #blackboard_left_container{
+        float:left; width:195px; background:url(../images/blackboard_img.jpg) repeat-y 0 0; padding-right:10px
+    }
+
+    #blackboard_left_container h3{
+        float:left; padding:24px 0 20px 0
+    }
 
     .left_ul{ float:left; width:100%; list-style:none; margin:20px 0}
-        .left_ul li{ float:left; width:100%; padding:4px 0}
-            .left_ul li small{ color:#333; text-transform:uppercase; background:url(../images/square_img.jpg) no-repeat 0 4px; padding-left:25px; float:left}
 
-        .left_ul li span{ float:left; font-size:12px; padding:5px 10px 5px 20px;}
-            .left_ul li span .aero3{ float:right; margin:5px 0 0 10px}
+    .left_ul li{ float:left; width:100%; padding:4px 0}
 
-        .left_ul .sub_list{ float:left; list-style:none; margin:15px 30px 20px}
-            .left_ul .sub_list li{ float:left; width:165px; background:url(../images/sprtr.png) no-repeat 0 bottom; min-height:28px}
-            .left_ul .sub_list li small{ float:left; padding:5px 0 5px 25px; font-size:10.21px; color:#1f5d7a;  background:url(../images/square_img.jpg) no-repeat center left; text-transform:uppercase;}
+    .left_ul li small{ color:#333; text-transform:uppercase; background:url(../images/square_img.jpg) no-repeat 0 4px; padding-left:25px; float:left}
 
-    /*#blackboard_right_container{ float:left; width:865px; padding-left:20px; padding-top:20px; padding-right:20px;}*/
+    .left_ul li span{ float:left; font-size:12px; padding:5px 10px 5px 20px;}
+
+    .left_ul li span .aero3{ float:right; margin:5px 0 0 10px}
+
+    .left_ul .sub_list{ float:left; list-style:none; margin:15px 30px 20px}
+
+    .left_ul .sub_list li{ float:left; width:165px; background:url(../images/sprtr.png) no-repeat 0 bottom; min-height:28px}
+
+    .left_ul .sub_list li small{ float:left; padding:5px 0 5px 25px; font-size:10.21px; color:#1f5d7a;  background:url(../images/square_img.jpg) no-repeat center left; text-transform:uppercase;}
+
     #blackboard_right_container {
-    /*    margin: 0 0 0 213px;*/
+        /* float:left; width:865px; padding-left:20px; padding-top:20px; padding-right:20px;
+        margin: 0 0 0 213px;*/
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 20px;
         background:#FBFBFB;
-        width:90%
+        width:90%;
+
+        h2 {
+            /*float:left; width:100%; */
+            font-size:25px;
+            color:#496680;
+            padding-bottom:25px;
+            margin:0!important;
+            color: #1f4878;
+            font-weight:400;
+            font-size:36px;
+        }
     }
-        #blackboard_right_container h2{ /*float:left; width:100%; */font-size:25px; color:#496680; padding-bottom:25px; margin:0!important}
 
     .content_raw{ float:left; width:892px; margin-top:20px}
     .heading_box{ float:left; width:100px }
@@ -3236,8 +3285,13 @@ Tags: Fluid Grid
             width: auto!important;
         }
         .wrapper{ overflow:hidden}
+
         #blackboard_left_container{ background:#fbfbfb; width:100%}
-        #blackboard_right_container{  float:left; width:90%!important; background:#fbfbfb; padding:20px 0 0 0}
+
+        #blackboard_right_container{
+            float:left; width:90%!important;
+            background:#fbfbfb; padding:20px 0 0 0
+        }
             
         ul.qa_buttons {
             margin-top: 34px !important;
@@ -3298,13 +3352,20 @@ Tags: Fluid Grid
             margin: -10px 0 0;
             width: auto!important;
         }
-            .wrapper{ overflow:hidden}
-        #blackboard_right_container{  float:left; width:90%!important; background:#fbfbfb; margin:0 0 -20px -20px; padding:20px 0 0 40px}
+        
+        .wrapper{ overflow:hidden}
+        
+        #blackboard_right_container {
+            float:left; width:
+            90%!important;
+            background:#fbfbfb;
+            margin:0 0 -20px -20px;
+            padding:20px 0 0 40px
+        }
         
         ul.qa_buttons {
             margin-top: 20px !important;
         }
-        
     }
 
     // custom theme styles
@@ -3329,7 +3390,7 @@ Tags: Fluid Grid
     }
 
     h1, h2, h3, h4, h4 a, h5, h5 a, h6, th {
-        font-family: "arial", Helvetica, sans-serif;
+        font-family: 'Open Sans Condensed', sans-serif;
     }
     p, td, li, dd, dt, legend {
         font-size: 16px;
@@ -3337,12 +3398,6 @@ Tags: Fluid Grid
 
     li {
         line-height: 21px;
-    }
-
-    #blackboard_right_container h2 {
-        color: #1f4878;
-        font-weight:400;
-        font-size:36px;
     }
 
     h3 {
@@ -3448,7 +3503,7 @@ Tags: Fluid Grid
     -webkit-border-radius: 6;
     -moz-border-radius: 6;
     border-radius: 6px;
-    font-family: Arial;
+    font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
     color: #ffffff;
     font-size: 16px;
     padding: 10px 20px 10px 20px;

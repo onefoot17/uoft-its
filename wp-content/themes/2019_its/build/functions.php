@@ -54,9 +54,12 @@
         wp_enqueue_script( 'script-scripts', get_template_directory_uri() . '/build/js/scripts-min.js', array(), false, true );
     }
 
-    // Remove auto tags
-    remove_filter ('the_excerpt', 'wpautop');
-    remove_filter ('the_content', 'wpautop');
+    // Remove auto tags on Index page
+    if ( is_front_page() && is_home() ) {
+        remove_filter ('the_excerpt', 'wpautop');
+
+        remove_filter ('the_content', 'wpautop');
+    }
     
     // SVG Upload
     function cc_mime_types($mimes) {
@@ -72,7 +75,7 @@
           if ( isset( $post ) ) {
               $classes[] = $post->post_type . '-' . $post->post_name;
             }
-            
+
             return $classes;
         }
         add_filter( 'body_class', 'add_slug_body_class' );

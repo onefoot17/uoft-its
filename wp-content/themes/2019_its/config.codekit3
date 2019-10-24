@@ -356,6 +356,14 @@
 		"oA": 0,
 		"oAP": "/build/tag.php",
 		"oF": 0
+		},
+	"/templates/template-its-ESC-help-landing-page.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/templates/template-its-ESC-help-landing-page.php",
+		"oF": 0
 		}
 	},
 "hooks": [
