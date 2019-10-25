@@ -1,12 +1,13 @@
 <?php get_header(); ?>
-<main id="content">
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'entry' ); ?>
-<?php if ( comments_open() && ! post_password_required() ) { comments_template( '', true ); } ?>
-<?php endwhile; endif; ?>
-<footer class="footer">
-<?php get_template_part( 'nav', 'below-single' ); ?>
-</footer>
+
+<main class="content">
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <h2><?php the_title(); ?></h2>
+
+        <?php the_content(); ?>
+    <?php endwhile; else : ?>
+        <h2>Not Found</h2>
+    <?php endif; ?>
 </main>
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

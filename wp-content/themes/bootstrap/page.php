@@ -29,7 +29,7 @@
 
 <?php if ( function_exists( 'breadcrumb_trail' ) ) breadcrumb_trail(); ?>
 
-<div class="row-fluid howdy">
+<div class="row-fluid">
 	<div class="wrapper">
 		<script>
 			function featurepage(){
@@ -261,7 +261,7 @@
 
 				<a id="<?php echo $post->ID;?>" name="<?php echo $post->ID;?>" ></a>
 
-				<h2 class="howdy"><?php the_title(); ?></h2>
+				<h2><?php the_title(); ?></h2>
 				
 				<!-- <div class="entry-content">-->
 				

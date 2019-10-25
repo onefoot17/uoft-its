@@ -16,7 +16,7 @@
 }
   
 // Buttons
-@mixin button-styles( $background-color: $blue-light, $border-color: transparent, $color: $white, $padding: $padding/1.5 $padding*2, $text-decoration: none ) {
+@mixin button-styles( $background-color: var(--blue-light), $border-color: transparent, $color: var(--white), $padding: $padding/1.5 $padding*2, $text-decoration: none ) {
     background-color: $background-color;
     border: 1px solid $border-color;
     border-radius: 4px;
@@ -26,15 +26,21 @@
     text-decoration: $text-decoration;
 }
 
-@mixin button-hover( $button: button, $background-color: $gray-medium, $border-color: $background-color, $color: $black ) {
+@mixin button-hover( $button: button, $background-color: var(--gray-medium), $border-color: $background-color, $color: var(--black) ) {
     @if $button == button {
         &:hover {
             background-color: $background-color;
             border-color: $background-color;
             color: $color;
         }
-    } @else if $button == link {
+    } @else if $button == outside_link {
         &:hover button {
+            background-color: $background-color;
+            border-color: $background-color;
+            color: $color;
+        }
+    } @else if $button == inside_link {
+        &:hover a {
             background-color: $background-color;
             border-color: $background-color;
             color: $color;
@@ -67,7 +73,7 @@
 }
 
 // Ratio
-@mixin ratio {
+@mixin ratio( $ratio: 1_1 ) {
     overflow: hidden;
     position: relative;
 
@@ -75,9 +81,14 @@
         display: block;
         content: "";
         width: 100%;
-        padding-top: 66.66%;
-        // 1:1 - 100%
-        // 16:9 - 56.25%
+
+        @if $ratio == 16_9 {
+            // 16:9 - 56.25%
+            padding-top: 56.25%;
+        } @else {
+            // 1:1 - 100%
+            padding-top: 100%;
+        }
         // 4:3 - 75%
         // 3:2 - 66.66%
         // 8:5 - 62.5%
@@ -103,10 +114,16 @@
 }
 
 // Gradients
-@mixin background-gradient( $gradient-direction: linear, $gradient-color-1: $white, $gradient-color-2: $gray-light ) {
+@mixin background-gradient( $gradient-direction: linear, $gradient-color-1: var(--white), $gradient-color-2: var(--gray-light) ) {
     @if $gradient-direction == 'diagonal' {
         background: linear-gradient(45deg, $gradient-color-1 0%, $gradient-color-2 25%, $gradient-color-2 25%, $gradient-color-1 75%, $gradient-color-2 100%);
     } @else {
         background: linear-gradient(to bottom, $gradient-color-1 0%, $gradient-color-2 100% );
     }
+}
+
+//Color
+@mixin background-color-rgba( $color-hex, $color-opacity ) {
+    background-color: $color-hex;
+    background-color: rgba( $color-hex, $color-opacity );
 }

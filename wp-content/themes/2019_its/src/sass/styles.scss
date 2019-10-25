@@ -15,7 +15,7 @@ body {
         $line-height: 1
     );
     
-    background-color: $gray-light;
+    background-color: var(--gray-light);
     display: flex;
     flex-direction: column;
     font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
@@ -51,7 +51,7 @@ p{
         $justify-content: center
     );
     
-    background-color: $blue-dark;
+    background-color: var(--blue-dark);
     padding: $padding*2;
     
     &#{$es}logos {
@@ -76,8 +76,8 @@ p{
         }
 
         &#{$es}its {
-            border-left: 1px solid $white;
-            color: $white;
+            border-left: 1px solid var(--white);
+            color: var(--white);
             font-family: 'Open Sans Condensed', sans-serif;
             font-size: 1.4rem;
             font-weight: 600;
@@ -103,7 +103,7 @@ p{
             justify-content: center;
         }
         
-        border-bottom: 1px solid $blue-light;
+        border-bottom: 1px solid var(--blue-light);
         padding-bottom: $padding/2;
         text-align: right;
 
@@ -139,7 +139,7 @@ p{
         }
         
         align-items: center;
-        color: $white;
+        color: var(--white);
         display: inline-flex;
         justify-content: center;
         margin-right: $margin;
@@ -147,7 +147,7 @@ p{
         text-decoration: none;
         
         &#{$es}icon {
-            background-color: $green-medium;
+            background-color: var(--green-medium);
             border-radius: 50%;
             margin-top: -1px;
             width: 5px;
@@ -169,7 +169,7 @@ p{
         
         .menu-item {
             @include button-hover(
-                $background-color: $blue-medium
+                $background-color: var(--blue-medium)
             );
             @include line-height;
             @include transition;
@@ -180,7 +180,7 @@ p{
 
             &:hover {
                 > .nav__menu__arrow:before {
-                    color: $blue-dark;
+                    color: var(--blue-dark);
                     content: '\f106';
                 }
 
@@ -200,31 +200,31 @@ p{
             
             .menu-item { // Level 2 Menu
                 @include button-hover(
-                    $background-color: $blue-light
+                    $background-color: var(--blue-light)
                 );
                 @include transition;
 
-                background-color: $blue-medium;
+                background-color: var(--blue-medium);
                 position: relative;
 
                 .menu-item { // Level 3 Menu
                     @include button-hover(
-                        $background-color: $gray-light
+                        $background-color: var(--gray-light)
                     );
                     @include transition;
 
-                    background-color: $blue-light;
+                    background-color: var(--blue-light);
                 }
             }
         }
     
         a {
-            color: $white;
+            color: var(--white);
             text-decoration: none;
         }
 
         &#{$es}arrow {
-            color: $white;
+            color: var(--white);
             font-size: 1.5rem;
             padding-left: $padding/2;
         }
@@ -334,12 +334,31 @@ p{
 
             padding: $padding;
         }
+
+        // Pagination nav buttons
+        &-nav {
+            @include display-flex;
+
+            &#{$es}prev,
+            &#{$es}next {
+                @include button-styles( $background-color:transparent, $padding: 0 );
+                @include button-hover( inside_link );
+            }
+            
+            a {
+                @include button-styles;
+                @include display-flex;
+                @include transition;
+
+                > * {
+                    padding: 0 $padding/2;
+                }
+            }
+        }
     }
 
     &#{$es}link {
-        @include button-hover(
-            link
-        );
+        @include button-hover( outside_link );
 
         &#{$es}title {
             font-family: 'Open Sans Condensed', sans-serif;
@@ -352,13 +371,55 @@ p{
         text-decoration: none;
         
         &#{$es}image {
-            border: 1px solid $gray-light;
+            border: 1px solid var(--gray-light);
         }
     }
-    
+
+    // Category pages
+    &#{$ms}category {
+        background-color: $white;
+
+        &#{$es}width {
+            padding-top: initial;
+        }
+
+        &#{$es}post {
+            align-self: stretch;
+            display: flex;
+            flex-basis: calc( 100% / 3 );
+            position: relative;
+        }
+
+        &#{$es}link {
+            @include button-hover;
+            @include transition;
+
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            position: relative;
+            
+            &#{$es}image-con {
+                @include ratio( 16_9 );
+            }
+        }
+
+        &#{$es}button {
+            @include button-styles( $padding: $padding/2 );
+            @include background-color-rgba( var(--blue-dark--rgb), 0.9 );
+            @include line-height;
+
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+        }
+    }
+
     // Carousel
     &#{$ms}#{$carousel} {
-        @include background-gradient(diagonal, $blue-very-light, $gray-light);
+        @include background-gradient(diagonal, var(--blue-very-light), var(--gray-light));
         
         &#{$es}link {
             @include display-flex(
@@ -366,7 +427,7 @@ p{
                 $flex-grow: 1
             );
             
-            color: $blue-medium;
+            color: var(--blue-medium);
             padding-left: $padding*8;
             padding-right: $padding*8;
             text-decoration: none;
@@ -402,7 +463,7 @@ p{
             }
                 
             &#{$es}image {
-                border-color: $white;
+                border-color: var(--white);
             }
         }
     }
@@ -414,8 +475,8 @@ p{
                 $justify-content: center
             );
             
-            background-color: $green-medium;
-            color: $white;
+            background-color: var(--green-medium);
+            color: var(--white);
             padding: $padding;
             text-align: center;
             text-decoration: none;
@@ -440,10 +501,10 @@ p{
     
     // News
     &#{$ms}#{$news} {
-        background-color: $white;
+        background-color: var(--white);
         
         &#{$es}heading {
-            color: $blue-light;
+            color: var(--blue-light);
         }
         
         &#{$es}button {
@@ -459,8 +520,8 @@ p{
             @include button-hover;
             @include transition;
             
-            border: 1px solid $gray-light;
-            color: $blue-dark;
+            border: 1px solid var(--gray-light);
+            color: var(--blue-dark);
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -485,10 +546,10 @@ p{
     
     // Follow
     &#{$ms}#{$follow} {
-        background-color: $gray-medium;
+        background-color: var(--gray-medium);
 
         &#{$es}heading {
-            color: $blue-dark;
+            color: var(--blue-dark);
         }
 
         &#{$es}button {
@@ -520,23 +581,23 @@ p{
             align-self: stretch;
 
             &:nth-of-type(2) .section__link {
-                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: $gray-light, $gradient-color-2: $blue-very-light );
+                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: var(--gray-light), $gradient-color-2: var(--blue-very-light) );
             }
 
             &:nth-of-type(3) .section__link {
-                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: $gold-light, $gradient-color-2: $gold-very-light );
+                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: var(--gold-light), $gradient-color-2: var(--gold-very-light) );
             }
 
             &:nth-of-type(4) .section__link {
-                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: $gray-light, $gradient-color-2: $green-very-light );
+                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: var(--gray-light), $gradient-color-2: var(--green-very-light) );
             }
         }
 
         &#{$es}link {
             @include background-gradient;
 
-            border: 1px solid $white;
-            color: $black;
+            border: 1px solid var(--white);
+            color: var(--black);
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -585,8 +646,8 @@ p{
 
 // Footer
 .#{$footer} {
-    background-color: $blue-dark;
-    color: $white;
+    background-color: var(--blue-dark);
+    color: var(--white);
     font-size: 2rem;
 
     .nav__menu--footer {
@@ -608,7 +669,7 @@ p{
             }
 
             align-self: stretch;
-            border: 3px dashed $blue-light;
+            border: 3px dashed var(--blue-light);
             flex: 1;
             flex-direction: column;
             margin-right: $margin*2;
@@ -636,7 +697,32 @@ p{
             }
         }
 
-        border-top: 1px solid $blue-light;
+        border-top: 1px solid var(--blue-light);
         padding: $padding*2 $padding*2 0;
+    }
+}
+
+// Breadcrumbs
+.breadcrumbs {
+    background-color: $white;
+    font-size: 1.2rem;
+    padding: $padding;
+
+    a {
+        color: $gray-medium;
+        text-decoration: none;
+    }
+    
+    .divider {
+        padding:0 5px;
+        color: #999;
+    }
+    
+    .active a {
+        color: $gray-dark;
+    }
+    
+    .trail-browse {
+        display: none !important;
     }
 }

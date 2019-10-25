@@ -18,7 +18,7 @@ Tags: Fluid Grid
    Typeahead, Hero Unit, Nav Pills, Tabs and only Partial use of Icons. Replace ../img with images */
 
 .legacy {
-    background-color: $white;
+    background-color: var(--white);
     padding-left: $padding;
     padding-right: $padding;
 
@@ -3092,19 +3092,32 @@ Tags: Fluid Grid
         font-weight: 100; }
 
     #quick_nav_container ul{ float:left; list-style:none; margin:0px; padding:0px;}
-        #quick_nav_container ul li{ float:left; position:relative; /*background: url(../images/quick_nav_img.jpg) 0 0;*/ margin-left:8px; margin-bottom:10px; height:170px; width:268px;/* margin-top:25px*/ overflow:hidden}
-            #quick_nav_container ul li span{ position:absolute; bottom:0px; left:0; font-size:12px; width:263px; background:url(../images/bg_img.png) repeat 0 0; padding:5px 0 5px 5px; color:#FFF; float:left; font-weight:bold}
-            #quick_nav_container ul li figure{ float:left; width:268px; height:170px}
-                #quick_nav_container ul li figure img{ float:left; /*width:268px; height:170px*/ width:100%; height:auto}
-            #quick_nav_container ul li a{ color:#fff; /*font-size:9px;*/ text-decoration:none}
-            
-            #quick_nav_container.featured ul li{ overflow:visible!important}
-                #quick_nav_container.featured ul li figure img{ width:100%; height:100%}
-                #quick_nav_container.featured ul li a{ float:left; width:100%}
-                    #quick_nav_container ul li ul{ position: absolute!important; top:170px; left:0px; height:auto!important; background:url(../images/bg_img.png) repeat 0 0; float:left; width:100%!important}
+    #quick_nav_container ul li{ float:left; position:relative; /*background: url(../images/quick_nav_img.jpg) 0 0;*/ margin-left:8px; margin-bottom:10px; height:170px; width:268px;/* margin-top:25px*/ overflow:hidden}
 
-            #quick_nav_container ul li li { margin:0; width:100%!important; float:left!important; height:auto!important }
-                #quick_nav_container ul li li span{ position:static!important}
+    #quick_nav_container ul li span {
+        @include background-color-rgba( var(--blue-dark--rgb), 0.9 );
+
+        color: var(--white);
+        display: block;
+        position: absolute;
+        bottom:0px;
+        left:0;
+        font-size:12px;
+        width: 100%;
+        padding:5px 0 5px 5px;
+        font-weight:bold;
+    }
+    #quick_nav_container ul li figure{ float:left; width:268px; height:170px}
+        #quick_nav_container ul li figure img{ float:left; /*width:268px; height:170px*/ width:100%; height:auto}
+    #quick_nav_container ul li a{ color:#fff; /*font-size:9px;*/ text-decoration:none}
+    
+    #quick_nav_container.featured ul li{ overflow:visible!important}
+        #quick_nav_container.featured ul li figure img{ width:100%; height:100%}
+        #quick_nav_container.featured ul li a{ float:left; width:100%}
+            #quick_nav_container ul li ul{ position: absolute!important; top:170px; left:0px; height:auto!important; background:url(../images/bg_img.png) repeat 0 0; float:left; width:100%!important}
+
+    #quick_nav_container ul li li { margin:0; width:100%!important; float:left!important; height:auto!important }
+        #quick_nav_container ul li li span{ position:static!important}
 
     .aero{ float:right; margin-top:3px; z-index:9!important}
 
