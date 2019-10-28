@@ -13,7 +13,9 @@
                             <a class="section__link section--category__link" href="<?php the_permalink(); ?>">
                                 <?php 
                                     if ( has_post_thumbnail() ) {
-                                        echo '<section class="section--category__link__image-con">' . wp_get_attachment_image(get_post_thumbnail_id(), 'medium', false, array('class' => 'section__link__image section--category__link__image') ) . '</section>';
+                                        echo '<section class="section--category__link__image-con">' . wp_get_attachment_image( get_post_thumbnail_id(), 'medium', false, array( 'class' => 'section__link__image section--category__link__image' ) ) . '</section>';
+                                    } else {
+                                        echo '<section class="section__image-fallback"><p>U of T</p></section>';
                                     }
                                 ?>
 

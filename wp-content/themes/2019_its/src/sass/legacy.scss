@@ -44,9 +44,16 @@ Tags: Fluid Grid
     sup{top:-0.5em;}
     sub{bottom:-0.25em;}
     
-    img{
-        max-width:100%;vertical-align:middle;border:0;-ms-interpolation-mode:bicubic;
+    img {
+        border:0;
+        -ms-interpolation-mode:bicubic;
+        max-width:100%;
+        vertical-align:middle;
         width: auto;
+
+        .single & {
+            width: inherit;
+        }
     }
 
     button,input,select,textarea{margin:0;font-size:100%;vertical-align:middle;}

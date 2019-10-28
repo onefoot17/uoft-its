@@ -38,10 +38,14 @@ h1 {
     font-size: 2rem;
 }
 
-p{
+p {
     @include line-height;
 
     font-size: 1.2rem;
+}
+
+a {
+    color: inherit;
 }
 
 // Header
@@ -209,8 +213,13 @@ p{
 
                 .menu-item { // Level 3 Menu
                     @include button-hover(
-                        $background-color: var(--gray-light)
+                        $background-color: var(--gray-medium)
                     );
+
+                    &:hover a {
+                        color: $black;
+                    }
+
                     @include transition;
 
                     background-color: var(--blue-light);
@@ -355,6 +364,12 @@ p{
                 }
             }
         }
+    }
+
+    &#{$es}image-fallback {
+        @include display-flex( $justify-content: center);
+        flex-direction: column;
+        flex-grow: 1;
     }
 
     &#{$es}link {
