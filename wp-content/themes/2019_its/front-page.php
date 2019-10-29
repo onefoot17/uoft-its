@@ -144,8 +144,43 @@
         </section>
     </section>
 
+    <section class="section section--follow">
+        <section class="section__width section--follow__width">
+            <header class="section__header">
+                <h1 class="section--follow__heading">Follow Us</h1>
+            </header>
+
+            <ul class="section__posts section--follow__posts">
+                <?php
+                    global $post;
+
+                    $args = array(
+                        'category_name' => 'Follow',
+                        'posts_per_page' => 4
+                    );
+
+                    $postslist = get_posts( $args );
+
+                    foreach ( $postslist as $post ) :
+                        setup_postdata( $post ); 
+                ?>
+                            
+                        <li class="section--follow__post">
+                            <a class="section__link section--follow__link" href="<?php the_permalink(); ?>">
+                                <button class="section--follow__button section--follow__link__button"><?php the_title(); ?></button>
+                            </a>
+                        </li>
+                <?php
+                    endforeach;
+
+                    wp_reset_postdata();
+                ?>
+            </ul>
+        </section>
+    </section>
+
     <section class="section section--highlights">
-        <section class="section__width section--highlights__width">    
+        <section class="section__width section--highlights__width">
             <ul class="section__posts section--highlights__posts">
                 <?php
                     global $post;
@@ -190,39 +225,6 @@
                     wp_reset_postdata();
                 ?>
             </ul>
-
-            <section class="section section--highlights__follow">
-                <header class="section__header section--highlights__follow__header">
-                    <h1 class="section--highlights__follow__heading">Follow Us</h1>
-                </header>
-
-                <ul class="section__posts section--highlights__follow__posts">
-                    <?php
-                        global $post;
-
-                        $args = array(
-                            'category_name' => 'Follow',
-                            'posts_per_page' => 4
-                        );
-
-                        $postslist = get_posts( $args );
-
-                        foreach ( $postslist as $post ) :
-                            setup_postdata( $post ); 
-                    ?>
-                                
-                            <li class="section--highlights__follow__post">
-                                <a class="section__link section--highlights__follow__link" href="<?php the_permalink(); ?>">
-                                    <button class="section--highlights__follow__button section--highlights__follow__link__button"><?php the_title(); ?></button>
-                                </a>
-                            </li>
-                    <?php
-                        endforeach;
-
-                        wp_reset_postdata();
-                    ?>
-                </ul>
-            </section>
         </section>
     </section>
 </main>

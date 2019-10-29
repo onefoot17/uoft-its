@@ -570,18 +570,41 @@ a {
         }
     }
     
+    // Follow
+    &#{$ms}#{$follow} {
+        &#{$es}width {
+            padding-bottom: 0;
+        }
+
+        &#{$es}heading {
+            color: var(--blue-dark);
+        }
+
+        &#{$es}button {
+            @include button-styles;
+
+            &:before {
+                content: "\f099";
+                font-family: "Font Awesome 5 Brands";
+                font-size: 2rem;
+                padding-right: $padding;
+            }
+        }
+
+        &#{$es}link {
+            &#{$es}button {
+                width: 100%;
+            }
+        }
+    }
+    
     // Highlights
     &#{$ms}#{$highlights} {
         &#{$es}width {
-            @include display-flex(
-                $align-items: flex-start
-            );
+            padding-top: 0;
         }
 
-        &#{$es}posts {
-            flex-basis: 87%;
-            padding-right: $padding;
-
+        &#{$es}posts {            
             > * {
                 flex-basis: 50%;
                 padding-right: $padding;
@@ -595,8 +618,6 @@ a {
         &#{$es}post {
             display: flex;
             align-self: stretch;
-            padding-top: 0;
-            padding-bottom: $padding*2;
 
             &:nth-of-type(1) .section__link {
                 background: linear-gradient(45deg, var(--white) 0%, var(--gray-light) 5%, var(--gray-medium) 15%, var(--gray-dark) 35%, var(--gray-medium) 50%, var(--gray-light) 75%, var(--white) 100%);
@@ -661,50 +682,6 @@ a {
 
             &#{$es}excerpt + &#{$es}image-con {
                 padding-left: $padding;
-            }
-        }
-    
-        // Follow
-        &#{$es}#{$follow} {
-            flex-basis: 13%;
-            align-self: stretch;
-    
-            &#{$es}header {
-                display: block;
-                padding: 0;
-            }
-            
-            &#{$es}heading {
-                color: var(--blue-dark);
-                text-align: center;
-            }
-
-            &#{$es}posts {
-                flex-direction: column;
-            }
-
-            &#{$es}post {
-                padding-left: 0;
-                padding-right: 0;
-                width: 100%;
-            }
-    
-            &#{$es}button {
-                @include button-styles;
-
-                &:before {
-                    content: "\f099";
-                    display: block;
-                    font-family: "Font Awesome 5 Brands";
-                    font-size: 2rem;
-                    padding-bottom: $padding;
-                }
-            }
-    
-            &#{$es}link {
-                &#{$es}button {
-                    width: 100%;
-                }
             }
         }
     }
