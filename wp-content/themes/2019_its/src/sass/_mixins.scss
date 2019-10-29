@@ -114,9 +114,9 @@
 }
 
 // Gradients
-@mixin background-gradient( $gradient-direction: linear, $gradient-color-1: var(--white), $gradient-color-2: var(--gray-light), $gradient-color-3: var(--gray-medium), $gradient-color-4: var(--gray-dark), $gradient-color-5: var(--black) ) {
+@mixin background-gradient( $gradient-direction: linear, $gradient-color-1: var(--white), $gradient-color-2: var(--gray-light) ) {
     @if $gradient-direction == 'diagonal' {
-        background: linear-gradient(45deg, $gradient-color-1 0%, $gradient-color-2 25%, $gradient-color-3 50%, $gradient-color-4 75%, $gradient-color-5 100%);
+        background: linear-gradient(45deg, $gradient-color-1 0%, $gradient-color-2 25%, $gradient-color-2 25%, $gradient-color-1 75%, $gradient-color-2 100%);
     } @else {
         background: linear-gradient(to bottom, $gradient-color-1 0%, $gradient-color-2 100% );
     }
