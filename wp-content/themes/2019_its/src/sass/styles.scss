@@ -76,7 +76,7 @@ a {
 
         &#{$es}uoft {
             max-width: 225px;
-            padding-right: $padding*2;
+            padding-right: 32px;
         }
 
         &#{$es}its {
@@ -86,6 +86,7 @@ a {
             font-size: 1.4rem;
             font-weight: 600;
             padding: $padding/2 $padding*2;
+            padding-left: 32px;
             text-decoration: none;
 
             &#{$es}top {
@@ -98,7 +99,7 @@ a {
 }
 
 // Navigation
-.#{$nav} {
+.#{$nav} {    
     &#{$es}top {
         @include display-flex(
             $justify-content: flex-end
@@ -168,7 +169,7 @@ a {
             $media-queries: false
         );
 
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         position: relative;
         
         .menu-item {
@@ -194,6 +195,8 @@ a {
                         $justify-content: flex-start,
                         $media-queries: false
                     );
+
+                    flex-direction: column;
                                         
                     > * {
                         flex: 0 1 100%;
@@ -210,6 +213,7 @@ a {
 
                 background-color: var(--blue-medium);
                 position: relative;
+                width: 100%;
 
                 .menu-item { // Level 3 Menu
                     @include button-hover(
@@ -240,11 +244,16 @@ a {
     }
     
     .sub-menu { // Level 2 Menu
+        background-color: var(--blue-medium);
         display: none;
         position: absolute;
         top: 100%;
         left: $padding;
         z-index: 10000;
+
+        .sub-menu {
+            background-color: var(--blue-light);
+        }
     }
     
     &#{$es}menu#{$ms}social {
@@ -263,7 +272,7 @@ a {
             text-indent: -9999px;
             
             &:before {
-                font-size: initial;
+                font-size: 2rem;
             }
         }
         
@@ -377,6 +386,7 @@ a {
 
         &#{$es}title {
             font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: 700;
         }
 
         button {
@@ -438,7 +448,6 @@ a {
         
         &#{$es}link {
             @include display-flex(
-                $flex-basis: 50%,
                 $flex-grow: 1
             );
             
@@ -448,12 +457,12 @@ a {
             text-decoration: none;
 
             &#{$es}title {
-                font-size: 4rem;
+                font-size: 3.8rem;
                 margin-bottom: $margin;
             }
             
             &#{$es}excerpt {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
                 margin-bottom: $margin;
             }
 
@@ -466,6 +475,7 @@ a {
             }
 
             &#{$es}copy {
+                flex-basis: 35%;
                 margin-bottom: $margin;
             }
                 
@@ -474,6 +484,7 @@ a {
                     padding-left: 0;
                 }
 
+                flex-basis: 65%;
                 padding-left: $padding;
             }
                 
@@ -595,16 +606,20 @@ a {
             display: flex;
             align-self: stretch;
 
+            &:nth-of-type(1) .section__link {
+                background: linear-gradient(45deg, var(--white) 0%, var(--gray-light) 5%, var(--gray-medium) 15%, var(--gray-dark) 35%, var(--gray-medium) 50%, var(--gray-light) 75%, var(--white) 100%);
+            }
+
             &:nth-of-type(2) .section__link {
-                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: var(--gray-light), $gradient-color-2: var(--blue-very-light) );
+                background: linear-gradient(225deg, var(--white) 0%, var(--blue-very-light) 5%, var(--blue-light) 15%, var(--blue-medium) 35%, var(--gray-medium) 50%, var(--gray-light) 75%, var(--white) 100%);
             }
 
             &:nth-of-type(3) .section__link {
-                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: var(--gold-light), $gradient-color-2: var(--gold-very-light) );
+                background: linear-gradient(135deg, var(--white) 0%, var(--gold-very-light) 5%, var(--gold-light) 15%, var(--gold-medium) 35%, var(--gray-light) 50%, var(--gray-medium) 75%, var(--gray-dark) 100%);
             }
 
             &:nth-of-type(4) .section__link {
-                @include background-gradient( $gradient-direction: diagonal, $gradient-color-1: var(--gray-light), $gradient-color-2: var(--green-very-light) );
+                background: linear-gradient(315deg, var(--green-medium) 0%, var(--green-light) 15%, var(--green-very-light) 35%, var(--white) 50%, var(--gray-light) 75%, var(--gray-medium) 100%);
             }
         }
 
@@ -616,7 +631,7 @@ a {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
-            padding: $padding*4;
+            padding: $padding*2;
             text-align: center;
 
             &#{$es}top {

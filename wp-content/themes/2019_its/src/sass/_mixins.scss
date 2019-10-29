@@ -16,12 +16,12 @@
 }
   
 // Buttons
-@mixin button-styles( $background-color: var(--blue-light), $border-color: transparent, $color: var(--white), $padding: $padding/1.5 $padding*2, $text-decoration: none ) {
+@mixin button-styles( $background-color: var(--blue-light), $border-color: transparent, $color: var(--white), $font-size: 1.4rem, $padding: $padding/1.5 $padding*2, $text-decoration: none ) {
     background-color: $background-color;
     border: 1px solid $border-color;
     border-radius: 4px;
     color: $color;
-    font-size: 1.4rem;
+    font-size: $font-size;
     padding: $padding;
     text-decoration: $text-decoration;
 }
@@ -50,8 +50,8 @@
 
 // Spacing
 @mixin display-flex( $align-items: center, $flex-grow: 0, $flex-shrink: 0, $flex-basis: auto, $justify-content: space-between, $media-queries: true ) {
-    display: flex;
     align-items: $align-items;
+    display: flex;
     flex-wrap: wrap;
     justify-content: $justify-content;
 
@@ -114,9 +114,9 @@
 }
 
 // Gradients
-@mixin background-gradient( $gradient-direction: linear, $gradient-color-1: var(--white), $gradient-color-2: var(--gray-light) ) {
+@mixin background-gradient( $gradient-direction: linear, $gradient-color-1: var(--white), $gradient-color-2: var(--gray-light), $gradient-color-3: var(--gray-medium), $gradient-color-4: var(--gray-dark), $gradient-color-5: var(--black) ) {
     @if $gradient-direction == 'diagonal' {
-        background: linear-gradient(45deg, $gradient-color-1 0%, $gradient-color-2 25%, $gradient-color-2 25%, $gradient-color-1 75%, $gradient-color-2 100%);
+        background: linear-gradient(45deg, $gradient-color-1 0%, $gradient-color-2 25%, $gradient-color-3 50%, $gradient-color-4 75%, $gradient-color-5 100%);
     } @else {
         background: linear-gradient(to bottom, $gradient-color-1 0%, $gradient-color-2 100% );
     }

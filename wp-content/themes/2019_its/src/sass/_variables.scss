@@ -1,17 +1,18 @@
 // Colours
-$black: #000000 !default;
-$blue-very-light: #99ccff !default;
+$black: #271100 !default;
+$blue-very-light: #7ba4d9 !default;
 $blue-light: #336699 !default;
-$blue-medium: #0066CC !default;
-$blue-dark: #003366 !default;
-$gray-light: #cccccc !default;
+$blue-medium: #008bb0 !default;
+$blue-dark: #002a5c !default;
+$gray-light: #cecfcb !default;
 $gray-medium: #999999 !default;
 $gray-dark: #666666 !default;
-$green-very-light: #99cc99 !default;
+$green-very-light: #dae5cd !default;
+$green-light: #99cc99 !default;
 $green-medium: #339933 !default;
 $gold-very-light: #FAFAD2 !default;
-$gold-light: #F0E68C !default;
-$gold-medium: #FFD700 !default;
+$gold-light: #ffcc33 !default;
+$gold-medium: #ffe498 !default;
 $white: #ffffff !default;
 
 // Spacing
@@ -48,6 +49,7 @@ $footer: 'footer' !default;
     --gray-medium: #{ $gray-medium };
     --gray-dark: #{ $gray-dark };
     --green-very-light: #{ $green-very-light };
+    --green-light: #{ $green-light };
     --green-medium: #{ $green-medium };
     --gold-very-light: #{ $gold-very-light };
     --gold-light: #{ $gold-light };
