@@ -1,3 +1,8 @@
+//Font Awesome
+@import '../font-awesome/fontawesome';
+@import "../font-awesome/solid.scss";
+@import "../font-awesome/brands.scss";
+
 // Intialization
 @import '_reset';
 @import '_variables';
@@ -184,9 +189,10 @@ a {
             padding: $padding;
 
             &:hover {
+                
                 > .nav__menu__arrow:before {
                     color: var(--blue-dark);
-                    content: '\f106';
+                    content: fa-content($fa-var-angle-up);
                 }
 
                 > .sub-menu { // Level 2 Menu
@@ -261,12 +267,12 @@ a {
             @include line-height(
                 $line-height: 1
             );
-
-            padding-left: $padding/2;
         }
 
         a {
-            font-family: "Font Awesome 5 Brands";
+            @extend %fa-icon;
+            @extend .fab;
+
             font-size: 0;
             padding-left: $padding*2;
             text-indent: -9999px;
@@ -277,31 +283,31 @@ a {
         }
         
         .twitter a:before {
-            content: "\f099";
+            content: fa-content($fa-var-twitter);
         }
         
         .facebook a:before {
-            content: "\f09a";
+            content: fa-content($fa-var-facebook);
         }
         
         .instagram a:before {
-            content: "\f16d";
+            content: fa-content($fa-var-instagram);
         }
         
         .youtube a:before {
-            content: "\f167";
+            content: fa-content($fa-var-youtube);
         }
         
         .linkedin a:before {
-            content: "\f08c";
+            content: fa-content($fa-var-linkedin);
         }
     }
 
-    &#{$es}menu#{$ms}main {
-        @include for-phone-only {
-            display: none;
-        }
-    }
+    // &#{$es}menu#{$ms}main {
+    //     @include for-phone-only {
+    //         display: none;
+    //     }
+    // }
 }
 
 .content {
@@ -450,6 +456,10 @@ a {
             @include display-flex(
                 $flex-grow: 1
             );
+            @include for-phone-only {
+                padding-left: $padding;
+                padding-right: $padding;
+            }
             
             color: var(--blue-medium);
             padding-left: $padding*8;
@@ -475,7 +485,10 @@ a {
             }
 
             &#{$es}copy {
-                flex-basis: 35%;
+                @include for-tablet-portrait-up {
+                    flex-basis: 35%;
+                }
+
                 margin-bottom: $margin;
             }
                 
@@ -584,7 +597,7 @@ a {
             @include button-styles;
 
             &:before {
-                content: "\f099";
+                content: fa-content($fa-var-twitter);
                 font-family: "Font Awesome 5 Brands";
                 font-size: 2rem;
                 padding-right: $padding;
