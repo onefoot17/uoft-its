@@ -181,7 +181,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/node_modules/@glidejs/glide/src/assets/sass/_variables.css",
+		"oAP": "/build/node_modules/@glidejs/glide/src/assets/sass/_variables.scss",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -193,8 +193,8 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 1,
-		"oA": 1,
-		"oAP": "/build/node_modules/@glidejs/glide/src/assets/sass/glide.core.css",
+		"oA": 2,
+		"oAP": "/build/node_modules/@glidejs/glide/src/assets/sass/glide.core.scss",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -206,8 +206,8 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 1,
-		"oA": 1,
-		"oAP": "/build/node_modules/@glidejs/glide/src/assets/sass/glide.theme.css",
+		"oA": 2,
+		"oAP": "/build/node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1

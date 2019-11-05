@@ -303,11 +303,11 @@ a {
         }
     }
 
-    // &#{$es}menu#{$ms}main {
-    //     @include for-phone-only {
-    //         display: none;
-    //     }
-    // }
+    &#{$es}menu#{$ms}main {
+        @include for-phone-only {
+            justify-content: center;
+        }
+    }
 }
 
 .content {
@@ -462,8 +462,8 @@ a {
             }
             
             color: var(--blue-medium);
-            padding-left: $padding*8;
-            padding-right: $padding*8;
+            padding-left: $padding*6;
+            padding-right: $padding*6;
             text-decoration: none;
 
             &#{$es}title {
@@ -566,7 +566,7 @@ a {
             flex-grow: 1;
             
             &#{$es}image-con {
-                @include ratio;
+                @include ratio( 16_9 );
             }
 
             &#{$es}image {
@@ -583,41 +583,27 @@ a {
         }
     }
     
-    // Follow
-    &#{$ms}#{$follow} {
-        &#{$es}width {
-            padding-bottom: 0;
-        }
-
-        &#{$es}heading {
-            color: var(--blue-dark);
-        }
-
-        &#{$es}button {
-            @include button-styles;
-
-            &:before {
-                content: fa-content($fa-var-twitter);
-                font-family: "Font Awesome 5 Brands";
-                font-size: 2rem;
-                padding-right: $padding;
-            }
-        }
-
-        &#{$es}link {
-            &#{$es}button {
-                width: 100%;
-            }
-        }
-    }
-    
     // Highlights
     &#{$ms}#{$highlights} {
-        &#{$es}width {
-            padding-top: 0;
+        &#{$es}postsCon {
+            @include display-flex(
+                $align-items: flex-start
+            );
+        }
+        
+        &#{$es}heading {
+            color: var(--blue-dark);
+            text-align: center;
         }
 
-        &#{$es}posts {            
+        &#{$es}posts {
+            @include for-tablet-portrait-up {
+                flex-basis: 100%;
+            }
+            @include for-tablet-landscape-up {
+                flex-basis: 75%;
+            }
+
             > * {
                 flex-basis: 50%;
                 padding-right: $padding;
@@ -631,6 +617,8 @@ a {
         &#{$es}post {
             display: flex;
             align-self: stretch;
+            padding-top: 0;
+            padding-bottom: $padding*2;
 
             &:nth-of-type(1) .section__link {
                 background: linear-gradient(45deg, var(--white) 0%, var(--gray-light) 5%, var(--gray-medium) 15%, var(--gray-dark) 35%, var(--gray-medium) 50%, var(--gray-light) 75%, var(--white) 100%);
@@ -695,6 +683,48 @@ a {
 
             &#{$es}excerpt + &#{$es}image-con {
                 padding-left: $padding;
+            }
+        }
+    
+        // Follow
+        &#{$es}#{$follow} {
+            @include for-tablet-portrait-up {
+                flex-basis: 100%;
+            }
+            @include for-tablet-landscape-up {
+                flex-basis: 25%;
+            }
+
+            align-self: stretch;
+
+            &#{$es}posts {
+                flex-direction: column;
+
+                :first-child {
+                    padding-top: 0;
+                }
+            }
+
+            &#{$es}post {
+                width: 100%;
+            }
+    
+            &#{$es}button {
+                @include button-styles;
+
+                &:before {
+                    content: "\f099";
+                    display: block;
+                    font-family: "Font Awesome 5 Brands";
+                    font-size: 2rem;
+                    padding-bottom: $padding;
+                }
+            }
+    
+            &#{$es}link {
+                &#{$es}button {
+                    width: 100%;
+                }
             }
         }
     }
