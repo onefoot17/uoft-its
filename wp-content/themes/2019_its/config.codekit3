@@ -159,14 +159,6 @@
 		"oAP": "/build/nav-below.php",
 		"oF": 0
 		},
-	"/nav.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/nav.php",
-		"oF": 0
-		},
 	"/node_modules": {
 		"ft": 65536,
 		"oA": 2,
@@ -565,19 +557,6 @@
 		"oA": 1,
 		"oAP": "/build/sass/legacy.css",
 		"oF": 0,
-		"oS": 3,
-		"uL": 1
-		},
-	"/src/sass/styles.scss": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 1,
-		"oA": 0,
-		"oAP": "/build/css/styles.css",
-		"oF": 2,
 		"oS": 3,
 		"uL": 1
 		},

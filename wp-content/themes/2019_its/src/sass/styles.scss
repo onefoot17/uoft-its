@@ -168,7 +168,12 @@ a {
             padding-left: $padding/2;
         }
     }
+
+    &#{$es}bottom {
+        position: relative;
+    }
     
+    // Main Menu
     &#{$es}menu { // Level 1 Menu
         @include display-flex(
             $media-queries: false
@@ -189,7 +194,6 @@ a {
             padding: $padding;
 
             &:hover {
-                
                 > .nav__menu__arrow:before {
                     color: var(--blue-dark);
                     content: fa-content($fa-var-angle-up);
@@ -306,6 +310,52 @@ a {
     &#{$es}menu#{$ms}main {
         @include for-phone-only {
             justify-content: center;
+        }
+    }
+
+    .menu-main {
+        @include for-phone-only {
+            background-color: var(--blue-light);
+            display: none;
+            position: absolute;
+            left: -200px;
+            top: 0;
+            height: 100%;
+            overflow-y: scroll;
+            overflow-x: visible;
+            // transition: left 0.3s ease, box-shadow 0.3s ease;
+            z-index: 999;
+
+            .menu-close {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            
+            &:target,
+            &[aria-expanded='true'] {
+                display: block;
+                left: 0;
+            }
+
+            &:target .menu-close,
+            &[aria-expanded='true'] .menu-close {
+                z-index: 1001;
+            }
+
+            &:target ul,
+            &[aria-expanded='true'] ul {
+                position: relative;
+                z-index: 1000;
+            }
+        }
+        
+        @supports (position: fixed) {
+            &,
+            &:target + .backdrop,
+            &[aria-expanded="true"] + .backdrop {
+                position: fixed;
+            }
         }
     }
 }
