@@ -106,7 +106,7 @@
             <header class="section__header">
                 <h1 class="section--news__heading">Latest News & Announcements</h1>
 
-                <a class="section__button section--news__button" href="">More ITS News</a>
+                <a class="section__button section--news__button" href="/category/news/">More ITS News</a>
             </header>
 
             <ul class="section__posts section--news__posts">
