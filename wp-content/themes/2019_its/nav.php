@@ -18,17 +18,13 @@
     </section>
 
     <section class="nav__bottom">
-        <a href="#menu-main" id="menu-main-toggle" class="menu-toggle" aria-label="Open main menu">
-            <span class="sr-only">Open main menu</span>
-
-            <span class="fa fa-bars" aria-hidden="true"></span>
-        </a>
+        
 
         <section id="menu-main" class="menu-main">
             <a href="#menu-main-toggle" id="menu-main-close" class="menu-close" aria-label="Close main menu">
                 <span class="sr-only">Close main menu</span>
     
-                <span class="fa fa-close" aria-hidden="true"></span>
+                <span class="fa fa-times" aria-hidden="true"></span>
             </a>
 
             <?php wp_nav_menu( array(

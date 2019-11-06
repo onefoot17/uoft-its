@@ -75,7 +75,8 @@ a {
 
         > * {
             @include for-phone-only {
-                flex-basis: 50%;
+                flex-basis: 45%;
+                flex-grow: 1;
             }
         }
 
@@ -99,6 +100,19 @@ a {
                 font-size: 2.6rem;
                 margin-bottom: $margin/2;
             }
+        }
+    }
+
+    .menu-toggle {
+        color: var(--white);
+        display: none;
+        flex-basis: 5%;
+        flex-grow: 1;
+        font-size: 3rem;
+        padding-left: 1rem;
+
+        @include for-phone-only {
+            display: block;
         }
     }
 }
@@ -171,27 +185,93 @@ a {
 
     &#{$es}bottom {
         position: relative;
+
+        .menu-close {
+            color: var(--white);
+            display: none;
+            font-size: 3rem;
+            padding-right: 1rem;
+            text-align: right;
+        }
+
+        @include for-phone-only {
+            .menu-close {
+                display: block;
+            }
+            
+            .menu-main {
+                @include background-color-rgba( var(--blue-dark--rgb), 0.98 );
+                @include transition;
+
+                display: none;
+                position: absolute;
+                left: -100vw;
+                top: 0;
+                height: 100%;
+                overflow-y: scroll;
+                overflow-x: visible;
+                // transition: left 0.3s ease, box-shadow 0.3s ease;
+                width: 100%;
+                z-index: 999;
+                
+                &:target,
+                &[aria-expanded='true'] {
+                    display: block;
+                    left: 0;
+                }
+    
+                &:target .menu-close,
+                &[aria-expanded='true'] .menu-close {
+                    z-index: 1001;
+                }
+    
+                &:target ul,
+                &[aria-expanded='true'] ul {
+                    position: relative;
+                    z-index: 1000;
+                }
+                
+                @supports (position: fixed) {
+                    &,
+                    &:target + .backdrop,
+                    &[aria-expanded="true"] + .backdrop {
+                        position: fixed;
+                    }
+                }
+            }
+        }
     }
     
     // Main Menu
     &#{$es}menu { // Level 1 Menu
-        @include display-flex(
-            $media-queries: false
-        );
+        @include display-flex;
 
         font-size: 1.4rem;
         position: relative;
         
         .menu-item {
+            @include display-flex(
+                $flex-shrink: 1,
+                $justify-content: flex-start
+            );
             @include button-hover(
                 $background-color: var(--blue-medium)
             );
             @include line-height;
             @include transition;
             
-            display: flex;
-            align-items: center;
             padding: $padding;
+
+
+            @include for-phone-only {
+                > a {
+                    flex-basis: auto;
+                }
+
+                > .nav__menu__arrow {
+                    flex-basis: auto;
+                }
+            }
 
             &:hover {
                 > .nav__menu__arrow:before {
@@ -221,7 +301,6 @@ a {
                 );
                 @include transition;
 
-                background-color: var(--blue-medium);
                 position: relative;
                 width: 100%;
 
@@ -229,14 +308,11 @@ a {
                     @include button-hover(
                         $background-color: var(--gray-medium)
                     );
+                    @include transition;
 
                     &:hover a {
                         color: $black;
                     }
-
-                    @include transition;
-
-                    background-color: var(--blue-light);
                 }
             }
         }
@@ -254,19 +330,26 @@ a {
     }
     
     .sub-menu { // Level 2 Menu
-        background-color: var(--blue-medium);
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: $padding;
+        @include background-color-rgba( var(--blue-medium--rgb), 0.95 );
+        @include for-tablet-portrait-up {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: $padding;
+        }
+
         z-index: 10000;
 
         .sub-menu {
-            background-color: var(--blue-light);
+            @include background-color-rgba( var(--blue-light--rgb), 0.95 );
         }
     }
     
     &#{$es}menu#{$ms}social {
+        @include display-flex(
+            $media-queries: false
+        );
+
         .menu-item {
             @include line-height(
                 $line-height: 1
@@ -310,52 +393,6 @@ a {
     &#{$es}menu#{$ms}main {
         @include for-phone-only {
             justify-content: center;
-        }
-    }
-
-    .menu-main {
-        @include for-phone-only {
-            background-color: var(--blue-light);
-            display: none;
-            position: absolute;
-            left: -200px;
-            top: 0;
-            height: 100%;
-            overflow-y: scroll;
-            overflow-x: visible;
-            // transition: left 0.3s ease, box-shadow 0.3s ease;
-            z-index: 999;
-
-            .menu-close {
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
-            
-            &:target,
-            &[aria-expanded='true'] {
-                display: block;
-                left: 0;
-            }
-
-            &:target .menu-close,
-            &[aria-expanded='true'] .menu-close {
-                z-index: 1001;
-            }
-
-            &:target ul,
-            &[aria-expanded='true'] ul {
-                position: relative;
-                z-index: 1000;
-            }
-        }
-        
-        @supports (position: fixed) {
-            &,
-            &:target + .backdrop,
-            &[aria-expanded="true"] + .backdrop {
-                position: fixed;
-            }
         }
     }
 }

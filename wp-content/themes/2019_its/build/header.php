@@ -22,6 +22,12 @@
                     <span class="header__logos__its__top">ITS</span>
                     <span class="header__logos__its__bottom">Information Technology Services</span>
                 </a>
+
+                <a href="#menu-main" id="menu-main-toggle" class="menu-toggle" aria-label="Open main menu">
+                    <span class="sr-only">Open main menu</span>
+
+                    <span class="fa fa-bars" aria-hidden="true"></span>
+                </a>
             </section>
 
             <?php get_template_part( 'nav' ); ?>

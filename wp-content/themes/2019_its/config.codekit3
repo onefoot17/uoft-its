@@ -159,6 +159,14 @@
 		"oAP": "/build/nav-below.php",
 		"oF": 0
 		},
+	"/nav.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/nav.php",
+		"oF": 0
+		},
 	"/node_modules": {
 		"ft": 65536,
 		"oA": 2,
@@ -271,7 +279,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_animated.css",
+		"oAP": "/build/css/_animated.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -284,7 +292,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_bordered-pulled.css",
+		"oAP": "/build/css/_bordered-pulled.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -297,7 +305,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_core.css",
+		"oAP": "/build/css/_core.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -310,7 +318,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_fixed-width.css",
+		"oAP": "/build/css/_fixed-width.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -323,7 +331,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_icons.css",
+		"oAP": "/build/css/_icons.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -336,7 +344,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_larger.css",
+		"oAP": "/build/css/_larger.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -349,7 +357,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_list.css",
+		"oAP": "/build/css/_list.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -362,7 +370,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_mixins.css",
+		"oAP": "/build/css/_mixins.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -375,7 +383,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_rotated-flipped.css",
+		"oAP": "/build/css/_rotated-flipped.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -388,7 +396,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_screen-reader.css",
+		"oAP": "/build/css/_screen-reader.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -401,7 +409,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_shims.css",
+		"oAP": "/build/css/_shims.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -414,7 +422,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_stacked.css",
+		"oAP": "/build/css/_stacked.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -427,7 +435,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/_variables.css",
+		"oAP": "/build/css/_variables.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -440,7 +448,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/brands.css",
+		"oAP": "/build/css/brands.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -453,7 +461,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/fontawesome.css",
+		"oAP": "/build/css/fontawesome.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -466,7 +474,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 0,
-		"oAP": "/build/font-awesome/regular.css",
+		"oAP": "/build/css/regular.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -479,7 +487,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/font-awesome/solid.css",
+		"oAP": "/build/css/solid.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -492,7 +500,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 0,
-		"oAP": "/build/font-awesome/v4-shims.css",
+		"oAP": "/build/css/v4-shims.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -516,7 +524,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/sass/_mixins.css",
+		"oAP": "/build/css/_mixins.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -529,7 +537,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/sass/_reset.css",
+		"oAP": "/build/css/_reset.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -542,7 +550,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/sass/_variables.css",
+		"oAP": "/build/css/_variables.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -555,7 +563,20 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "/build/sass/legacy.css",
+		"oAP": "/build/css/legacy.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"/src/sass/styles.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 0,
+		"oAP": "/build/css/styles.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -2595,7 +2616,7 @@
 		"autoOutputPathRelativePath": "../css",
 		"autoOutputPathReplace1": "sass",
 		"autoOutputPathReplace2": "css",
-		"autoOutputPathStyle": 0,
+		"autoOutputPathStyle": 2,
 		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
