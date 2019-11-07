@@ -19,7 +19,7 @@
 
     <section class="nav__bottom">
         <section id="menu-main" class="menu-main" aria-hidden="true">
-            <a href="#menu-main-toggle" id="menu-main-close" class="menu-toggle menu-close" aria-expanded="true" aria-label="Close main menu">
+            <a href="#menu-main-toggle" data-href="#menu-main" id="menu-main-close" class="menu-toggle menu-close" aria-expanded="true" aria-label="Close main menu">
                 <span class="sr-only">Close main menu</span>
     
                 <span class="fa fa-times" aria-hidden="true"></span>

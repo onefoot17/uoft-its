@@ -204,7 +204,6 @@ a {
                 @include background-color-rgba( var(--blue-dark--rgb), 0.98 );
                 @include transition;
 
-                display: none;
                 position: absolute;
                 left: -100vw;
                 top: 0;
