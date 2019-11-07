@@ -27,6 +27,13 @@ body {
     min-height: 100vh;
     padding: $padding/2;
     word-break: break-word;
+
+    @include for-phone-only {
+        &.menu-is-open {
+            position: fixed;
+            overflow: hidden;
+        }
+    }
 }
 
 img {
