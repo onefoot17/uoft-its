@@ -66,6 +66,7 @@ a {
     &#{$es}logos {
         @include display-flex(
             $align-items: flex-end,
+            $flex-wrap: nowrap,
             $media-queries: false
         );
         @include for-phone-only {
@@ -104,16 +105,16 @@ a {
     }
 
     .menu-toggle {
+        @include for-phone-only {
+            display: block;
+        }
+
         color: var(--white);
         display: none;
         flex-basis: 5%;
         flex-grow: 1;
         font-size: 3rem;
         padding-left: 1rem;
-
-        @include for-phone-only {
-            display: block;
-        }
     }
 }
 
@@ -215,26 +216,24 @@ a {
                 z-index: 999;
                 
                 &:target,
-                &[aria-expanded='true'] {
+                &[aria-hidden='false'] {
                     display: block;
                     left: 0;
                 }
     
                 &:target .menu-close,
-                &[aria-expanded='true'] .menu-close {
+                &[aria-hidden='false'] .menu-close {
                     z-index: 1001;
                 }
     
                 &:target ul,
-                &[aria-expanded='true'] ul {
+                &[aria-hidden='false'] ul {
                     position: relative;
                     z-index: 1000;
                 }
                 
                 @supports (position: fixed) {
-                    &,
-                    &:target + .backdrop,
-                    &[aria-expanded="true"] + .backdrop {
+                    & {
                         position: fixed;
                     }
                 }
@@ -454,14 +453,21 @@ a {
             &#{$es}next {
                 @include button-styles( $background-color:transparent, $padding: 0 );
                 @include button-hover( inside_link );
+                @include for-phone-only {
+                    flex-basis: 50%;
+                }
             }
             
             a {
                 @include button-styles;
-                @include display-flex;
+                @include display-flex(
+                    $flex-grow: 1,
+                    $flex-shrink: 1
+                );
                 @include transition;
 
                 > * {
+                    flex-basis: auto;
                     padding: 0 $padding/2;
                 }
             }
@@ -504,7 +510,9 @@ a {
         &#{$es}post {
             align-self: stretch;
             display: flex;
-            flex-basis: calc( 100% / 3 );
+            @include for-tablet-portrait-up {
+                flex-basis: calc( 100% / 3 );
+            }
             position: relative;
         }
 

@@ -1,5 +1,5 @@
 // Glide slider carousel
-const carousels = document.querySelectorAll('.glide');
+const carousels = document.querySelectorAll( '.glide' );
 
 Object.values( carousels ).map( carousel => {
     const slider = new Glide( carousel, {
