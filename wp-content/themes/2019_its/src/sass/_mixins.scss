@@ -85,13 +85,19 @@
         @if $ratio == 16_9 {
             // 16:9 - 56.25%
             padding-top: 56.25%;
+        } @else if $ratio == 4_3 {
+            // 4:3 - 75%
+            padding-top: 56.25%;
+        } @else if $ratio == 3_2 {
+            // 3:2 - 66.66%
+            padding-top: 56.25%;
+        } @else if $ratio == 8_5 {
+            // 8:5 - 62.5%
+            padding-top: 56.25%;
         } @else {
             // 1:1 - 100%
             padding-top: 100%;
         }
-        // 4:3 - 75%
-        // 3:2 - 66.66%
-        // 8:5 - 62.5%
     }
 
     :first-child {
