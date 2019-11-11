@@ -316,7 +316,7 @@ a {
                     @include transition;
 
                     &:hover a {
-                        color: $black;
+                        color: var(--black);
                     }
                 }
             }

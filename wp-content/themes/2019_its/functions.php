@@ -1,7 +1,7 @@
 <?php
-    add_action( 'after_setup_theme', 'blankslate_setup' );
-    function blankslate_setup() {
-        load_theme_textdomain( 'blankslate', get_template_directory() . '/languages' );
+    add_action( 'after_setup_theme', 'its_2019_setup' );
+    function its_2019_setup() {
+        load_theme_textdomain( 'its_2019', get_template_directory() . '/languages' );
         add_theme_support( 'title-tag' );
         add_theme_support( 'automatic-feed-links' );
         add_theme_support( 'post-thumbnails' );
@@ -14,7 +14,7 @@
         }
 
         // Navigation Menu
-        register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'blankslate' ) ) );
+        register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'its_2019' ) ) );
 
         add_filter( 'walker_nav_menu_start_el', 'add_arrow', 10, 4 );
 
@@ -43,10 +43,10 @@
     }
 
     // Enqueue Scripts
-    add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
-    function blankslate_load_scripts() {
+    add_action( 'wp_enqueue_scripts', 'its_2019_load_scripts' );
+    function its_2019_load_scripts() {
         // CSS
-        wp_enqueue_style( 'blankslate-style', get_template_directory_uri() . '/build/css/styles.css' );
+        wp_enqueue_style( 'its_2019-style', get_template_directory_uri() . '/build/css/styles.css' );
 
         // JS
         wp_enqueue_script( 'script-glide', get_template_directory_uri() . '/node_modules/@glidejs/glide/dist/glide.min.js', array(), false, true );
