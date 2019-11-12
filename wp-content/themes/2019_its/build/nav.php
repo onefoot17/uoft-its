@@ -2,7 +2,7 @@
     <section class="nav__top">
         <a class="nav__esc" href="https://uthrprod.service-now.com/help">
             <section class="nav__esc__image-con">
-                <img class="nav__esc__image" src="http://staging.its.utoronto.ca/wp-content/uploads/2019/11/esc_logo.png" title="" />
+                <img class="nav__esc__image" src="http://staging.its.utoronto.ca/wp-content/uploads/2019/11/esc_logo-white.png" title="" />
             </section>
 
             <section class="nav__esc__text">Get Help</section>
