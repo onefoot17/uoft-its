@@ -4,6 +4,7 @@ $blue-very-light: #7ba4d9 !default;
 $blue-light: #336699 !default;
 $blue-medium: #008bb0 !default;
 $blue-dark: #002a5c !default;
+$gray-very-light: #dddddd !default;
 $gray-light: #cecfcb !default;
 $gray-medium: #999999 !default;
 $gray-dark: #666666 !default;
@@ -47,6 +48,7 @@ $footer: 'footer' !default;
     --blue-medium--rgb: #{ hex-to-rgb( $blue-medium ) };
     --blue-dark: #{ $blue-dark };
     --blue-dark--rgb: #{ hex-to-rgb( $blue-dark ) };
+    --gray-very-light: #{ $gray-very-light };
     --gray-light: #{ $gray-light };
     --gray-medium: #{ $gray-medium };
     --gray-dark: #{ $gray-dark };
@@ -60,3 +62,6 @@ $footer: 'footer' !default;
     --margin: #{ $margin };
     --padding: #{ $padding };
 }
+
+// Typography
+$font-family: Arial, Helvetica, Verdana, sans-serif !default;

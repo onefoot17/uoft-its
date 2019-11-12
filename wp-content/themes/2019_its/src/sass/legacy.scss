@@ -1368,7 +1368,7 @@ Tags: Fluid Grid
         margin-bottom: 0;
         .search-query {
             padding: 4px 9px;
-            font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+            font-family: $font-family;
             font-size: 13px;
             font-weight: normal;
             line-height: 1;
@@ -2490,12 +2490,12 @@ button.close {
     .span6, .span7, .span8, .span9, .span10, .span11, .span12 { font-size: 15px; }
 
     h1, h2, h3, h4, h4 a, h5, h5 a, h6, th {
-        font-family: 'Open Sans Condensed', sans-serif;
+        font-family: $font-family;
         text-rendering: optimizeLegibility;
     }
 
     p, td, li, a, dd, dt, legend {
-        font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+        font-family: $font-family;
         text-rendering: optimizeLegibility;
     }
 
@@ -2513,7 +2513,7 @@ button.close {
 
     h3 { font-size: 1.6em; margin: 0.8em 0 0.3em; color: #666; }
 
-    h4 { font-size: 1.4em; margin: 0.9em 0 0.35em; color: #666; }
+    h4 { font-size: 1.4rem; margin: 0.9em 0 0.35em; color: #666; }
 
     h5 { font-size: 1.2em; margin: 1em 0 0.4em; color: #666; }
 
@@ -2528,7 +2528,7 @@ button.close {
     .serif { font-family: Georgia, "Times New Roman", Times, serif; }
 
     .sans-serif {
-        font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+        font-family: $font-family;
     }
 
     .monospace { font-family: Menlo, Monaco, "Courier New", monospace; }
@@ -3081,7 +3081,7 @@ button.close {
 
         color: #fff;
 
-        font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+        font-family: $font-family;
 
         text-shadow: none;
 
@@ -3157,7 +3157,7 @@ button.close {
 
         border-radius:3px;
 
-        font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+        font-family: $font-family;
 
     }
 
@@ -3597,7 +3597,7 @@ button.close {
 
     .widget {
 
-        font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+        font-family: $font-family;
         
         text-rendering: optimizeLegibility;
 
@@ -4300,7 +4300,7 @@ button.close {
         // body { width: 100% !important; margin:0 !important; padding:0 !important; line-height: 1.4; word-spacing: 1.1pt; letter-spacing: 0.2pt; font-family: Garamond,"Times New Roman", serif; color: #000; background: none; font-size: 12pt; }
 
         h1,h2,h3,h4,h5,h6 {
-            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: $font-family;
          }
 
         h1{ font-size: 19pt; }
@@ -4554,7 +4554,7 @@ button.close {
     #quick_nav_container h2{ float:left; width:100%; border-bottom:1px solid #dddddd; padding:18px 0;; font-size:24px}
 
     h1.page-title {
-        font-family: 'Open Sans Condensed', sans-serif;
+        font-family: $font-family;
         font-weight: 100; }
 
     #quick_nav_container ul{ float:left; list-style:none; margin:0px; padding:0px;}
@@ -4587,42 +4587,71 @@ button.close {
 
     .aero{ float:right; margin-top:3px; z-index:9!important}
 
-    #blackboard_container{
-        float:left; width:98.5%; margin-top:23px; background: url(../images/blakbrd_bg.jpg) repeat-y 0 0; padding-left:14px; border-radius:7px; background-color: #fbfbfb!important
+    #blackboard_container {
+        @include display-flex(
+            $align-items: flex-start
+        )
     }
 
-    #blackboard_left_container{
-        float:left; width:195px; background:url(../images/blackboard_img.jpg) repeat-y 0 0; padding-right:10px
+    #blackboard_left_container {
+        flex-basis: 30%;
+        padding-right: $padding*2;
     }
 
-    #blackboard_left_container h3{
+    #blackboard_left_container h3 {
         float:left; padding:24px 0 20px 0
     }
 
-    .left_ul{ float:left; width:100%; list-style:none; margin:20px 0}
+    .left_ul {
+        background-color: $gray-very-light;
+        list-style: none;
+        margin: 0;
+        padding: $padding;
 
-    .left_ul li{ float:left; width:100%; padding:4px 0}
+        li {
+            @include display-flex(
+                $align-items: flex-start,
+                $justify-content: flex-start
+            );
 
-    .left_ul li small{ color:#333; text-transform:uppercase; background:url(../images/square_img.jpg) no-repeat 0 4px; padding-left:25px; float:left}
+            padding-bottom: $padding;
 
-    .left_ul li span{ float:left; font-size:12px; padding:5px 10px 5px 20px;}
+            .fas {
+                color: $blue-light;
+            }
 
-    .left_ul li span .aero3{ float:right; margin:5px 0 0 10px}
+            .fa-angle-right,
+            .fa-angle-down {
+                font-size: 1.8rem;
+            }
 
-    .left_ul .sub_list{ float:left; list-style:none; margin:15px 30px 20px}
-
-    .left_ul .sub_list li{ float:left; width:165px; background:url(../images/sprtr.png) no-repeat 0 bottom; min-height:28px}
-
-    .left_ul .sub_list li small{ float:left; padding:5px 0 5px 25px; font-size:10.21px; color:#1f5d7a;  background:url(../images/square_img.jpg) no-repeat center left; text-transform:uppercase;}
-
+            .fa-square {
+                font-size: 1.2rem;
+                padding-top: $padding/2;
+            }
+            
+            a {
+                padding-left: $padding;
+                width: 83%;
+            }
+        }
+        
+        .sub_list {
+            flex-shrink: 1;
+            list-style: none outside none;
+            margin: 0;
+            padding-left: $padding;
+            
+            li {
+                background: none !important;
+            }
+        }
+    }
+        
     #blackboard_right_container {
-        /* float:left; width:865px; padding-left:20px; padding-top:20px; padding-right:20px;
-        margin: 0 0 0 213px;*/
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 20px;
-        background:#FBFBFB;
-        width:90%;
+        flex-basis: 70%;
+        // flex-grow: 1;
+        flex-shrink: 1;
 
         h2 {
             /*float:left; width:100%; */
@@ -4712,26 +4741,6 @@ button.close {
     .dropdown li .caret{ display:none!important}
 
     ul.qa_buttons{ margin-top:17px!important }
-
-
-
-    .left_ul li img {
-        float: left;
-        margin: 4px 10px 0 0;
-    }
-
-    .left_ul li a {
-        float: left;
-        width: 83%;
-    }
-
-    .left_ul .sub_list {
-        float: left;
-        list-style: none outside none;
-        margin: 6px 30px 3px;
-    }
-    .left_ul .sub_list li{ background:none!important}
-
 
     /*		Tablet Layout: 768px.
             Gutters: 24px.
@@ -4869,7 +4878,7 @@ button.close {
     }
 
     h1, h2, h3, h4, h4 a, h5, h5 a, h6, th {
-        font-family: 'Open Sans Condensed', sans-serif;
+        font-family: $font-family;
     }
     p, td, li, dd, dt, legend {
         font-size: 16px;
@@ -4982,7 +4991,7 @@ button.close {
     -webkit-border-radius: 6;
     -moz-border-radius: 6;
     border-radius: 6px;
-    font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+    font-family: $font-family;
     color: #ffffff;
     font-size: 16px;
     padding: 10px 20px 10px 20px;

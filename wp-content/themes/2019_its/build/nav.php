@@ -1,13 +1,17 @@
 <nav class="nav">
     <section class="nav__top">
         <a class="nav__esc" href="https://uthrprod.service-now.com/help">
-            <section class="nav__its-alerts__text">Enterprise Service Centre</section>
+            <section class="nav__esc__image-con">
+                <img class="nav__esc__image" src="http://staging.its.utoronto.ca/wp-content/uploads/2019/11/esc_logo.png" title="" />
+            </section>
+
+            <section class="nav__esc__text">Get Help</section>
         </a>
 
         <a class="nav__its-alerts" href="http://www.systemstatus.utoronto.ca/">
             <section class="nav__its-alerts__icon"></section>
             
-            <section class="nav__its-alerts__text">ITS Alerts</section>
+            <section class="nav__its-alerts__text">ITS System Status</section>
         </a>
 
         <?php wp_nav_menu( array(
@@ -29,7 +33,8 @@
                 'theme_location' => 'main-menu',
                 'container' => '',
                 'menu_class' => 'nav__menu nav__menu--main',
-                'items_wrap' => '<ul class="%2$s" role="menubar" aria-label="Main menu">%3$s</ul>'
+                'items_wrap' => '<ul class="%2$s" role="menubar" aria-label="Main menu">%3$s</ul>',
+                'depth' => 2
             ) ); ?>
         </section>
     </section>

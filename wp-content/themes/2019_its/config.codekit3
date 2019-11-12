@@ -25,14 +25,6 @@
 		"oAP": "/build/archive.php",
 		"oF": 0
 		},
-	"/attachment.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/attachment.php",
-		"oF": 0
-		},
 	"/author.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -61,46 +53,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/build/comments.php",
-		"oF": 0
-		},
-	"/entry-content.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/entry-content.php",
-		"oF": 0
-		},
-	"/entry-footer.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/entry-footer.php",
-		"oF": 0
-		},
-	"/entry-meta.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/entry-meta.php",
-		"oF": 0
-		},
-	"/entry-summary.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/entry-summary.php",
-		"oF": 0
-		},
-	"/entry.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/entry.php",
 		"oF": 0
 		},
 	"/footer.php": {
@@ -141,22 +93,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/build/index.php",
-		"oF": 0
-		},
-	"/nav-below-single.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/nav-below-single.php",
-		"oF": 0
-		},
-	"/nav-below.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/nav-below.php",
 		"oF": 0
 		},
 	"/nav.php": {
@@ -601,14 +537,6 @@
 		"oAP": "/build/style-min.css",
 		"oF": 0,
 		"oS": 3
-		},
-	"/tag.php": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/build/tag.php",
-		"oF": 0
 		},
 	"/templates/template-its-ESC-help-landing-page.php": {
 		"cB": 0,

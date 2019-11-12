@@ -146,9 +146,6 @@
 
     <section class="section section--highlights">
         <section class="section__width section--highlights__width">
-            <header class="section__header section--highlights__header">
-                <h1 class="section--highlights__heading">Follow Us</h1>
-            </header>
 
             <section class="section--highlights__postsCon">
                 <ul class="section__posts section--highlights__posts">
@@ -197,6 +194,10 @@
                 </ul>
 
                 <section class="section section--highlights__follow">
+                    <header class="section__header section--highlights__follow__header">
+                        <h1 class="section--highlights__follow__heading">Follow Us</h1>
+                    </header>
+
                     <ul class="section__posts section--highlights__follow__posts">
                         <li class="section--highlights__follow__post"><a class="twitter-timeline" data-height="300" href="https://twitter.com/ITSUofT?ref_src=twsrc%5Etfw">Tweets by ITSUofT</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
 

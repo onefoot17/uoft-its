@@ -23,7 +23,7 @@ body {
     background-color: var(--gray-light);
     display: flex;
     flex-direction: column;
-    font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+    font-family: $font-family;
     min-height: 100vh;
     padding: $padding/2;
     word-break: break-word;
@@ -78,8 +78,12 @@ a {
         );
         @include for-phone-only {
             align-items: center;
-            margin-bottom: $margin;
         }
+        @include for-desktop-up {
+            margin-bottom: 0;
+        }
+
+        margin-bottom: $margin;
 
         > * {
             @include for-phone-only {
@@ -96,7 +100,7 @@ a {
         &#{$es}its {
             border-left: 1px solid var(--white);
             color: var(--white);
-            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: $font-family;
             font-size: 1.4rem;
             font-weight: 600;
             padding: $padding/2 $padding*2;
@@ -129,7 +133,7 @@ a {
 .#{$nav} {    
     &#{$es}top {
         @include display-flex(
-            $justify-content: flex-end
+            $justify-content: center
         );
         @include for-phone-only {
             justify-content: center;
@@ -160,6 +164,15 @@ a {
         }
 
         margin-right: $margin*2;
+        padding: $padding/2;
+
+        &#{$es}image-con {
+            margin: 0 auto;
+            max-width: 50px;
+            padding-bottom: $padding/2;
+        }
+
+        &#{$es}text {}
     }
 
     &#{$es}its-alerts {
@@ -309,7 +322,11 @@ a {
                 position: relative;
                 width: 100%;
 
-                .menu-item { // Level 3 Menu
+                .nav__menu__arrow {
+                    display: none;
+                }
+
+                /* .menu-item { // Level 3 Menu
                     @include button-hover(
                         $background-color: var(--gray-medium)
                     );
@@ -318,7 +335,7 @@ a {
                     &:hover a {
                         color: var(--black);
                     }
-                }
+                } */
             }
         }
     
@@ -490,7 +507,7 @@ a {
         @include button-hover( outside_link );
 
         &#{$es}title {
-            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: $font-family;
             font-weight: 700;
         }
 
@@ -691,11 +708,6 @@ a {
                 $align-items: flex-start
             );
         }
-        
-        &#{$es}heading {
-            color: var(--blue-dark);
-            text-align: center;
-        }
 
         &#{$es}posts {
             @include for-tablet-portrait-up {
@@ -798,6 +810,15 @@ a {
 
             align-self: stretch;
 
+            &#{$es}header {
+                padding-top: 0;
+            }
+            
+            &#{$es}heading {
+                color: var(--blue-dark);
+                text-align: center;
+            }
+
             &#{$es}posts {
                 flex-direction: column;
 
@@ -838,9 +859,13 @@ a {
     font-size: 2rem;
 
     .nav__menu--footer {
-        padding: 0 $padding*4 $padding*4;
+        padding: 0 $padding $padding;
 
         > * {
+            @include button-styles;
+            @include button-hover(
+                inside_link
+            );
             @include display-flex(
                 $justify-content: center
             );
@@ -856,12 +881,11 @@ a {
             }
 
             align-self: stretch;
-            border: 3px dashed var(--blue-light);
             flex: 1;
             flex-direction: column;
             margin-right: $margin*2;
-            padding-top: $padding*4;
-            padding-bottom: $padding*4;
+            padding-top: $padding;
+            padding-bottom: $padding;
             text-align: center;
 
             &:last-child {

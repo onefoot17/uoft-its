@@ -40,10 +40,13 @@
             color: $color;
         }
     } @else if $button == inside_link {
-        &:hover a {
+        &:hover {
             background-color: $background-color;
             border-color: $background-color;
-            color: $color;
+        
+            a {
+                color: $color;
+            }
         }
     }
 }

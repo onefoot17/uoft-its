@@ -162,7 +162,7 @@
 			if($Arrdept2Page) {
 		?>
 		<div id="blackboard_container">    
-			<div id="blackboard_left_container" style="margin:0 30px 0 0;">
+			<div id="blackboard_left_container" class="howdy" style="margin:0 30px 0 0;">
 				<!-- Below mentioned code for depth 1 or greater -->
 				<?php if( count($post->ancestors) > 0 ) { ?>
 				<ul class="left_ul">
