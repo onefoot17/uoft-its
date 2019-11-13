@@ -4614,8 +4614,6 @@ button.close {
                 $justify-content: flex-start
             );
 
-            padding-bottom: $padding;
-
             .fas {
                 color: $blue-light;
             }
@@ -4631,6 +4629,7 @@ button.close {
             }
             
             a {
+                padding-bottom: $padding;
                 padding-left: $padding;
                 width: 83%;
             }
@@ -4867,7 +4866,6 @@ button.close {
     .breadcrumbs .trail-browse, .breadcrumbs .trail-items, .breadcrumbs .trail-items li, .breadcrumbs .trail-browse, .breadcrumbs .trail-items, .breadcrumbs .trail-items li a {
         font-size:14px;
         color: #888888;
-        padding-top:5px;
     }
 
     .page-template-default #quick_nav_container {
@@ -4925,13 +4923,6 @@ button.close {
         padding: 15px 15px 15px 15px;
         margin: 18px;
     }
-
-    #blackboard_container {
-        padding-top: 30px;
-        padding-bottom: 100px;
-        padding-left:0px;
-    }
-
 
     #blackboard_container img {
         height: auto;
