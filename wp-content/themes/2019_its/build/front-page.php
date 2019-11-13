@@ -9,12 +9,11 @@
                         <?php
                             global $post;
 
-                            $args = array( 
-                                'category_name' => 'Carousel',
+                            $args = array (
                                 'meta_query' => array (
-                                    array(
+                                    array (
                                         'key' => 'include_on_home_page',
-                                        'value' => 'Yes',
+                                        'value' => 'Carousel',
                                         'compare' => 'LIKE',
                                     )
                                 )
@@ -55,12 +54,11 @@
                     <?php
                         global $post;
 
-                        $args = array(
-                            'category_name' => 'Carousel',
+                        $args = array (
                             'meta_query' => array (
-                                array(
+                                array (
                                     'key' => 'include_on_home_page',
-                                    'value' => 'Yes',
+                                    'value' => 'Carousel',
                                     'compare' => 'LIKE',
                                 )
                             )
@@ -91,9 +89,15 @@
         <?php
             global $post;
 
-            $args = array(
-                'category_name' => 'Alerts',
-                'posts_per_page' => 1
+            $args = array (
+                'posts_per_page' => 1,
+                'meta_query' => array (
+                    array (
+                        'key' => 'include_on_home_page',
+                        'value' => 'Alerts',
+                        'compare' => 'LIKE',
+                    )
+                )
             );
 
             $postslist = get_posts( $args );
@@ -128,13 +132,12 @@
                 <?php
                     global $post;
 
-                    $args = array(
-                        'cat' => '48, -42, -46, 5, -9, -6',
+                    $args = array (
                         'posts_per_page' => 4,
                         'meta_query' => array (
-                            array(
+                            array (
                                 'key' => 'include_on_home_page',
-                                'value' => 'Yes',
+                                'value' => 'Latest News',
                                 'compare' => 'LIKE',
                             )
                         )
@@ -173,13 +176,12 @@
                 <?php
                     global $post;
 
-                    $args = array(
-                        'category_name' => 'Highlights',
+                    $args = array (
                         'posts_per_page' => 4,
                         'meta_query' => array (
-                            array(
+                            array (
                                 'key' => 'include_on_home_page',
-                                'value' => 'Yes',
+                                'value' => 'Highlights',
                                 'compare' => 'LIKE',
                             )
                         )
@@ -235,8 +237,14 @@
                 <?php
                     global $post;
 
-                    $args = array(
-                        'category_name' => 'Follow'
+                    $args = array (
+                        'meta_query' => array (
+                            array (
+                                'key' => 'include_on_home_page',
+                                'value' => 'Follow',
+                                'compare' => 'LIKE',
+                            )
+                        )
                     );
 
                     $postslist = get_posts( $args );
