@@ -63,7 +63,7 @@ define('NONCE_SALT',       'xsF0dN0CHKnyxMzh5EGA1gvsYzpEc0RTDOQvdQJ+OqFudKQcv1yo
  */
 $table_prefix = 'wp_';
 
-
+@ini_set('upload_max_size' , '256M' );
 
 
 /* That's all, stop editing! Happy blogging. */
