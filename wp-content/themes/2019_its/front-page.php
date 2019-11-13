@@ -129,7 +129,7 @@
                     global $post;
 
                     $args = array(
-                        'cat' => '48, -42, -46',
+                        'cat' => '48, -42, -46, 5, -9, -6',
                         'posts_per_page' => 4,
                         'meta_query' => array (
                             array(
