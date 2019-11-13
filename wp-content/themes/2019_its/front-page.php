@@ -10,7 +10,14 @@
                             global $post;
 
                             $args = array( 
-                                'category_name' => 'Carousel'
+                                'category_name' => 'Carousel',
+                                'meta_query' => array (
+                                    array(
+                                        'key' => 'include_on_home_page',
+                                        'value' => 'Yes',
+                                        'compare' => 'LIKE',
+                                    )
+                                )
                             );
 
                             $postslist = get_posts( $args );
@@ -23,7 +30,7 @@
                                             <section class="section--carousel__link__copy">
                                                 <h2 class="section__link__title section--carousel__link__title"><?php if (get_field( 'alternative_title' ) ) { the_field( 'alternative_title' ); } else { the_title(); } ?></h2>
 
-                                                <p class="section--carousel__link__excerpt"><?php the_excerpt(); ?></p>
+                                                <p class="section--carousel__link__excerpt"><?php if (get_field( 'alternative_excerpt' ) ) { the_field( 'alternative_excerpt' ); } else { the_excerpt(); } ?></p>
 
                                                 <button class="section__button section--carousel__link__button"><?php the_field('read_more_button'); ?></button>
                                             </section>
@@ -49,7 +56,14 @@
                         global $post;
 
                         $args = array(
-                            'category_name' => 'Carousel'
+                            'category_name' => 'Carousel',
+                            'meta_query' => array (
+                                array(
+                                    'key' => 'include_on_home_page',
+                                    'value' => 'Yes',
+                                    'compare' => 'LIKE',
+                                )
+                            )
                         );
 
                         $postslist = get_posts( $args );
@@ -115,8 +129,15 @@
                     global $post;
 
                     $args = array(
-                        'category_name' => 'News',
-                        'posts_per_page' => 4
+                        'cat' => '48, -42, -46',
+                        'posts_per_page' => 4,
+                        'meta_query' => array (
+                            array(
+                                'key' => 'include_on_home_page',
+                                'value' => 'Yes',
+                                'compare' => 'LIKE',
+                            )
+                        )
                     );
 
                     $postslist = get_posts( $args );
@@ -154,7 +175,14 @@
 
                     $args = array(
                         'category_name' => 'Highlights',
-                        'posts_per_page' => 4
+                        'posts_per_page' => 4,
+                        'meta_query' => array (
+                            array(
+                                'key' => 'include_on_home_page',
+                                'value' => 'Yes',
+                                'compare' => 'LIKE',
+                            )
+                        )
                     );
 
                     $postslist = get_posts( $args );
