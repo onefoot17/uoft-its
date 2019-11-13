@@ -5,11 +5,11 @@
                 <img class="nav__esc__image" src="http://staging.its.utoronto.ca/wp-content/uploads/2019/11/esc_logo-white.png" title="" />
             </section>
 
-            <section class="nav__esc__text">Get Help</section>
+            <section class="nav__esc__text">Enterprise Service Centre</section>
         </a>
 
         <a class="nav__its-alerts" href="http://www.systemstatus.utoronto.ca/">
-            <section class="nav__its-alerts__icon"></section>
+            <section class="nav__its-alerts__icon"><i class="fas fa-circle"></i></section>
             
             <section class="nav__its-alerts__text">ITS System Status</section>
         </a>

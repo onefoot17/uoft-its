@@ -4650,18 +4650,15 @@ button.close {
         
     #blackboard_right_container {
         flex-basis: 70%;
-        // flex-grow: 1;
+        flex-grow: 1;
         flex-shrink: 1;
 
         h2 {
-            /*float:left; width:100%; */
-            font-size:25px;
-            color:#496680;
-            padding-bottom:25px;
-            margin:0!important;
-            color: #1f4878;
-            font-weight:400;
-            font-size:36px;
+            padding-bottom: $padding*2;
+            margin: 0!important;
+            color: $blue-dark;
+            font-weight: 400;
+            font-size: 3.6rem;
         }
     }
 
