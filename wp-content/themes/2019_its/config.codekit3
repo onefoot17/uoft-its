@@ -441,6 +441,132 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/src/font-awesome/webfonts/fa-brands-400.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-brands-400.eot",
+		"oF": 0
+		},
+	"/src/font-awesome/webfonts/fa-brands-400.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/build/font-awesome/webfonts/fa-brands-400.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/src/font-awesome/webfonts/fa-brands-400.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-brands-400.ttf",
+		"oF": 0
+		},
+	"/src/font-awesome/webfonts/fa-brands-400.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-brands-400.woff",
+		"oF": 0
+		},
+	"/src/font-awesome/webfonts/fa-brands-400.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-brands-400.woff2",
+		"oF": 0
+		},
+	"/src/font-awesome/webfonts/fa-regular-400.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-regular-400.eot",
+		"oF": 0
+		},
+	"/src/font-awesome/webfonts/fa-regular-400.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/build/font-awesome/webfonts/fa-regular-400.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/src/font-awesome/webfonts/fa-regular-400.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-regular-400.ttf",
+		"oF": 0
+		},
+	"/src/font-awesome/webfonts/fa-regular-400.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-regular-400.woff",
+		"oF": 0
+		},
+	"/src/font-awesome/webfonts/fa-regular-400.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-regular-400.woff2",
+		"oF": 0
+		},
+	"/src/font-awesome/webfonts/fa-solid-900.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-solid-900.eot",
+		"oF": 0
+		},
+	"/src/font-awesome/webfonts/fa-solid-900.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/build/font-awesome/webfonts/fa-solid-900.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/src/font-awesome/webfonts/fa-solid-900.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-solid-900.ttf",
+		"oF": 0
+		},
+	"/src/font-awesome/webfonts/fa-solid-900.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-solid-900.woff",
+		"oF": 0
+		},
+	"/src/font-awesome/webfonts/fa-solid-900.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/font-awesome/webfonts/fa-solid-900.woff2",
+		"oF": 0
+		},
 	"/src/js/_closest_polyfill.js": {
 		"bF": 4,
 		"ft": 64,
