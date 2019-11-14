@@ -254,7 +254,7 @@
                 ?>
                             
                         <li class="section--follow__post">
-                            <a class="twitter-timeline" data-height="300" <?php echo 'href="https://' . wp_filter_nohtml_kses( get_the_content() ) . '?ref_src=twsrc%5Etfw">'; ?>Tweets by <?php the_title(); ?></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <a class="twitter-timeline" data-height="300" data-chrome="nofooter" <?php echo 'href="https://' . wp_filter_nohtml_kses( get_the_content() ) . '?ref_src=twsrc%5Etfw">'; ?>Tweets by <?php the_title(); ?></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </li>
                 <?php
                     endforeach;
