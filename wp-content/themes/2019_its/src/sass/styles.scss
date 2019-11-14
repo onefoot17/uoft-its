@@ -65,6 +65,9 @@ a {
     @include display-flex(
         $justify-content: center
     );
+    @include for-phone-only {
+        padding-bottom: $padding;
+    }
     
     background-color: var(--blue-dark);
     padding: $padding*2;
@@ -137,9 +140,11 @@ a {
         @include for-phone-only {
             justify-content: center;
         }
+        @include for-tablet-portrait-up {
+            border-bottom: 1px solid var(--blue-light);
+            padding-bottom: $padding/2;
+        }
         
-        border-bottom: 1px solid var(--blue-light);
-        padding-bottom: $padding/2;
         text-align: right;
 
         > * {
@@ -158,7 +163,10 @@ a {
     &#{$es}esc {
         @include button-hover;
         @include button-styles;
-        @include display-flex;
+        @include display-flex(
+            $media-queries: false,
+            $justify-content: center
+        );
         @include transition;
         @include for-phone-only {
             margin-right: 0;
@@ -172,22 +180,21 @@ a {
             max-width: 40px;
             padding-right: $padding/2;
         }
-
-        &#{$es}text {}
     }
 
     &#{$es}its-alerts {
         @include button-hover;
         @include button-styles;
+        @include display-flex(
+            $media-queries: false,
+            $justify-content: center
+        );
         @include transition;
         @include for-phone-only {
             margin-right: 0;
         }
         
-        align-items: center;
         color: var(--white);
-        display: inline-flex;
-        justify-content: center;
         margin-right: $margin;
         padding: $padding/2;
         text-decoration: none;

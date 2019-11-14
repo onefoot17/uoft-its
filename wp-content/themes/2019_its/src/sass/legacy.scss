@@ -4633,6 +4633,10 @@ button.close {
                 padding-left: $padding;
                 width: 83%;
             }
+
+            &:last-child a {
+                padding-bottom: 0;
+            }
         }
         
         .sub_list {

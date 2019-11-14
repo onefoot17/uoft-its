@@ -112,10 +112,13 @@
             <?php } ?>
         </div><!--quick_nav_container-->
 
-        <section id="blackboard_container">
-            <div id="blackboard_left_container">
-                <!-- Below mentioned code for depth 1 or greater -->
-                <?php if( count($post->ancestors) > 0 ) { ?>
+        <?php
+			if($Arrdept2Page) {
+		?>
+        <div id="blackboard_container">
+			<div id="blackboard_left_container">
+				<!-- Below mentioned code for depth 1 or greater -->
+				<?php if( count($post->ancestors) > 0 ) { ?>
                     <ul class="left_ul">
                         <?php
                             $varIncludeIDs = implode(",",$Arrdept2Page);
@@ -175,10 +178,9 @@
                     <?php } ?> 
                 </li>
                     <?php } ?>
-                </ul>
-
-                <?php } else { ?>
-                    <!-- Below mentioned code for Root pages -->
+                </ul>  
+			<?php } else { ?>
+                <!-- Below mentioned code for Root pages -->
                     <ul class="left_ul">
                         <?php
                             $args = array(
@@ -206,17 +208,48 @@
                     <?php } ?>
                 </ul>
 
-                <?php } ?>
-            </div>
+			<?php } ?>
+			</div>
 
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                <section id="blackboard_right_container">
+			<div id="blackboard_right_container">
+				<?php 
+					wp_reset_query();
+
+					if (have_posts()) : while (have_posts()) : the_post();
+				?>
+
+				<a id="<?php echo $post->ID;?>" name="<?php echo $post->ID;?>" ></a>
+
                     <h2><?php the_title(); ?></h2>
+				
+					<?php the_content(); ?>
+				
+					<?php endwhile; ?>
+					<?php else : ?>
+						<h2>Not Found</h2>
+					<?php endif; ?>
+				</div><!--blackboard_left_container-->
+		</div>
+		<?php  } else { ?>
+			<div id="blackboard_container">
+				<div id="blackboard_right_container">
+					<?php 
+						wp_reset_query();
 
-                    <?php the_content(); ?>
-                </section>
-            <?php endwhile; endif; ?>
-        </section>
+						if (have_posts()) : while (have_posts()) : the_post();
+					?>
+
+                        <h2><?php the_title(); ?></h2>
+                        
+                        <?php the_content(); ?>
+					<?php endwhile; ?>
+
+					<?php else : ?>
+						<h2>Not Found</h2>
+					<?php endif; ?>
+				</div>		
+			</div>           
+		<?php } ?>
     </section>
 </main>
 
