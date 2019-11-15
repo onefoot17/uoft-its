@@ -20,7 +20,7 @@
     <section class="section__width">
         <?php if ( function_exists( 'breadcrumb_trail' ) ) breadcrumb_trail(); ?>
 
-        <div id="quick_nav_container" class="featured">
+        <div id="quick_nav_container" class="featured" style="display:none;">
             <?php
                 $args = array('sort_order' => 'ASC','child_of' => $varParent, 'parent' => -1, 'offset' => 0, 'post_type' => 'page', 'post_status' => 'publish' ); 
                     

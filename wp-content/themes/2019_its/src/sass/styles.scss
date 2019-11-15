@@ -531,10 +531,6 @@ a {
     &#{$ms}category {
         background-color: $white;
 
-        &#{$es}width {
-            padding-top: initial;
-        }
-
         &#{$es}post {
             align-self: stretch;
             display: flex;
@@ -869,8 +865,9 @@ a {
 // Breadcrumbs
 .breadcrumbs {
     background-color: $white;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: $margin;
+    text-transform: uppercase;
 
     a {
         color: $gray-medium;
@@ -878,12 +875,12 @@ a {
     }
     
     .divider {
-        padding:0 5px;
-        color: #999;
+        padding: 0 $padding/2;
+        color: $gray-medium;
     }
     
     .active a {
-        color: $gray-dark;
+        color: $blue-dark;
     }
     
     .trail-browse {
