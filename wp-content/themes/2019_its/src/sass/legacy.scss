@@ -1998,13 +1998,16 @@ a.thumbnail {
 	padding: 10px 15px 5px;
 	background: #333333;
 	background: rgba(0, 0, 0, 0.75);
-	h4 {
+    
+    h4 {
 		color: #ffffff;
 	}
-	p {
+    
+    p {
 		color: #ffffff;
 	}
 }
+
 .well {
 	min-height: 20px;
 	padding: 19px;
@@ -2489,33 +2492,76 @@ button.close {
 
     .span6, .span7, .span8, .span9, .span10, .span11, .span12 { font-size: 15px; }
 
-    h1, h2, h3, h4, h4 a, h5, h5 a, h6, th {
+    h1,
+    h2,
+    h3,
+    h4,
+    h4 a,
+    h5,
+    h5 a,
+    h6,
+    th {
         font-family: $font-family;
         text-rendering: optimizeLegibility;
     }
 
-    p, td, li, a, dd, dt, legend {
+    p,
+    td,
+    li,
+    a,
+    dd,
+    dt,
+    legend {
         font-family: $font-family;
         text-rendering: optimizeLegibility;
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #444;
+        font-weight: bold;
+        line-height: 1.1em;
+    }
 
+    h1 {
+        font-size: 2.4em;
+        margin: 0.6em 0 0.25em;
+    }
 
-    h1, h2, h3, h4, h5, h6 { color: #444; font-weight: bold; line-height: 1.1em; }
+    h1.page-title {
+        margin-top: 0.2em;
+    }
 
-    h1 { font-size: 2.4em; margin: 0.6em 0 0.25em; }
+    h2 {
+        font-size: 1.8em;
+        margin: 0.7em 0 0.25em;
+    }
 
-    h1.page-title { margin-top: 0.2em; }
+    h2.entry-title {
+        margin-top: 0.2em;
+    }
 
-    h2 { font-size: 1.8em; margin: 0.7em 0 0.25em; }
+    h3 {
+        color: #666;
+        font-size: 1.6em;
+        margin: 0.8em 0 0.3em;
+    }
 
-    h2.entry-title { margin-top: 0.2em; }
+    h4 {
+        color: #666;
+        font-size: 1.8rem;
+        margin: 0.9em 0 0.35em;
+    }
 
-    h3 { font-size: 1.6em; margin: 0.8em 0 0.3em; color: #666; }
-
-    h4 { font-size: 1.4rem; margin: 0.9em 0 0.35em; color: #666; }
-
-    h5 { font-size: 1.2em; margin: 1em 0 0.4em; color: #666; }
+    h5 {
+        color: #666;
+        font-size: 1.2em;
+        margin: 1em 0 0.4em;
+    }
 
     .page-template-service-landing-php h5 { margin: 0.5em 0 0.4em; }
 
@@ -4689,10 +4735,10 @@ button.close {
                 padding-left: $padding;
                 width: 83%;
             }
+        }
 
-            &:last-child a {
-                padding-bottom: 0;
-            }
+        > li:last-child a {
+            padding-bottom: 0;
         }
         
         .sub_list {
@@ -4721,6 +4767,14 @@ button.close {
             color: $blue-dark;
             font-weight: 400;
             font-size: 3.6rem;
+        }
+
+        h4 {
+            font-size: 2.2rem;
+        }
+
+        h5 {
+            font-size: 1.5rem;
         }
     }
 
@@ -4942,10 +4996,24 @@ button.close {
         display:none;
     }
 
-    h1, h2, h3, h4, h4 a, h5, h5 a, h6, th {
+    h1,
+    h2,
+    h3,
+    h4,
+    h4 a,
+    h5,
+    h5 a,
+    h6,
+    th {
         font-family: $font-family;
     }
-    p, td, li, dd, dt, legend {
+    
+    p,
+    td,
+    li,
+    dd,
+    dt,
+    legend {
         font-size: 16px;
     }
 
@@ -4954,27 +5022,28 @@ button.close {
     }
 
     h3 {
-        font-size: 28px;
+        font-size: 2.8rem;
         color: #1f4878;
         font-weight: 400;
         padding-top:20px;
     }
 
     h4 {
-        padding-top:10px;
-        color: #1f4878;
+        color: var(--blue-dark);
+        padding-top: $padding;
     }
 
     a {
         color: #005bb0;
     }
 
-    ul, ol {
+    ul,
+    ol {
         margin: 0 0 25px 25px;
     }
 
     .navbar .nav > li > a {
-        font-size: 16px;
+        font-size: 1.6rem;
     }
 
     .top_links .hidden-phone {

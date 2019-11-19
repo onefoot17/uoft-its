@@ -206,7 +206,7 @@
                                         $turn_off_excerpt = get_field('turn_off_excerpt');
 
                                         if( ! $turn_off_excerpt ) {
-                                            echo '<p class="section--highlights__link__excerpt">' . get_the_excerpt();
+                                            echo '<p class="section--highlights__link__excerpt">' . get_the_excerpt() . '</p>';
                                         }
                                         
                                         if (get_field( 'alternative_image' ) ) {
