@@ -13,11 +13,21 @@
             $content_width = 1920;
         }
 
-        // Navigation Menu
-        register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'its_2019' ) ) );
+        // Menus
+        if ( function_exists ( 'register_nav_menus' ) ) {
+            register_nav_menus (
+                array (
+                    'main' => __( 'Main' ),
+                    'header_right' => __( 'Header Right' ),
+                    'main-demo' => __( 'DEMO Landing Page Main' ),
+                    'main-menu' => esc_html__( 'Main Menu', 'its_2019' ),
+                    'social-links' => esc_html__( 'Social Links', 'its_2019' ),
+                    'footer' => esc_html__( 'Footer', 'its_2019' )
+                )
+            );
+        }
 
-        add_filter( 'walker_nav_menu_start_el', 'add_arrow', 10, 4 );
-
+        // Nav Menu arrows        
         function add_arrow( $output, $item, $depth, $args ) {
             //Only add class to 'top level' items on the 'primary' menu.
             if( 'main-menu' == $args->theme_location ) {
@@ -28,18 +38,7 @@
             
             return $output;
         }
-    }
-
-    // Social Links Navigation Menu
-    add_action( 'init', 'register_menu_social_links' );
-    function register_menu_social_links() {
-        register_nav_menu( 'social-links',__( 'Social Links' ) );
-    }
-
-    // Footer Navigation Menu
-    add_action( 'init', 'register_menu_footer' );
-    function register_menu_footer() {
-        register_nav_menu( 'footer',__( 'Footer' ) );
+        add_filter( 'walker_nav_menu_start_el', 'add_arrow', 10, 4 );
     }
 
     // Enqueue Scripts
