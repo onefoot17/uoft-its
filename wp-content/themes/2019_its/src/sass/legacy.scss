@@ -18,124 +18,135 @@ Tags: Fluid Grid
    Typeahead, Hero Unit, Nav Pills, Tabs and only Partial use of Icons. Replace ../img with images */
 
    .legacy {
-    background-color: var(--white);
-    padding-left: $padding;
-    padding-right: $padding;
+        background-color: var(--white);
+        padding-left: $padding;
+        padding-right: $padding;
 
-    .clearfix {
-        *zoom: 1;
-        &:before {
-            display: table;
-            content: "";
+        .clearfix {
+            *zoom: 1;
+            &:before {
+                display: table;
+                content: "";
+            }
+            &:after {
+                display: table;
+                content: "";
+                clear: both;
+            }
         }
-        &:after {
-            display: table;
-            content: "";
-            clear: both;
-        }
-    }
     
-    .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
+        .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
 
-    .input-block-level{display:block;width:100%;min-height:28px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+        .input-block-level{display:block;width:100%;min-height:28px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
 
-    article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block;}
+        article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block;}
 
-    audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
+        audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
 
-    audio:not([controls]){display:none;}
+        audio:not([controls]){display:none;}
 
-    html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+        html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
 
-    a {
-        &:focus {
-            outline: thin dotted #333;
-            outline: 5px auto -webkit-focus-ring-color;
-            outline-offset: -2px;
+        a {
+            &:focus {
+                outline: thin dotted #333;
+                outline: 5px auto -webkit-focus-ring-color;
+                outline-offset: -2px;
+            }
+
+            &:hover,
+            &:active {
+                outline: 0 ;
+            }
         }
 
-        &:hover,
-        &:active {
-            outline: 0 ;
-        }
-    }
+        sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
+        sup{top:-0.5em;}
+        sub{bottom:-0.25em;}
+        
+        img {
+            border:0;
+            -ms-interpolation-mode:bicubic;
+            max-width:100%;
+            vertical-align:middle;
+            width: auto;
 
-    sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline;}
-    sup{top:-0.5em;}
-    sub{bottom:-0.25em;}
-    
-    img {
-        border:0;
-        -ms-interpolation-mode:bicubic;
-        max-width:100%;
-        vertical-align:middle;
-        width: auto;
+            .single & {
+                width: inherit;
+            }
+        }
 
-        .single & {
-            width: inherit;
+        button {
+            margin: 0;
+            font-size: 100%;
+            vertical-align: middle;
+            *overflow: visible;
+            line-height: normal;
+            cursor: pointer;
+            -webkit-appearance: button;
+            &::-moz-focus-inner {
+                padding: 0;
+                border: 0;
+            }
         }
-    }
+        
+        input {
+            margin: 0;
+            font-size: 100%;
+            vertical-align: middle;
+            *overflow: visible;
+            line-height: normal;
+            &::-moz-focus-inner {
+                padding: 0;
+                border: 0;
+            }
+        }
+        
+        select {
+            margin: 0;
+            font-size: 100%;
+            vertical-align: middle;
+        }
 
-    button {
-        margin: 0;
-        font-size: 100%;
-        vertical-align: middle;
-        *overflow: visible;
-        line-height: normal;
-        cursor: pointer;
-        -webkit-appearance: button;
-        &::-moz-focus-inner {
-            padding: 0;
-            border: 0;
+        textarea {
+            margin: 0;
+            font-size: 100%;
+            vertical-align: middle;
+            overflow: auto;
+            vertical-align: top;
         }
-    }
-    input {
-        margin: 0;
-        font-size: 100%;
-        vertical-align: middle;
-        *overflow: visible;
-        line-height: normal;
-        &::-moz-focus-inner {
-            padding: 0;
-            border: 0;
+
+        input[type="text"] {
+            appearance: textfield;
         }
-    }
-    select {
-        margin: 0;
-        font-size: 100%;
-        vertical-align: middle;
-    }
-    textarea {
-        margin: 0;
-        font-size: 100%;
-        vertical-align: middle;
-        overflow: auto;
-        vertical-align: top;
-    }
-    input[type="button"] {
-        cursor: pointer;
-        -webkit-appearance: button;
-    }
-    input[type="reset"] {
-        cursor: pointer;
-        -webkit-appearance: button;
-    }
-    input[type="submit"] {
-        cursor: pointer;
-        -webkit-appearance: button;
-    }
-    input[type="search"] {
-        -webkit-box-sizing: content-box;
-        -moz-box-sizing: content-box;
-        box-sizing: content-box;
-        -webkit-appearance: textfield;
-        &::-webkit-search-decoration {
-            -webkit-appearance: none;
+        
+        input[type="button"] {
+            cursor: pointer;
+            appearance: button;
         }
-        &::-webkit-search-cancel-button {
-            -webkit-appearance: none;
+        
+        input[type="reset"] {
+            cursor: pointer;
+            appearance: button;
         }
-    }    
+        
+        input[type="submit"] {
+            cursor: pointer;
+            appearance: button;
+        }
+        
+        input[type="search"] {
+            box-sizing: content-box;
+            appearance: textfield;
+            
+            &::-webkit-search-decoration {
+                appearance: none;
+            }
+            
+            &::-webkit-search-cancel-button {
+                appearance: none;
+            }
+        }
 
     .row {
         margin-left: -20px;
