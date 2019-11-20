@@ -2,13 +2,13 @@
     <section class="nav__top">
         <a class="nav__esc" href="https://uthrprod.service-now.com/help">
             <section class="nav__esc__image-con">
-                <img class="nav__esc__image" src="http://main.its.utoronto.ca/wp-content/uploads/2019/11/esc_logo-white.png" title="" />
+                <img class="nav__esc__image" src="https://main.its.utoronto.ca/wp-content/uploads/2019/11/esc_logo-white.png" title="" />
             </section>
 
             <section class="nav__esc__text">Enterprise Service Centre</section>
         </a>
 
-        <a class="nav__its-alerts" href="http://www.systemstatus.utoronto.ca/">
+        <a class="nav__its-alerts" href="https://www.systemstatus.utoronto.ca/">
             <section class="nav__its-alerts__icon"><i class="fas fa-circle"></i></section>
             
             <section class="nav__its-alerts__text">ITS System Status</section>
