@@ -53,7 +53,7 @@ h1 {
 p {
     @include line-height;
 
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 a {
@@ -103,7 +103,7 @@ a {
             border-left: 1px solid var(--white);
             color: var(--white);
             font-family: $font-family;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
             padding: $padding/2 $padding*2;
             padding-left: 32px;
@@ -269,7 +269,7 @@ a {
     &#{$es}menu { // Level 1 Menu
         @include display-flex;
 
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         position: relative;
         
         .menu-item {
@@ -479,8 +479,13 @@ a {
 
             &#{$es}prev,
             &#{$es}next {
-                @include button-styles( $background-color:transparent, $padding: 0 );
-                @include button-hover( inside_link );
+                @include button-styles(
+                    $background-color:transparent,
+                    $padding: 0
+                );
+                @include button-hover(
+                    inside_link 
+                );
                 @include for-phone-only {
                     flex-basis: 50%;
                 }
@@ -503,13 +508,22 @@ a {
     }
 
     &#{$es}image-fallback {
-        @include display-flex( $justify-content: center);
+        @include display-flex(
+            $justify-content: flex-start,
+            $media-queries: false
+        );
+        
+        align-self: stretch;
+        border: 1px solid var(--gray-light);
+        flex-basis: 100% !important;
         flex-direction: column;
-        flex-grow: 1;
+        padding: $padding;
     }
 
     &#{$es}link {
         @include button-hover( outside_link );
+
+        text-decoration: none;
 
         &#{$es}title {
             font-family: $font-family;
@@ -519,9 +533,27 @@ a {
         button {
             @include transition;
         }
+        
+        &#{$es}image {
+            border: 1px solid var(--gray-light);
+        }
+    }
+
+    &#{$es}link {
+        @include button-hover( outside_link );
 
         text-decoration: none;
-        
+
+        &#{$es}title {
+            font-family: $font-family;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        button {
+            @include transition;
+        }
+
         &#{$es}image {
             border: 1px solid var(--gray-light);
         }
@@ -529,22 +561,38 @@ a {
 
     // Category pages
     &#{$ms}category {
-        background-color: $white;
+        background-color: var(--white);
+
+        &#{$es}width {
+            padding-left: $padding;
+            padding-right: $padding;
+        }
+
+        &#{$es}posts {
+            justify-content: flex-start;
+        }
 
         &#{$es}post {
-            align-self: stretch;
-            display: flex;
             @include for-tablet-portrait-up {
                 flex-basis: calc( 100% / 3 );
+                flex-grow: 0;
             }
+            
+            align-self: stretch;
+            display: flex;
+            min-height: 150px;
             position: relative;
         }
 
         &#{$es}link {
             @include button-hover;
+            @include display-flex(
+                $align-items: initial,
+                $flex-wrap: nowrap,
+                $justify-content: center
+            );
             @include transition;
 
-            display: flex;
             flex-direction: column;
             flex-grow: 1;
             position: relative;
@@ -643,7 +691,6 @@ a {
             &#{$es}excerpt {
                 @include line-height;
 
-                font-size: 1.5rem;
                 padding: $padding*2;
             }
             
@@ -691,8 +738,6 @@ a {
             &#{$es}title {
                 @include line-height;
                 
-                font-size: 1.5rem;
-                font-weight: bold;
                 padding: $padding;
             }
         }
@@ -774,7 +819,6 @@ a {
             &#{$es}excerpt {
                 @include line-height;
 
-                font-size: 1.5rem;
                 text-align: left;
             }
 
@@ -807,9 +851,19 @@ a {
     color: var(--white);
     font-size: 2rem;
 
-    .nav__menu--footer {
-        padding: 0 $padding $padding;
+    .section__width--footer {
+        > * {
+            padding-bottom: $padding*2;
+            padding-left: $padding;
+            padding-right: $padding;
 
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    .nav__menu--footer {
         > * {
             @include button-styles;
             @include button-hover(
@@ -864,23 +918,23 @@ a {
 
 // Breadcrumbs
 .breadcrumbs {
-    background-color: $white;
-    font-size: 1.4rem;
-    margin-bottom: $margin;
+    background-color: var(--white);
+    font-size: 1.3rem;
+    margin-bottom: $margin*2;
     text-transform: uppercase;
 
     a {
-        color: $gray-medium;
+        color: var(--gray-medium);
         text-decoration: none;
     }
     
     .divider {
         padding: 0 $padding/2;
-        color: $gray-medium;
+        color: var(--gray-medium);
     }
     
     .active a {
-        color: $blue-dark;
+        color: var(--blue-dark);
     }
     
     .trail-browse {

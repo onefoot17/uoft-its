@@ -15,7 +15,7 @@
                                     if ( has_post_thumbnail() ) {
                                         echo '<section class="section--category__link__image-con">' . wp_get_attachment_image( get_post_thumbnail_id(), 'medium', false, array( 'class' => 'section__link__image section--category__link__image' ) ) . '</section>';
                                     } else {
-                                        echo '<section class="section__image-fallback"><p>U of T</p></section>';
+                                        echo '<section class="section__image-fallback"><p>' . esc_html( get_bloginfo( 'name' ) ) . '</p></section>';
                                     }
                                 ?>
 

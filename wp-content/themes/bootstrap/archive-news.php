@@ -5,7 +5,7 @@
 get_header(); ?>
 
 <div class="row-fluid">
-  <div id="quick_nav_container" class="howdy">
+  <div id="quick_nav_container">
     <h2><?php the_title();?> </h2>
 
     <ul>

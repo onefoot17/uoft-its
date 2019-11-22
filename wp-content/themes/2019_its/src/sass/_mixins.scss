@@ -16,7 +16,7 @@
 }
   
 // Buttons
-@mixin button-styles( $background-color: var(--blue-light), $border-color: transparent, $color: var(--white), $font-size: 1.4rem, $padding: $padding/1.5 $padding*2, $text-decoration: none ) {
+@mixin button-styles( $background-color: var(--blue-light), $border-color: transparent, $color: var(--white), $font-size: 1.5rem, $padding: $padding/1.5 $padding*2, $text-decoration: none ) {
     background-color: $background-color;
     border: 1px solid $border-color;
     border-radius: 4px;
