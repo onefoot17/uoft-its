@@ -25,11 +25,25 @@
                 <?php endwhile; ?>
             </ul>
         
-            <nav class="section__posts-nav" class="navigation">
-                <button class="section__posts-nav__prev"><?php next_posts_link( __( '<i class="fas fa-angle-left"></i><span>Older posts</span>', 'test' ) ); ?></button>
+            <?php if ( get_next_posts_link() || get_previous_posts_link() ) {
+                echo '<nav class="section__posts-nav" class="navigation">';
+                    if ( get_next_posts_link() ) {
+                        echo '<button class="section__posts-nav__next">';
+                        
+                        next_posts_link( __( '<i class="fas fa-angle-left"></i><span>Older posts</span>' ) );
 
-                <button class="section__posts-nav__next"><?php previous_posts_link( __( '<span>Newer posts</span><i class="fas fa-angle-right"></i>', 'test' ) ); ?></button>
-            </div><!-- #nav-above -->
+                        echo '</button>';
+                    }
+
+                    if ( get_previous_posts_link() ) {
+                        echo '<button class="section__posts-nav__prev">';
+                        
+                        previous_posts_link( __( '<span>Newer posts</span><i class="fas fa-angle-right"></i>' ) );
+                        
+                        echo '</button>';
+                    }
+                echo '</nav>';
+            } ?>
 
             <?php else : ?>
                 <ul><li><h2>Not Found</h2></li></ul>
