@@ -27,24 +27,26 @@
         
             <?php if ( get_next_posts_link() || get_previous_posts_link() ) {
                 echo '<nav class="section__posts-nav" class="navigation">';
-                    if ( get_next_posts_link() ) {
-                        echo '<button class="section__posts-nav__next">';
-                        
-                        next_posts_link( __( '<i class="fas fa-angle-left"></i><span>Older posts</span>' ) );
 
-                        echo '</button>';
-                    }
+                if ( get_next_posts_link() ) {
+                    echo '<button class="section__posts-nav__next">';
+                    
+                    next_posts_link( __( '<i class="fas fa-angle-left"></i><span>Older posts</span>' ) );
 
-                    if ( get_previous_posts_link() ) {
-                        echo '<button class="section__posts-nav__prev">';
-                        
-                        previous_posts_link( __( '<span>Newer posts</span><i class="fas fa-angle-right"></i>' ) );
-                        
-                        echo '</button>';
-                    }
+                    echo '</button>';
+                }
+
+                if ( get_previous_posts_link() ) {
+                    echo '<button class="section__posts-nav__prev">';
+                    
+                    previous_posts_link( __( '<span>Newer posts</span><i class="fas fa-angle-right"></i>' ) );
+                    
+                    echo '</button>';
+                }
+
                 echo '</nav>';
             } ?>
-
+            
             <?php else : ?>
                 <ul><li><h2>Not Found</h2></li></ul>
             <?php endif; ?>
