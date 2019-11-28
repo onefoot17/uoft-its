@@ -27,10 +27,21 @@
             );
         }
 
+        // Add search box to Main Menu
+        add_filter( 'wp_nav_menu_items','add_search_box', 10, 2 );
+        function add_search_box( $items, $args ) {
+            if( $args->theme_location == 'main-menu' ) {
+                $items .= '<li class="menu-item menu-item--search">' . get_search_form( false ) . '</li>';
+            }
+
+            return $items;
+        }
+
         // Nav Menu arrows        
+        add_filter( 'walker_nav_menu_start_el', 'add_arrow', 10, 4 );
         function add_arrow( $output, $item, $depth, $args ) {
             //Only add class to 'top level' items on the 'primary' menu.
-            if( 'main-menu' == $args->theme_location ) {
+            if( $args->theme_location == 'main-menu' ) {
                 if ( in_array( 'menu-item-has-children', $item->classes ) ) {
                     $output .='<i class="fas fa-angle-down nav__menu__arrow"></i>';
                 }
@@ -38,7 +49,6 @@
             
             return $output;
         }
-        add_filter( 'walker_nav_menu_start_el', 'add_arrow', 10, 4 );
     }
 
     // Enqueue Scripts

@@ -14,6 +14,10 @@
             <section class="nav__its-alerts__text">ITS System Status</section>
         </a>
 
+        <a class="nav__its-alerts" href="http://128.100.131.66/">
+            <section class="nav__its-alerts__text">ITS Service Catalogue</section>
+        </a>
+
         <?php wp_nav_menu( array(
             'theme_location' => 'social-links',
             'container' => '',
