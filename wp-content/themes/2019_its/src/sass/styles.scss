@@ -991,7 +991,13 @@ a {
         width: 50%;
     }
 
+    &-not-found-title,
     &-not-found-text {
         margin-bottom: $margin*2;
     }
+}
+
+// 404
+.error404 .#{$search}-form-container .#{$search}-form {
+    width: 50%;
 }
