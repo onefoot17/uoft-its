@@ -21,6 +21,7 @@
                     'header_right' => __( 'Header Right' ),
                     'main-demo' => __( 'DEMO Landing Page Main' ),
                     'main-menu' => esc_html__( 'Main Menu', 'its_2019' ),
+                    'featured-buttons' => esc_html__( 'Featured Buttons', 'its_2019' ),
                     'social-links' => esc_html__( 'Social Links', 'its_2019' ),
                     'footer' => esc_html__( 'Footer', 'its_2019' )
                 )
