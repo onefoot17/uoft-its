@@ -83,7 +83,7 @@ a {
 
         > * {
             @include for-phone-only {
-                flex-basis: 45%;
+                flex-basis: 50%;
                 flex-grow: 1;
             }
         }
@@ -94,6 +94,10 @@ a {
         }
 
         &#{$es}its {
+            @include for-phone-only{
+                padding-right: 0;
+            }
+
             border-left: 1px solid var(--white);
             color: var(--white);
             font-family: $font-family;
@@ -119,9 +123,14 @@ a {
         color: var(--white);
         display: none;
         flex-basis: 5%;
-        flex-grow: 1;
         font-size: 3rem;
-        padding-left: 1rem;
+    }
+
+    .menu-open {
+        @include for-phone-only {
+            flex-shrink: 1;
+            order: 2;
+        }
     }
 }
 
@@ -131,6 +140,7 @@ a {
 
     &#{$es}top {
         @include display-flex(
+            $flex-basis-items: calc(50% - #{$margin/2}),
             $justify-content: center
         );
         @include for-phone-only {
@@ -141,11 +151,14 @@ a {
             padding-bottom: $padding/2;
         }
         
-        text-align: right;
-
         > * {
             @include for-phone-only {
                 margin-bottom: $margin;
+                order: 3;
+
+                &:nth-child(even) {
+                    margin-right: 0;
+                }
             }
 
             align-self: stretch;
@@ -156,52 +169,53 @@ a {
                 margin-right: 0;
             }
         }
+        
+        &#{$es}button {
+            @include button-hover;
+            @include button-styles;
+            @include display-flex(
+                $media-queries: false,
+                $justify-content: center
+            );
+            @include transition;
+            
+            color: var(--white);
+            padding: $padding/2;
+            text-decoration: none;
+        }
+    }
+
+    &#{$es}image-con {
+        padding: $padding/2;
     }
     
-    &#{$es}esc {
-        @include button-hover;
-        @include button-styles;
-        @include display-flex(
-            $media-queries: false,
-            $justify-content: center
-        );
-        @include transition;
-        @include for-phone-only {
-            margin-right: 0;
-            text-align: center;
-        }
-
-        padding: $padding/2;
-
-        &#{$es}image-con {
-            max-width: 40px;
-            padding-right: $padding/2;
-        }
+    &#{$es}esc__image-con {
+        max-width: 40px;
     }
 
-    &#{$es}its-alerts {
-        @include button-hover;
-        @include button-styles;
-        @include display-flex(
-            $media-queries: false,
-            $justify-content: center
-        );
-        @include transition;
-        @include for-phone-only {
-            margin-right: 0;
-        }
-        
-        color: var(--white);
+    &#{$es}its-alerts__icon {
+        color: var(--green-medium);
+        font-size: 1rem;
         padding: $padding/2;
-        text-decoration: none;
-        
-        &#{$es}icon {
-            color: var(--green-medium);
-            font-size: 1rem;
-        }
-        
-        &#{$es}text {
-            padding-left: $padding/2;
+    }
+
+    &#{$es}herug__image-con {
+        max-width: 30px;
+    }
+
+    .search-form {
+        height: 100%;
+    }
+
+    @include for-phone-only {
+        &#{$es}search-container {
+            flex-grow: 1;
+            margin-right: $margin*2;
+            order: 1;
+
+            .search-form > * {
+                flex-basis: auto;
+            }
         }
     }
 
@@ -263,7 +277,10 @@ a {
     
     // Main Menu
     &#{$es}menu { // Level 1 Menu
-        @include display-flex;
+        justify-content: space-around; // Fallback for $justify-content: space-evenly
+        @include display-flex(
+            $justify-content: space-evenly
+        );
 
         font-size: 1.5rem;
         position: relative;
@@ -281,8 +298,11 @@ a {
             
             padding: $padding;
 
-
             @include for-phone-only {
+                &.menu-item-has-children:hover {
+                    background: transparent;
+                }
+
                 > a {
                     flex-basis: auto;
                 }
@@ -294,6 +314,10 @@ a {
 
             &:hover {
                 > .nav__menu__arrow:before {
+                    @include for-phone-only {
+                        color: var(--white);
+                    }
+
                     color: var(--blue-dark);
                     content: fa-content($fa-var-angle-up);
                 }
@@ -341,14 +365,6 @@ a {
 
             @include for-phone-only {
                 order: 2;
-
-                &--search {
-                    order: 1;
-
-                    .search-form > * {
-                        flex-basis: auto;
-                    }
-                }
             }
         }
     
@@ -380,6 +396,22 @@ a {
         }
     }
     
+    .menu-item--social {
+        @include for-phone-only {
+            order: 1;
+        }
+
+        padding: 0;
+
+        &:hover {
+            background-color: transparent;
+        }
+
+        .menu-item:hover {
+            background-color: var(--blue-medium);
+        }
+    }
+
     &#{$es}menu#{$ms}social {
         @include display-flex(
             $media-queries: false
@@ -389,6 +421,8 @@ a {
             @include line-height(
                 $line-height: 1
             );
+
+            width: auto !important;
         }
 
         a {
@@ -396,8 +430,8 @@ a {
             @extend .fab;
 
             font-size: 0;
-            padding-left: $padding*2;
-            text-indent: -9999px;
+            // padding-left: $padding;
+            // text-indent: -9999px;
             
             &:before {
                 font-size: 2rem;
@@ -488,7 +522,7 @@ a {
             &#{$es}prev,
             &#{$es}next {
                 @include button-styles(
-                    $background-color:transparent,
+                    $background-color: transparent,
                     $padding: 0
                 );
                 @include button-hover(

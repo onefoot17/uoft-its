@@ -48,7 +48,7 @@
             } ?>
             
             <?php else : ?>
-                <ul><li><h2>Not Found</h2></li></ul>
+                <ul><li><h2>No posts found.</h2></li></ul>
             <?php endif; ?>
         </section>
     </section>

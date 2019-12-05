@@ -31,7 +31,15 @@
         add_filter( 'wp_nav_menu_items','add_search_box', 10, 2 );
         function add_search_box( $items, $args ) {
             if( $args->theme_location == 'main-menu' ) {
-                $items .= '<li class="menu-item menu-item--search">' . get_search_form( false ) . '</li>';
+                $items .= 
+                    '<li class="menu-item menu-item--social">' . 
+                    wp_nav_menu( array(
+                        'theme_location' => 'social-links',
+                        'container' => '',
+                        'menu_class' => 'nav__menu nav__menu--social',
+                        'echo' => false
+                    ) )
+                    . '</li>';
             }
 
             return $items;
