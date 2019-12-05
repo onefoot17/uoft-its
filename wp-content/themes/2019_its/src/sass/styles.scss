@@ -282,7 +282,6 @@ a {
     
     // Main Menu
     &#{$es}menu { // Level 1 Menu
-        justify-content: space-around; // Fallback for $justify-content: space-evenly
         @include display-flex(
             $justify-content: space-evenly
         );
@@ -402,9 +401,7 @@ a {
     }
     
     .menu-item--social {
-        justify-content: space-around; // Fallback for $justify-content: space-evenly
         @include for-phone-only {
-            justify-content: space-evenly;
             order: 1;
         }
 
@@ -421,8 +418,10 @@ a {
 
     &#{$es}menu#{$ms}social {
         @include display-flex(
+            $justify-content: space-evenly,
             $media-queries: false
         );
+
 
         .menu-item {
             @include line-height(
@@ -435,7 +434,7 @@ a {
         a {
             @extend %fa-icon;
             @extend .fab;
-            
+
             font-size: 0;
             
             &:before {
