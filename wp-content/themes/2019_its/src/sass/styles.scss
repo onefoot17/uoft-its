@@ -128,6 +128,7 @@ a {
 
     .menu-open {
         @include for-phone-only {
+            flex-grow: 0;
             flex-shrink: 1;
             order: 2;
         }
@@ -136,11 +137,13 @@ a {
 
 // Navigation
 .#{$nav} {
+    flex-shrink: 1;
     margin-bottom: $margin;
 
     &#{$es}top {
         @include display-flex(
             $flex-basis-items: calc(50% - #{$margin/2}),
+            $flex-grow: 1,
             $justify-content: center
         );
         @include for-phone-only {
@@ -148,12 +151,12 @@ a {
         }
         @include for-tablet-portrait-up {
             border-bottom: 1px solid var(--blue-light);
-            padding-bottom: $padding/2;
         }
         
         > * {
+            margin-bottom: $margin;
+
             @include for-phone-only {
-                margin-bottom: $margin;
                 order: 3;
 
                 &:nth-child(even) {
@@ -174,6 +177,7 @@ a {
             @include button-hover;
             @include button-styles;
             @include display-flex(
+                $flex-shrink: 1,
                 $media-queries: false,
                 $justify-content: center
             );
@@ -181,12 +185,13 @@ a {
             
             color: var(--white);
             padding: $padding/2;
+            text-align: center;
             text-decoration: none;
-        }
-    }
 
-    &#{$es}image-con {
-        padding: $padding/2;
+            > * {
+                padding: $padding/2;
+            }
+        }
     }
     
     &#{$es}esc__image-con {
@@ -397,7 +402,9 @@ a {
     }
     
     .menu-item--social {
+        justify-content: space-around; // Fallback for $justify-content: space-evenly
         @include for-phone-only {
+            justify-content: space-evenly;
             order: 1;
         }
 
@@ -428,10 +435,8 @@ a {
         a {
             @extend %fa-icon;
             @extend .fab;
-
+            
             font-size: 0;
-            // padding-left: $padding;
-            // text-indent: -9999px;
             
             &:before {
                 font-size: 2rem;

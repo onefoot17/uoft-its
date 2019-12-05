@@ -23,7 +23,7 @@
                 <img src="https://main.its.utoronto.ca/wp-content/uploads/2019/12/HERUG-logo.png" title="" />
             </section>
 
-            <section>HERUG</section>
+            <section>HERUG 2020</section>
         </a>
 
         <section class="nav__search-container"><?php get_search_form(); ?></section>
