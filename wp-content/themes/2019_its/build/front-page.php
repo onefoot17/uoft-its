@@ -35,7 +35,7 @@
                                             </section>
 
                                             <?php if (get_field( 'alternative_image' ) ) {
-                                                    echo '<section class="section--carousel__link__image-con">' . wp_get_attachment_image(get_field( 'alternative_image' ), 'large', false, array('class' => 'section__link__image section--carousel__link__image') ) . '</section>';
+                                                    echo '<section class="section--carousel__link__image-con">' . wp_get_attachment_image(get_field( 'alternative_image' ), 'custom', false, array('class' => 'section__link__image section--carousel__link__image') ) . '</section>';
                                                 } elseif ( has_post_thumbnail() ) {
                                                     echo '<section class="section--carousel__link__image-con">' . wp_get_attachment_image(get_post_thumbnail_id(), 'large', false, array('class' => 'section__link__image section--carousel__link__image') ) . '</section>';
                                                 }
