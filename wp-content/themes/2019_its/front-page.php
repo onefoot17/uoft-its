@@ -10,11 +10,14 @@
                             global $post;
 
                             $args = array (
+                                'order' => 'ASC',
+                                'meta_key' => 'custom_sorting_order',
+                                'orderby' => 'meta_value',
                                 'meta_query' => array (
                                     array (
                                         'key' => 'include_on_home_page',
                                         'value' => 'Carousel',
-                                        'compare' => 'LIKE',
+                                        'compare' => 'LIKE'
                                     )
                                 )
                             );
