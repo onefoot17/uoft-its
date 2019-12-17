@@ -16,15 +16,15 @@
 
         <!-- <a class="nav__top__button" href="http://128.100.131.66/">
             <section>ITS Service Catalogue</section>
-        </a>
+        </a> -->
 
-        <a class="nav__top__button" href="/category/herug-2020/">
+        <a class="nav__top__button" href="/herug2020/">
             <section class="nav__image-con nav__herug__image-con">
                 <img src="https://main.its.utoronto.ca/wp-content/uploads/2019/12/HERUG-logo.png" title="" />
             </section>
 
             <section>HERUG 2020</section>
-        </a> -->
+        </a>
 
         <section class="nav__search-container"><?php get_search_form(); ?></section>
                 

@@ -546,6 +546,14 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/templates/template-HERUG.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/templates/template-HERUG.php",
+		"oF": 0
+		},
 	"/templates/template-its-ESC-help-landing-page.php": {
 		"cB": 0,
 		"ft": 8192,
