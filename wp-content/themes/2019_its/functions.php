@@ -32,8 +32,8 @@
         add_filter( 'wp_nav_menu_items','add_search_box', 10, 2 );
         function add_search_box( $items, $args ) {
             if( $args->theme_location == 'main-menu' ) {
-                $items .= 
-                    '<li class="menu-item menu-item--social">' . 
+                $items .=
+                    '<li class="menu-item menu-item--social">' .
                     wp_nav_menu( array(
                         'theme_location' => 'social-links',
                         'container' => '',
@@ -46,7 +46,7 @@
             return $items;
         }
 
-        // Nav Menu arrows        
+        // Nav Menu arrows
         add_filter( 'walker_nav_menu_start_el', 'add_arrow', 10, 4 );
         function add_arrow( $output, $item, $depth, $args ) {
             //Only add class to 'top level' items on the 'primary' menu.
@@ -55,7 +55,7 @@
                     $output .='<i class="fas fa-angle-down nav__menu__arrow"></i>';
                 }
             }
-            
+
             return $output;
         }
     }
@@ -72,17 +72,17 @@
         wp_enqueue_script( 'script-scripts', get_template_directory_uri() . '/build/js/scripts-min.js', array(), false, true );
     }
 
-    // Remove auto tags on Index page    
+    // Remove auto tags on Index page
     function removeP() {
         if ( is_front_page() ) {
             remove_filter ('the_excerpt', 'wpautop');
-            
+
             remove_filter('the_content', 'wpautop');
         }
     }
-    
+
     add_action( 'template_redirect', 'removeP' );
-    
+
     // SVG Upload
     function cc_mime_types($mimes) {
         $mimes['svg'] = 'image/svg+xml';
@@ -175,6 +175,15 @@
         'after_widget' => '',
         'before_title' => '<strong>',
         'after_title' => '</strong>'
+        ));
+        register_sidebar(array(
+        'name' => 'HERUG Sidebar',
+        'id' => 'herug-sidebar',
+        'description' => 'Sidebar to display on every HERUG page',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => ''
         ));
     }
 
@@ -272,22 +281,22 @@ function get_depth($id = '', $depth = '', $i = 0)
 
 function is_child_of( $page_id, $potential_child_id = '' ) {
   $is_child = false;
-   
+
   if ( ! is_int( $page_id ) ) {
     $page = get_page_by_path( $page_id );
     $page_id = empty( $page ) ? 0 : $page->ID;
   }
-   
+
   if ( empty( $potential_child_id ) ) {
     $potential_child_id = get_the_ID();
   }
-   
+
   $potential_child = get_page( $potential_child_id );
-   
+
   if ( ! empty( $potential_child ) && is_array( $potential_child->ancestors ) ) {
     $is_child = in_array( $page_id, $potential_child->ancestors );
   }
-   
+
   return $is_child;
 }
 ?>
