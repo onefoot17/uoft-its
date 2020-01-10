@@ -200,9 +200,7 @@
                         ?>
 
                             <li>
-                                <small>
-                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                </small>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </li>
                         </li>
                     <?php } ?>
