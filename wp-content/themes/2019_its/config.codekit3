@@ -79,6 +79,14 @@
 		"oAP": "/build/functions.php",
 		"oF": 0
 		},
+	"/header-landing.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/build/header-landing.php",
+		"oF": 0
+		},
 	"/header.php": {
 		"cB": 0,
 		"ft": 8192,
