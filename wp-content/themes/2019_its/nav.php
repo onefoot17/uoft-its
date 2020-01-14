@@ -20,7 +20,7 @@
 
         <a class="nav__top__button" href="/herug2020/">
             <section class="nav__image-con nav__herug__image-con">
-                <img src="https://main.its.utoronto.ca/wp-content/uploads/2019/12/HERUG-logo.png" title="" />
+                <img src="https://main.its.utoronto.ca/wp-content/uploads/2020/01/logo-image-only.png" title="" />
             </section>
 
             <section>HERUG 2020</section>
