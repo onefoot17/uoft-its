@@ -14,7 +14,14 @@ $green-medium: #339933 !default;
 $gold-very-light: #FAFAD2 !default;
 $gold-light: #ffcc33 !default;
 $gold-medium: #ffe498 !default;
+$red: #e31837 !default;
 $white: #ffffff !default;
+
+// IE Fallback
+$vars: (
+    red-medium: #e31837,
+    white-very-light: #ffffff
+);
 
 // Spacing
 $section-width: 960px;
@@ -40,8 +47,12 @@ $search: 'search' !default;
 @function hex-to-rgb( $hex ) {
     @return red( $hex ), green( $hex ), blue( $hex );
 }
+@mixin var($property, $varName) {
+    #{$property}: map-get($vars, $varName);
+    #{$property}: var(--#{$varName}, map-get($vars, $varName));
+}
 :root {
-    --black: #{ $black };
+    --black: #{ map-get( $vars, $black ) };
     --blue-very-light: #{ $blue-very-light };
     --blue-light: #{ $blue-light };
     --blue-light--rgb: #{ hex-to-rgb( $blue-light ) };
@@ -59,7 +70,10 @@ $search: 'search' !default;
     --gold-very-light: #{ $gold-very-light };
     --gold-light: #{ $gold-light };
     --gold-medium: #{ $gold-medium };
+    --red: #{ $red };
+    --red-medium: #{ map-get( $vars, red-medium ) };
     --white: #{ $white };
+    --white-very-light: #{ map-get( $vars, white-very-light ) };
     --margin: #{ $margin };
     --padding: #{ $padding };
 }

@@ -498,7 +498,7 @@ li.menu-has-children {
 
 <main class="content legacy herug">
     <section class="header-image">
-        <img class="herug-logo" src="https://main.its.utoronto.ca/wp-content/uploads/2020/01/herug-logo.png">
+        <img class="herug-logo" src="https://its.utoronto.ca/wp-content/uploads/2020/01/herug-logo.png">
         <!-- <a href="mailto:herug2020@utoronto.ca?Subject=HERUG2020" class="nav__top__button nav__esc cta-button"
             style="background-color: var(--blue-dark);">
             <section class="nav__image-con nav__esc__image-con">
@@ -507,7 +507,7 @@ li.menu-has-children {
 
             <section class="nav__esc__text">Click here to learn more</section>
         </a> -->
-        <img class="herug-banner" src="https://main.its.utoronto.ca/wp-content/uploads/2020/01/herug-banner.jpg">
+        <img class="herug-banner" src="https://its.utoronto.ca/wp-content/uploads/2020/01/herug-banner.jpg">
     </section>
     <section class="section__width">
 

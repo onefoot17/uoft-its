@@ -15,5 +15,14 @@
         </footer>
 
         <?php wp_footer(); ?>
+
+        <script>
+            // Browser Detection
+            if ( "ActiveXObject" in window ) {
+                const unsupported_browser = document.querySelector( '.unsupported-browser' );
+
+                unsupported_browser.classList.remove( 'unsupported-browser-none' );
+            }
+        </script>
     </body>
 </html>

@@ -60,6 +60,23 @@ a {
     color: inherit;
 }
 
+// Unsupported Browser
+.unsupported-browser {
+    @include var(background-color, red-medium);
+    @include var(color, white-very-light);
+
+    font-size: 1.5rem;
+    padding: $padding;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 100000;
+
+    &-none {
+        display: none;
+    }
+}
+
 // Header
 .#{$header} {
     @include display-flex(
@@ -202,6 +219,10 @@ a {
         color: var(--green-medium);
         font-size: 1rem;
         padding: $padding/2;
+    }
+
+    &#{$es}service-catalogue {
+        display: none;
     }
 
     &#{$es}herug__image-con {

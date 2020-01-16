@@ -14,11 +14,13 @@
 </head>
 
 <body <?php body_class(); ?>>
+    <section class="unsupported-browser unsupported-browser-none">You are using an unsupported browser, for best results please use the latest versions of: Chrome, Edge, Firefox or Safari.</section>
+
     <header id="header" class="header">
         <section class="header__logos">
             <a class="header__logos__uoft" href="https://www.utoronto.ca/"
                 title="<?php echo get_bloginfo( 'name' ); ?>"><img class="header__logo"
-                    src="https://main.its.utoronto.ca/wp-content/uploads/2019/11/U-of-T-logo.svg" /></a>
+                    src="https://its.utoronto.ca/wp-content/uploads/2019/11/U-of-T-logo.svg" /></a>
 
             <a class="header__logos__its" href="<?php echo get_site_url(); ?>" title="">
                 <span class="header__logos__its__top">ITS</span>

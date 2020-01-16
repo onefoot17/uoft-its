@@ -12,7 +12,7 @@
 
 	<p>Unfortunately, what you are looking for can't be found</p>
 
-	<p>Maybe give the <a href-="http://www.its.utoronto.ca/">search box</a> another try? If you can't find what you are looking for, <a href="http://main.its.utoronto.ca/contact/">let us know!</a></p>
+	<p>Maybe give the <a href-="http://www.its.utoronto.ca/">search box</a> another try? If you can't find what you are looking for, <a href="http://its.utoronto.ca/contact/">let us know!</a></p>
 
 	
 
