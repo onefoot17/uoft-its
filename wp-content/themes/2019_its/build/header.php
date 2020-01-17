@@ -14,7 +14,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <section class="unsupported-browser unsupported-browser-none">You are using an unsupported browser, for best results please use the latest versions of: Chrome, Edge, Firefox or Safari.</section>
+    <section class="unsupported-browser unsupported-browser-none">You are using an unsupported browser. For best results please use the latest versions of Chrome, Edge, Firefox or Safari.</section>
 
     <header id="header" class="header">
         <section class="header__logos">
