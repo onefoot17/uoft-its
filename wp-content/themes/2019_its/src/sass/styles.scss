@@ -1060,3 +1060,20 @@ a {
 .error404 .#{$search}-form-container .#{$search}-form {
     width: 50%;
 }
+
+// ITS Service Catalogue
+.page-its-service-catalogue .section__width {
+    max-width: 1140px;
+}
+
+.its-service-catalogue-container {
+    height: calc(1440px - 100px);
+    overflow: hidden;
+    position: relative;
+
+    iframe {
+        overflow: hidden;
+        position: absolute;
+        top: -187px;
+    }
+}
