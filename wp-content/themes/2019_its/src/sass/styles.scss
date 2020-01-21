@@ -171,23 +171,14 @@ a {
         }
         
         > * {
-            margin-bottom: $margin;
-
             @include for-phone-only {
                 order: 3;
-
-                &:nth-child(even) {
-                    margin-right: 0;
-                }
             }
-
+            
             align-self: stretch;
-            margin-right: $margin;
-
-            &:last-child {
-                margin-bottom: 0;
-                margin-right: 0;
-            }
+            margin-bottom: $margin;
+            margin-left: $margin/2;
+            margin-right: $margin/2;
         }
         
         &#{$es}button {
@@ -236,7 +227,6 @@ a {
     @include for-phone-only {
         &#{$es}search-container {
             flex-grow: 1;
-            margin-right: $margin*2;
             order: 1;
 
             .search-form > * {

@@ -14,7 +14,7 @@
             <section>ITS System Status</section>
         </a>
 
-        <a class="nav__top__button nav__service-catalogue" href="http://128.100.131.66/">
+        <a class="nav__top__button nav__service-catalogue" href="/its-service-catalogue">
             <section>ITS Service Catalogue</section>
         </a>
 
